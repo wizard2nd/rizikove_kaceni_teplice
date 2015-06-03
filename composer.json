@@ -50,7 +50,8 @@
     "wpackagist-plugin/categories-images": "2.5",
     "wpackagist-plugin/custom-post-type-ui": "1.0.8",
     "wpackagist-plugin/advanced-custom-fields": "4.4.2",
-    "wpackagist-plugin/php-browser-detection": "3.1.4"
+    "wpackagist-plugin/php-browser-detection": "3.1.4",
+    "wpackagist-plugin/contact-form-7": "4.1.2"
   },
   "extra": {
     "installer-paths": {

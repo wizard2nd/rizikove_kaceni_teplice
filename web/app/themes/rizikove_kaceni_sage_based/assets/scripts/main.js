@@ -10,6 +10,11 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+require('jquery');
+require('modernizr');
+require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+require('./pages/home.js');
+
 (function($) {
 
   // Use this variable to set up the common and page specific functions. If you

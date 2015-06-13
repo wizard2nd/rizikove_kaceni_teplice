@@ -1,3 +1,4 @@
+@import "common/_custom_bootstrap_colors";
 @import "common/_variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
@@ -7,14 +8,17 @@
 // endbower
 
 @import "common/_global";
+
 @import "components/_buttons";
 @import "components/_comments";
 @import "components/_forms";
 @import "components/_grid";
 @import "components/_wp-classes";
+@import "components/header";
+@import "components/menu";
+
 @import "layouts/_header";
 @import "layouts/_sidebar";
 @import "layouts/_footer";
 @import "layouts/_pages";
 @import "layouts/_posts";
-

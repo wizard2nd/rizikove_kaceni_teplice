@@ -1,5 +1,23 @@
 <?php
 /**
+ * Custom theme functions
+ *
+ * automatically loads all php files in inc folder
+ */
+
+$custom_includes = [
+  'frontend_helper.php'
+];
+
+foreach ($custom_includes as $file) {
+    $file = __DIR__."/inc/$file";
+    file_exists($file) ?
+        require_once $file :
+        trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
+}
+
+
+/**
  * Sage includes
  *
  * The $sage_includes array determines the code library included in your theme.
@@ -28,6 +46,8 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+add_filter('show_admin_bar', '__return_false');
 
 
 /*

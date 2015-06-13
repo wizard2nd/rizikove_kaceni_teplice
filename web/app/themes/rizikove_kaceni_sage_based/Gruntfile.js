@@ -10,7 +10,9 @@ module.exports = function(grunt) {
             'Author: Jakub Adler\n' +
             '*/\n',
             sass_assets_dir: 'assets/styles',
-            css_dest: 'dist/styles/main.css'
+            js_assets_dir: 'assets/scripts',
+            css_dest: 'dist/styles/main.css',
+            js_dest: 'dist/scripts/main.js'
         },
         sass: {
             main: {
@@ -25,14 +27,50 @@ module.exports = function(grunt) {
                     banner: '<%= meta.css_banner %>'
                 },
                 files: {
-                    '<%= meta.css_dest %>': ['<%= meta.css_dest %>']
+                    '<%= meta.css_dest %>': '<%= meta.css_dest %>'
                 }
+            }
+        },
+        jshint: {
+            options: {
+                curly: true,
+                eqeqeq: true,
+                immed: true,
+                latedef: true,
+                newcap: true,
+                noarg: true,
+                sub: true,
+                undef: true,
+                boss: true,
+                eqnull: true,
+                browser: true,
+                globals: {
+                    // jQuery
+                    jQuery: true,
+                    // extras
+                    alert: true,
+                    console: true,
+                    require: true
+                }
+            },
+            all: [
+                'Gruntfile.js',
+                '<%= meta.js_assets_dir %>/**/*.js'
+            ]
+        },
+        browserify: {
+            "app": {
+                files: { '<%= meta.js_dest %>': ['<%= meta.js_assets_dir %>/main.js'] }
             }
         },
         watch: {
             sass: {
                 files: ['<%= meta.sass_assets_dir %>/**/*.scss'],
                 tasks: ['sass', 'cssmin']
+            },
+            lint: {
+                files: '<%= jshint.all %>',
+                tasks: ['jshint','browserify']
             }
         }
     });
@@ -41,8 +79,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    //grunt.loadNpmTasks('grunt-contrib-copy');
-    //grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     //grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // // Default task(s)

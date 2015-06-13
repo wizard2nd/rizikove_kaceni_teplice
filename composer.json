@@ -48,10 +48,14 @@
     "wpackagist-plugin/qtranslate-x": "3.3",
     "wpackagist-plugin/regenerate-thumbnails": "2.2.4",
     "wpackagist-plugin/categories-images": "2.5",
-    "wpackagist-plugin/custom-post-type-ui": "1.0.8",
+    "wpackagist-plugin/custom-post-type-ui": "~1.1.0",
     "wpackagist-plugin/advanced-custom-fields": "4.4.2",
     "wpackagist-plugin/php-browser-detection": "3.1.4",
-    "wpackagist-plugin/contact-form-7": "4.1.2"
+    "wpackagist-plugin/contact-form-7": "4.2.0",
+    "wpackagist-plugin/qtranslate-slug": "1.1.16",
+    "webcode/wp-bootstrap-navwalker":"dev-master",
+    "wpackagist-plugin/all-in-one-seo-pack": "2.2.7",
+    "wpackagist-plugin/all-in-one-seo-pack-qtranslate-x": "1.0"
   },
   "extra": {
     "installer-paths": {

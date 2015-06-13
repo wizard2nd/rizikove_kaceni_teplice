@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e5dac0980e98bd46b57d205555f4a023",
+    "hash": "75d9f17765bdbfb03fc3e86ede3a02a7",
     "packages": [
         {
             "name": "composer/installers",
@@ -140,20 +140,20 @@
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "a4c08e91be99e858c7778c2f52a4d73820147c2e"
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a4c08e91be99e858c7778c2f52a4d73820147c2e",
-                "reference": "a4c08e91be99e858c7778c2f52a4d73820147c2e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/a04c2c383ef13aae077f36799ed2eafdebd618d2",
+                "reference": "a04c2c383ef13aae077f36799ed2eafdebd618d2",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0"
+                "composer-plugin-api": "^1.0"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
@@ -181,7 +181,10 @@
                 }
             ],
             "description": "A custom installer to handle deploying WordPress with composer",
-            "time": "2013-09-09 15:04:54"
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-06-11 15:15:30"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -235,6 +238,37 @@
             "time": "2014-10-16 14:50:21"
         },
         {
+            "name": "webcode/wp-bootstrap-navwalker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/r-a-stone/webcode-wp-bootstrap-navwalker.git",
+                "reference": "b205af581191839d32a6432154d7f7e5762815b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/r-a-stone/webcode-wp-bootstrap-navwalker/zipball/b205af581191839d32a6432154d7f7e5762815b6",
+                "reference": "b205af581191839d32a6432154d7f7e5762815b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Webcode\\WordPress": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Bootstrap Navwalker for WordPress",
+            "keywords": [
+                "navwalker",
+                "wordpress"
+            ],
+            "time": "2014-12-18 02:58:45"
+        },
+        {
             "name": "wpackagist-plugin/advanced-custom-fields",
             "version": "4.4.2",
             "source": {
@@ -253,6 +287,46 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/all-in-one-seo-pack",
+            "version": "2.2.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/all-in-one-seo-pack/",
+                "reference": "tags/2.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.2.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack/"
+        },
+        {
+            "name": "wpackagist-plugin/all-in-one-seo-pack-qtranslate-x",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/all-in-one-seo-pack-qtranslate-x/",
+                "reference": "tags/1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack-qtranslate-x.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack-qtranslate-x/"
         },
         {
             "name": "wpackagist-plugin/categories-images",
@@ -276,15 +350,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.1.2",
+            "version": "4.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.1.2"
+                "reference": "tags/4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -296,15 +370,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.0.8",
+            "version": "1.1.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.0.8"
+                "reference": "tags/1.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.0.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -355,6 +429,26 @@
             "homepage": "https://wordpress.org/plugins/php-browser-detection/"
         },
         {
+            "name": "wpackagist-plugin/qtranslate-slug",
+            "version": "1.1.16",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/qtranslate-slug/",
+                "reference": "tags/1.1.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/qtranslate-slug.1.1.16.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/qtranslate-slug/"
+        },
+        {
             "name": "wpackagist-plugin/qtranslate-x",
             "version": "3.3",
             "source": {
@@ -398,7 +492,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "webcode/wp-bootstrap-navwalker": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

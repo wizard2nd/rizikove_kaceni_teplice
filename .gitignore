@@ -34,5 +34,4 @@ node_modules
 bin
 .vagrant
 
-#sass cache
-.sass-cache/*
+

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "75d9f17765bdbfb03fc3e86ede3a02a7",
+    "hash": "e06556db1b973ffee31fe0a1db48a9a5",
     "packages": [
         {
             "name": "composer/installers",
@@ -347,6 +347,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/categories-images/"
+        },
+        {
+            "name": "wpackagist-plugin/codestyling-localization",
+            "version": "1.99.30",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/codestyling-localization/",
+                "reference": "tags/1.99.30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/codestyling-localization.1.99.30.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/codestyling-localization/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",

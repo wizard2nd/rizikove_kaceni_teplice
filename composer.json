@@ -55,7 +55,8 @@
     "wpackagist-plugin/qtranslate-slug": "1.1.16",
     "webcode/wp-bootstrap-navwalker":"dev-master",
     "wpackagist-plugin/all-in-one-seo-pack": "2.2.7",
-    "wpackagist-plugin/all-in-one-seo-pack-qtranslate-x": "1.0"
+    "wpackagist-plugin/all-in-one-seo-pack-qtranslate-x": "1.0",
+    "wpackagist-plugin/codestyling-localization": "1.99.30"
   },
   "extra": {
     "installer-paths": {

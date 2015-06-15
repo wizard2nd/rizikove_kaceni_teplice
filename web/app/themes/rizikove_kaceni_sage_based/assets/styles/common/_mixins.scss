@@ -1,0 +1,13 @@
+@mixin modular-mq($breakpoint, $orientation: landscape) {
+
+  @if $breakpoint == tablet {
+    @media screen and (min-width: $screen-sm-min) { @content; }
+  }
+  @else if $breakpoint == desktop {
+    @media screen and (min-width: $screen-md-min) { @content; }
+  }
+  @else if $breakpoint == desktop-large {
+    @media screen and (min-width: $screen-lg-min) { @content; }
+  }
+
+}

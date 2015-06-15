@@ -1,0 +1,19 @@
+.menu-center{
+  width: 100%;
+
+  @include modular-mq(desktop){
+    width: 1000px;
+  }
+}
+
+.main-menu-container{
+  position: absolute;
+  left: 14px;
+  width: 75%;
+  z-index: 1000;
+}
+
+.main-menu{
+  background: $navbar-inverse-bg;
+}
+

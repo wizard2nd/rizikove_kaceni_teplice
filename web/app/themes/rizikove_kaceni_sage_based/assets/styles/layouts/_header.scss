@@ -1,0 +1,21 @@
+header{
+  //background: $navbar-inverse-bg;
+}
+
+.header-image{
+  position: relative;
+  background: url("#{$img-path}/header-background.jpg");
+  width: 100%;
+  height: 400px;
+
+  @include modular-mq(desktop){
+    width: $site-width;
+  }
+
+}
+
+.site-title{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

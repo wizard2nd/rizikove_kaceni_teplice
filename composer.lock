@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e06556db1b973ffee31fe0a1db48a9a5",
+    "hash": "bd784434acb8860227c6697d0774a945",
     "packages": [
         {
             "name": "composer/installers",
@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2.2",
+            "version": "4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "998358f3b7a2c75caae11ff3c79e514951aac7f6"
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/998358f3b7a2c75caae11ff3c79e514951aac7f6",
-                "reference": "998358f3b7a2c75caae11ff3c79e514951aac7f6",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
+                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-05-07 01:46:09"
+            "time": "2015-04-23 16:31:07"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -270,7 +270,7 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.2",
+            "version": "4.4.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
@@ -390,15 +390,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.1.0"
+                "reference": "tags/1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -430,15 +430,15 @@
         },
         {
             "name": "wpackagist-plugin/php-browser-detection",
-            "version": "3.1.4",
+            "version": "3.1.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/php-browser-detection/",
-                "reference": "tags/3.1.4"
+                "reference": "tags/3.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/php-browser-detection.3.1.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/php-browser-detection.3.1.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -467,26 +467,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/qtranslate-slug/"
-        },
-        {
-            "name": "wpackagist-plugin/qtranslate-x",
-            "version": "3.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/qtranslate-x/",
-                "reference": "tags/3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/qtranslate-x.3.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/qtranslate-x/"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",

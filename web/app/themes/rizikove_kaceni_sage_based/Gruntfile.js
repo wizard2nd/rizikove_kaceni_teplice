@@ -9,10 +9,11 @@ module.exports = function(grunt) {
             'Theme Name: Rizikove kaceni teplice based on Sage base wordpress theme' +
             'Author: Jakub Adler\n' +
             '*/\n',
-            sass_assets_dir: 'assets/styles',
-            js_assets_dir: 'assets/scripts',
-            css_dest: 'dist/styles/main.css',
-            js_dest: 'dist/scripts/main.js'
+            sass_assets_dir:    'assets/styles',
+            js_assets_dir:      'assets/scripts',
+            css_dest:           'dist/styles/main.css',
+            js_dest:            'dist/scripts/main.js',
+            fonts_dest:         'dist/fonts/'
         },
         sass: {
             main: {
@@ -61,6 +62,14 @@ module.exports = function(grunt) {
         browserify: {
             "app": {
                 files: { '<%= meta.js_dest %>': ['<%= meta.js_assets_dir %>/main.js'] }
+            }
+        },
+        copy: {
+            main:{
+                expand: true,
+                cwd: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/',
+                src: '*',
+                dest: '<%= meta.fonts_dest %>'
             }
         },
         watch: {

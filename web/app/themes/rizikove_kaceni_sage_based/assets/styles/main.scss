@@ -7,10 +7,11 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 // endbower
 
+@import "common/_reset";
 @import "common/_global";
-@import "common/fonts";
-@import "common/variables";
-@import "common/mixins";
+@import "common/_fonts";
+@import "common/_variables";
+@import "common/_mixins";
 
 @import "components/_buttons";
 @import "components/_comments";
@@ -19,7 +20,7 @@
 @import "components/_wp-classes";
 
 @import "layouts/_header";
-@import "layouts/navigation";
+@import "layouts/_navigation";
 @import "layouts/_sidebar";
 @import "layouts/_footer";
 @import "layouts/_pages";

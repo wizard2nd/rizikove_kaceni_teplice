@@ -2,7 +2,7 @@
 $icon-font-path:        "../fonts/";
 
 //bootsrap breakpoints overrides
-$screen-md-min: 1024px;
+$screen-md-min: 1030px;
 
 // Grid settings
 $main-sm-columns:       12;
@@ -22,3 +22,11 @@ $site-width: 960px;
 
 // images
 $img-path: 'images';
+
+// header
+$header-image-height: 420px;
+
+// logo height and width mobile and normal
+$logo-dim-mob: 200px;
+$logo-dim: 250px;
+

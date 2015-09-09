@@ -2,7 +2,35 @@
   width: 100%;
 
   @include modular-mq(desktop){
-    width: 1000px;
+    width: 1040px;
+  }
+}
+
+.navbar{
+  margin-bottom: 0;
+  font-family: Quicksand, sans-serif;
+  font-weight: 300;
+  min-height: initial;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  @include border-radius(0px);
+
+  li.menu-item{
+
+    a {
+      font-size: 20px;
+
+      @include modular-mq(tablet){
+        font-size: 17px;
+      }
+
+      @include modular-mq(desktop) {
+        font-size: 23px;
+        line-height: 35px;
+      }
+    }
   }
 }
 
@@ -11,9 +39,71 @@
   left: 14px;
   width: 75%;
   z-index: 1000;
+
+  @include modular-mq(tablet){
+    position: relative;
+    left: initial;
+    padding: 0;
+    margin: 0 auto !important; // override .navbar-collapse from bootstrap
+    width: 100%;
+  }
+
+  @include modular-mq(desktop){
+    width: 100%;
+  }
 }
 
+
 .main-menu{
+  &.navbar-nav{
+
+    @include modular-mq(tablet){
+      width: 730px;
+      margin: 0 auto;
+      float: initial;
+
+      .de & {
+        width: 760px;
+      }
+    }
+
+    @include modular-mq(desktop){
+      width: 925px;
+
+      .de & {
+        width: 990px;
+      }
+    }
+  }
+
   background: $navbar-inverse-bg;
 }
+
+// shift language menu to right
+.lang .dropdown-menu{
+  right: 0;
+  left: initial;
+}
+
+// css adjustments for language
+
+.nav>li>a {
+
+  @include modular-mq(tablet){
+    .de & {
+      padding: 20px 6px;
+    }
+
+    .en & {
+      padding: 20px 10px;
+    }
+
+    .cz & {
+      padding: 20px 12px;
+    }
+  }
+
+}
+
+//=============================
 

@@ -23,11 +23,26 @@
                      ?>
               </div>
         </nav>
-        <div class="header-image center-block">
-            <div class="site-title">
-                <h1><?php bloginfo('title') ?></h1>
-                <h4><?php bloginfo('description') ?></h4>
+        <div class="header-image">
+            <?php if (is_mobile() || is_tablet()) : ?>
+            <div class="mobile">
+                <div class="site-logo-title-wrap">
+                    <div class="site-logo"></div>
+                    <h1 class="site-title"><?php bloginfo('title') ?></h1>
+                </div>
+                <h4 class="site-description"><?php bloginfo('description') ?></h4>
             </div>
+            <?php else : ?>
+                <div class="desktop">
+                    <div class="site-logo-title-wrap">
+                        <div class="site-logo"></div>
+                        <div class="title-description-wrap">
+                            <h1 class="site-title"><?php bloginfo('title') ?></h1>
+                            <h4 class="site-description"><?php bloginfo('description') ?></h4>
+                        </div>
+                    </div>
+                </div>
+            <?php endif ?>
         <div>
 
 </header>

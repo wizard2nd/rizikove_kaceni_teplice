@@ -2,7 +2,14 @@
 * Bootstrap overrides
 */
 
-.navbar{
-  margin-bottom: 0;
-  font-family: 'Muli', sans-serif;
+.navbar-toggle{
+  float: none;
+}
+
+.container-fluid{
+  padding: 0;
+}
+
+.navbar-nav{
+  margin-top: 0;
 }

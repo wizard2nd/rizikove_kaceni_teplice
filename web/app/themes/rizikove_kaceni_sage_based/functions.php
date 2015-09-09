@@ -49,6 +49,7 @@ unset($file, $filepath);
 
 add_filter('show_admin_bar', '__return_false');
 
+add_filter('wp_nav_menu_items', array('\rk\frontend_helper\FrontendHelper', 'add_icon_to_menu'), 10, 2);
 
 /*
     * My custom functions
@@ -68,14 +69,6 @@ function rk_create_home_image_post_type(){
 
 add_action('init', 'rk_create_home_image_post_type');
 
-
-function rk_get_language(){
-
-    $uri = explode('/',trim($_SERVER['REQUEST_URI'],'/'));
-    if (in_array('cz', $uri)) return 'cz';
-    if (in_array('de', $uri)) return 'de';
-
-}
 
 function rk_custom_translate($cz, $de){
 

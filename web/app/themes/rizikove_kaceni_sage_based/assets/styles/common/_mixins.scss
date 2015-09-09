@@ -1,7 +1,25 @@
-@mixin modular-mq($breakpoint, $orientation: landscape) {
+/**
+* Media query
+*/
 
-  @if $breakpoint == tablet {
-    @media screen and (min-width: $screen-sm-min) { @content; }
+@mixin modular-mq($breakpoint, $orientation: portrait) {
+
+  @if  $breakpoint == mobile{
+    @if $orientation == landscape{
+      @media screen and (max-width: $screen-sm-min) and (orientation: $orientation ) { @content; }
+    }
+    @else{
+      @media screen and (max-width: $screen-sm-min) { @content; }
+    }
+  }
+  @else if $breakpoint == tablet {
+    @if $orientation == landscape{
+      @media screen and (min-width: $screen-sm-min) and (orientation: $orientation ) { @content; }
+    }
+    @else{
+      @media screen and (min-width: $screen-sm-min) { @content; }
+    }
+
   }
   @else if $breakpoint == desktop {
     @media screen and (min-width: $screen-md-min) { @content; }
@@ -10,4 +28,30 @@
     @media screen and (min-width: $screen-lg-min) { @content; }
   }
 
+}
+
+/**
+* background image
+*/
+@mixin bg_img($image, $repeat: no-repeat, $attachment: null, $position: center){
+  background: url("#{$img-path}/#{$image}") $repeat $attachment $position;
+}
+
+/**
+* border radius
+* depend on mixins from bourbon lib
+*/
+
+@mixin border-radius($radius){
+  @include border-bottom-radius($radius);
+  @include border-top-radius($radius);
+}
+
+/**
+* set same dimensions for width and height
+*/
+
+@mixin square-dim($dim){
+  width: $dim;
+  height: $dim;
 }

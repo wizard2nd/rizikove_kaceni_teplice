@@ -1,15 +1,12 @@
 .menu-center{
   width: 100%;
-
-  @include modular-mq(desktop){
-    width: 1040px;
-  }
 }
 
 .navbar{
   margin-bottom: 0;
-  font-family: Quicksand, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  letter-spacing: 1px;
   min-height: initial;
   position: fixed;
   top: 0;
@@ -63,15 +60,22 @@
       float: initial;
 
       .de & {
-        width: 760px;
+        width: 750px;
       }
     }
 
+    @include modular-mq(tablet, landscape){
+      .de & {
+        width: 860px;
+      }
+      width: 860px;
+    }
+
     @include modular-mq(desktop){
-      width: 925px;
+      width: 1030px;
 
       .de & {
-        width: 990px;
+        width: 1100px;
       }
     }
   }
@@ -91,15 +95,29 @@
 
   @include modular-mq(tablet){
     .de & {
-      padding: 20px 6px;
+      padding: 20px 4px;
     }
 
     .en & {
-      padding: 20px 10px;
+      padding: 20px 9px;
     }
 
     .cz & {
+      padding: 20px 11px;
+    }
+  }
+
+  @include modular-mq(tablet, landscape){
+    .de & {
       padding: 20px 12px;
+    }
+
+    .en & {
+      padding: 20px 18px;
+    }
+
+    .cz & {
+      padding: 20px 20px;
     }
   }
 

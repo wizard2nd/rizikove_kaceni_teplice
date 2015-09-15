@@ -7,6 +7,7 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 // endbower
 
+@import "common/_helpers";
 @import "common/_reset";
 @import "common/_global";
 @import "common/_fonts";
@@ -25,5 +26,7 @@
 @import "layouts/_footer";
 @import "layouts/_pages";
 @import "layouts/_posts";
+
+@import "pages/_home_page";
 
 @import "common/overrides";

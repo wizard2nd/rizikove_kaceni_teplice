@@ -1,0 +1,19 @@
+
+@include modular-mq(tablet){
+  .container{
+    width: 100%;
+
+  }
+}
+
+.site-content{
+
+  @include modular-mq(desktop){
+    width: $site-width;
+    margin: 70px auto;
+  }
+
+}
+
+
+

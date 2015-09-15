@@ -1,0 +1,131 @@
+// styles for home page
+
+#home-page{
+  .container{
+    padding: 0;
+  }
+}
+
+.carousel{
+
+}
+
+.item{
+
+  &__bottom-title{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(223, 230, 221, 0.66);
+    padding: 10px 10px;
+    text-align: left;
+    //z-index: 1000;
+
+    h1{
+      color: $color-primary-4;
+      font-weight: 400;
+      font-size: 20px;
+
+      @include modular-mq(tablet){
+        font-size: 30px;
+      }
+    }
+
+
+
+    &--link{
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .more-info{
+        margin: 10px 8px 0 0;
+        font-size: 16px;
+        font-weight: 200;
+        color: $color-primary-4;
+
+        @include modular-mq(tablet){
+          font-size: 23px;
+          margin: 11px 8px 0 0;
+        }
+      }
+
+      p{
+        margin: 0;
+        float: left;
+      }
+
+      .glyphicon{
+        font-size: 21px;
+
+        @include modular-mq(tablet){
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  img{
+    @include square-dim(100%);
+  }
+}
+
+.home-page-post{
+
+  ul{
+    list-style-type: none;
+    margin: 0 auto;
+    font-size: 15px;
+    padding: 10px;
+    background-color: #C1C7C2;
+    font-family: HelveticaNeue-Light, Arial, sans-serif;
+
+    li{
+      margin-bottom: 10px;
+    }
+
+    @include modular-mq(tablet){
+      font-size: 25px;
+      padding: 25px;
+    }
+
+    @include modular-mq(desktop){
+      margin-top: 70px;
+      font-size: 31px;
+      padding: 20px;
+    }
+  }
+
+
+  .glyphicon{
+
+    font-size: 15px;
+    margin: 3px 10px 0 0;
+    float: left;
+    display: block;
+    height: 22px;
+
+    @include modular-mq(tablet){
+      font-size: 25px;
+    }
+
+    @include modular-mq(desktop){
+      font-size: 25px;
+      margin: 8px 16px 0 0;
+    }
+
+  }
+}
+
+// override bootstrap next, prev button in carousel
+.carousel-control{
+  height: 82%;
+
+  @include modular-mq(tablet){
+    height: 86%;
+  }
+
+  @include modular-mq(desktop){
+    height: 89%;
+  }
+}

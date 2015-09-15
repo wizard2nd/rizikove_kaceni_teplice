@@ -5,18 +5,6 @@
  * automatically loads all php files in inc folder
  */
 
-$custom_includes = [
-  'frontend_helper.php'
-];
-
-foreach ($custom_includes as $file) {
-    $file = __DIR__."/inc/$file";
-    file_exists($file) ?
-        require_once $file :
-        trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
-}
-
-
 /**
  * Sage includes
  *
@@ -47,14 +35,33 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
+
+/**
+ * Custom classes
+ */
+$custom_includes = [
+    'frontend_helper.php',
+    'media_helper.php'
+];
+
+foreach ($custom_includes as $file) {
+    $file = __DIR__."/inc/$file";
+    file_exists($file) ?
+        require_once $file :
+        trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
+}
+
 add_filter('show_admin_bar', '__return_false');
 
 add_filter('wp_nav_menu_items', array('\rk\frontend_helper\FrontendHelper', 'add_icon_to_menu'), 10, 2);
 
-/*
-    * My custom functions
-    *
-    */
+add_filter('post_thumbnail_html', array('\rk\frontend_helper\FrontendHelper', 'add_class_to_thumbnail'), 10, 1);
+
+
+
+/**
+* My custom functions
+*/
 
 function rk_create_home_image_post_type(){
     $post_setting = array(
@@ -68,24 +75,4 @@ function rk_create_home_image_post_type(){
 }
 
 add_action('init', 'rk_create_home_image_post_type');
-
-
-function rk_custom_translate($cz, $de){
-
-    if (rk_get_language() == 'cz') return $cz;
-    if (rk_get_language() == 'de') return $de;
-}
-
-function rk_get_routes(){
-    return $routes = array(4 => 71, 5 => 73, 6 => 75);
-}
-
-function rk_nbsp($string){
-    return str_replace('@', '&nbsp;', $string);
-}
-
-function rk_get_language_url($lang){
-    $current_url = get_permalink();
-    return preg_replace('@/(cz|de)@', "/$lang", $current_url);
-}
 

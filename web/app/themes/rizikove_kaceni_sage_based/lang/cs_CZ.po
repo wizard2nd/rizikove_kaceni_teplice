@@ -1,0 +1,157 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Rizikove kaceni Sage based v8.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-09-10 11:32:38+0000\n"
+"Last-Translator: jakubadler <adler.jakub@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:4
+#@ sage
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: base.php:15
+#@ sage
+msgid "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: functions.php:43
+#, php-format
+#@ sage
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: functions.php:62
+#@ default
+msgid "Index Images"
+msgstr ""
+
+#: functions.php:63
+#@ default
+msgid "Index Image"
+msgstr ""
+
+#: home_page.php:9
+#@ sage
+msgid "Pridej tady"
+msgstr ""
+
+#: home_page.php:11
+#@ sage
+msgid "Risk Felling"
+msgstr "Rizikové káceni"
+
+#: home_page.php:12
+#@ sage
+msgid "Pruning trees"
+msgstr "Prořezy stromů"
+
+#: home_page.php:13
+#@ sage
+msgid "Directional felling"
+msgstr "Směrové kácení"
+
+#: index.php:5
+#: search.php:5
+#@ sage
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: lib/extras.php:31
+#@ sage
+msgid "Continued"
+msgstr ""
+
+#: lib/init.php:22
+#@ sage
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/init.php:49
+#@ sage
+msgid "Primary"
+msgstr ""
+
+#: lib/init.php:58
+#@ sage
+msgid "Footer"
+msgstr ""
+
+#: lib/titles.php:13
+#@ sage
+msgid "Latest Posts"
+msgstr ""
+
+#: lib/titles.php:18
+#, php-format
+#@ sage
+msgid "Search Results for %s"
+msgstr ""
+
+#: lib/titles.php:20
+#@ sage
+msgid "Not Found"
+msgstr ""
+
+#: templates/comments.php:9
+#, php-format
+#@ sage
+msgctxt "comments title"
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: templates/comments.php:19
+#@ sage
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:22
+#@ sage
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:31
+#@ sage
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-page.php:2
+#: templates/content-single.php:11
+#@ sage
+msgid "Pages:"
+msgstr ""
+
+#: templates/entry-meta.php:2
+#@ sage
+msgid "By"
+msgstr ""
+
+#: templates/searchform.php:2
+#@ sage
+msgid "Search for:"
+msgstr ""
+
+#: templates/searchform.php:4
+#: templates/searchform.php:6
+#@ sage
+msgid "Search"
+msgstr ""
+

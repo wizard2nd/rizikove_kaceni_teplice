@@ -3,8 +3,8 @@
 }
 
 .navbar{
+  @extend .navigation-font;
   margin-bottom: 0;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   letter-spacing: 1px;
   min-height: initial;

@@ -1,0 +1,110 @@
+//footer{
+//  position: fixed;
+//  width: 100%;
+//  bottom: 0;
+//}
+
+.sitemap, .services {
+  display: none;
+
+  @include modular-mq(tablet){
+    display: block;
+  }
+
+}
+
+.footer-container{
+
+  background-color: #D2E0D1;
+  padding-top: 1px;
+
+  &__contact{
+    text-align: center;
+
+    @include modular-mq(tablet){
+      text-align: left;
+      font-size: 17px;
+    }
+
+  }
+
+  &__list{
+
+    margin: 20px auto;
+
+    & li{
+      list-style-type: none;
+    }
+
+    @include modular-mq(tablet){
+      height: 240px;
+    }
+
+    &--section{
+
+      height: 100%;
+
+      @include modular-mq(tablet){
+        width: 33%;
+        padding:0 25px 0 25px;
+        float: left;
+        border-right: 1px solid;
+
+        &.last{
+          border: none;
+          padding-right: 0;
+        }
+
+      }
+
+      @include modular-mq(desktop){
+        border-right: 1px solid;
+
+        &.first{
+          border-left: 1px solid;
+        }
+
+        &.last{
+          border-right: 1px solid;
+        }
+
+      }
+
+
+      h3{
+        margin: 10px 0;
+      }
+    }
+
+    @include modular-mq(desktop){
+      width: $site-width;
+      margin: 30px auto;
+    }
+
+  }
+
+}
+
+.footer-link{
+  font-size: 17px;
+}
+
+
+.credentials{
+  text-align: center;
+  background-color: #C3CAC4;
+  padding: 10px;
+
+  .created_by{
+    display: block;
+  }
+
+  @include modular-mq(mobile, landscape){
+    .created_by{
+      display: inline;
+    }
+  }
+}
+
+
+

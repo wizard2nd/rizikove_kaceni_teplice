@@ -49,4 +49,33 @@ class FrontendHelper {
 		else return 'en';
 	}
 
+    public static function add_class_to_thumbnail($thumbnail_html){
+        return $thumbnail_html;
+    }
+
+    /**
+     * @param $page_ids
+     */
+    public static function render_footer_links($page_ids){
+        $pages = get_pages(array('include' => implode(',', $page_ids)));
+        foreach ($pages as $id => $page){
+            $url = get_page_link($page->ID);
+            print sprintf('<li class="footer-link"><a href="%s">%s</a></li>', $url, $page->post_title);
+        }
+    }
+
+    private static function get_device(){
+        if (is_tablet()) return 'tablet';
+        if (is_mobile()) return 'mobile';
+        if (is_desktop()) return 'desktop';
+    }
+
+    public static function get_thumbnail_image($post_id){
+        print get_the_post_thumbnail($post_id, self::get_device());
+    }
+
+    public static function add_icon_to_list_item($content){
+        return preg_replace('@(<li>)(.*)(</li>)@', '$1<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span><span>$2</span>$3', $content);
+    }
+
 }

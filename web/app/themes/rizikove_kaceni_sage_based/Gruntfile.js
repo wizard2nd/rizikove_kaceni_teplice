@@ -16,6 +16,9 @@ module.exports = function(grunt) {
             fonts_dest:         'dist/fonts/'
         },
         sass: {
+            options:{
+              lineNumbers: true
+            },
             main: {
                 files: {
                    '<%= meta.css_dest %>': '<%= meta.sass_assets_dir %>/main.scss'
@@ -75,7 +78,7 @@ module.exports = function(grunt) {
         watch: {
             sass: {
                 files: ['<%= meta.sass_assets_dir %>/**/*.scss'],
-                tasks: ['sass', 'cssmin']
+                tasks: ['sass']
             },
             lint: {
                 files: '<%= jshint.all %>',

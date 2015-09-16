@@ -47,8 +47,8 @@ var Profile = require('./pages/profile.js');
     },
     'profile': {
         init: function(){
-            var profile = new Profile();
-            profile.init();
+            Profile.init();
+
         }
     }
   };

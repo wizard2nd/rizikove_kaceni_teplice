@@ -2,7 +2,7 @@
  * Created by wizard on 16/09/15.
  */
 
-module.exports = function(){
+var Profile = function(){
 
     var profileCarouselId = 'profile-carousel',
         $profileCarousel  = $('#'+profileCarouselId),
@@ -27,3 +27,5 @@ module.exports = function(){
     };
 };
 
+
+module.exports = new Profile();

@@ -14,6 +14,7 @@ require('jquery');
 require('modernizr');
 require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 require('./pages/home.js');
+var Profile = require('./pages/profile.js');
 
 (function($) {
 
@@ -43,6 +44,12 @@ require('./pages/home.js');
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    'profile': {
+        init: function(){
+            var profile = new Profile();
+            profile.init();
+        }
     }
   };
 

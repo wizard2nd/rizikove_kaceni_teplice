@@ -41,7 +41,8 @@ unset($file, $filepath);
  */
 $custom_includes = [
     'frontend_helper.php',
-    'media_helper.php'
+    'media_helper.php',
+    'carousel_helper.php'
 ];
 
 foreach ($custom_includes as $file) {

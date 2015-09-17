@@ -14,7 +14,8 @@ require('jquery');
 require('modernizr');
 require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 require('./pages/home.js');
-var Profile = require('./pages/profile.js');
+require('underscore');
+var Modal = require('./components/modal.js');
 
 (function($) {
 
@@ -47,7 +48,7 @@ var Profile = require('./pages/profile.js');
     },
     'profile': {
         init: function(){
-            Profile.init();
+            Modal.init();
 
         }
     }

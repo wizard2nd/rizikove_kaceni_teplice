@@ -9,7 +9,8 @@
   "dependencies": {
     "modernizr": "2.8.2",
     "bootstrap-sass-official": "3.3.4",
-    "bourbon": "4.2.3"
+    "bourbon": "4.2.3",
+    "underscore": "1.8.3"
   },
   "overrides": {
     "modernizr": {

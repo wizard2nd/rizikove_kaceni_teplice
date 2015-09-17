@@ -1,0 +1,157 @@
+
+.profile-page{
+  font-size: 17px;
+  font-weight: 200;
+
+  .container{
+    padding: 30px 20px;
+
+    @include modular-mq(tablet){
+      padding: 40px 30px;
+    }
+
+    @include modular-mq(desktop){
+      padding: 0;
+    }
+  }
+
+  @include modular-mq(tablet){
+    font-size: 27px;
+  }
+
+  @include modular-mq(desktop){
+    font-size: 24px;
+  }
+}
+
+
+.profile-post{
+
+  .profile-photo{
+    display: none;
+
+    @include modular-mq(tablet){
+      display: block;
+      margin-right: 20px;
+      @include square-dim(50%);
+    }
+
+    @include modular-mq(tablet, landscape){
+      @include square-dim(25%);
+    }
+
+    @include modular-mq(desktop){
+      margin-right: 20px;
+    }
+  }
+
+}
+
+.slider-images{
+
+  @include modular-mq(tablet){
+    margin-top: 40px;
+  }
+
+  @include modular-mq(desktop){
+    margin-top: 50px;
+  }
+
+
+  &__image{
+
+    @extend .image-border;
+    border-width: 2px;
+    margin-bottom: 10px;
+
+    @include transition(all 0.5s ease-in-out);
+
+    &:hover{
+      @include transform(scale(1.2))
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    @include modular-mq(tablet){
+      display: inline-block;
+      width: 49%;
+    }
+
+    @include modular-mq(desktop){
+      width: 23%;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    img{
+      @include square-dim(100%);
+    }
+
+    @include modular-mq(desktop){
+
+    }
+  }
+}
+
+#profile-carousel{
+
+  display: none;
+  @extend .image-border;
+
+  @include modular-mq(desktop){
+    border-width: 10px;
+    width: 700px;
+    margin: 0 auto;
+
+  }
+
+}
+
+.certificates{
+
+  display: none;
+
+  @include modular-mq(desktop){
+    margin-top: 50px;
+    display: block;
+  }
+
+  h1{
+    border-bottom: 1px solid;
+  }
+
+  &__list{
+
+    @include modular-mq(desktop){
+      margin-top: 50px;
+    }
+
+
+    &--single{
+      display: inline-block;
+      width: 25%;
+      margin-right: 11.5%;
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      @include transition(all 0.5s ease-in-out);
+
+      &:hover{
+        @include transform(scale(1.1))
+      }
+
+      img{
+        @include square-dim(100%);
+      }
+
+      h3{
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

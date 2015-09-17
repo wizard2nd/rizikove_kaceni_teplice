@@ -56,7 +56,8 @@ module.exports = function(grunt) {
                     console: true,
                     require: true,
                     $: true,
-                    module: true
+                    module: true,
+                    _ : true
                 }
             },
             all: [

@@ -41,11 +41,13 @@
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "modernizr": "./bower_components/modernizr/modernizr.js"
+    "modernizr": "./bower_components/modernizr/modernizr.js",
+    "underscore": "./bower_components/underscore/underscore-min.js"
   },
   "browserify-shim": {
     "jquery": "$",
-    "modernizr": "Modernizr"
+    "modernizr": "Modernizr",
+    "underscore": "_"
   },
   "browserify": {
     "transform": ["browserify-shim"]

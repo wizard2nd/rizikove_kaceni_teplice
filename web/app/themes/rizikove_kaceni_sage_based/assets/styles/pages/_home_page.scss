@@ -1,8 +1,22 @@
 // styles for home page
 
 #home-page{
+
   .container{
     padding: 0;
+  }
+
+  // override bootstrap next, prev button in carousel
+  .carousel-control{
+    height: 82%;
+
+    @include modular-mq(tablet){
+      height: 86%;
+    }
+
+    @include modular-mq(desktop){
+      height: 89%;
+    }
   }
 }
 
@@ -117,15 +131,3 @@
   }
 }
 
-// override bootstrap next, prev button in carousel
-.carousel-control{
-  height: 82%;
-
-  @include modular-mq(tablet){
-    height: 86%;
-  }
-
-  @include modular-mq(desktop){
-    height: 89%;
-  }
-}

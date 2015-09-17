@@ -30,6 +30,8 @@ class MediaHelper {
         add_image_size('mobile', 700, 500, array('top', 'left'));
         add_image_size('tablet', 1024, 500, array('top', 'left'));
         add_image_size('desktop', 1024, 500, array('center', 'center'));
+
+        add_image_size('cert-desktop', 690, 1000);
     }
 }
 

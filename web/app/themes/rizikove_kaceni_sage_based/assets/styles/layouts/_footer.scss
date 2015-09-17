@@ -4,16 +4,18 @@
 //  bottom: 0;
 //}
 
-.sitemap, .services {
-  display: none;
 
-  @include modular-mq(tablet){
-    display: block;
-  }
-
-}
 
 .footer-container{
+
+  .sitemap, .services {
+    display: none;
+
+    @include modular-mq(tablet){
+      display: block;
+    }
+
+  }
 
   background-color: #D2E0D1;
   padding-top: 1px;

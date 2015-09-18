@@ -16,28 +16,20 @@ use rk\helpers\CarouselHelper;
             ?>
 
             <?php
-                $featured_images = get_fields();
-                //var_dump($featured_images);
-                $slider_images = [];
-            ?>
-            <ul class="slider-images">
-                <?php foreach ($featured_images as $title => $fe_img_id) : ?>
-                    <?php if (preg_match('/feature/', $title)) : ?>
-                        <?php unset($featured_images[$title])?>
-                        <?php $slider_image = wp_get_attachment_image( $fe_img_id, 'mobile'); ?>
-                        <?php $slider_images[] = $slider_image; ?>
-                        <li class="slider-images__image"><a href="profile-carousel" class="slide-image modal-open"><?php print $slider_image; ?></a></li>
-                    <?php endif ?>
-                <?php endforeach ?>
-            </ul>
-            <?php
-                $profile_carousel = new CarouselHelper('profile-carousel', $slider_images);
+                $custom_images = get_fields();
+
+                $featured_images = FrontendHelper::get_featured_images($custom_images);
+                FrontendHelper::render_featured_images($featured_images, 'mobile');
+
+                $profile_carousel = new CarouselHelper('profile-carousel', $featured_images);
                 $profile_carousel->render();
+
+                $cert_images = array_flip(preg_grep('/cert/', array_flip($custom_images)));
             ?>
             <div id="certificates" class="certificates">
                 <h1><?php _e('Certificates', 'sage')?></h1>
                 <ul  class="certificates__list">
-                    <?php foreach($featured_images as $title => $img_id) : ?>
+                    <?php foreach($cert_images as $title => $img_id) : ?>
                         <?php
 
                             $titles = [
@@ -47,11 +39,11 @@ use rk\helpers\CarouselHelper;
                             ];
 
                             switch($title){
-                                case 'arboriculture_certifikate': $title = $titles['arbor'];
+                                case 'arboriculture_cert': $title = $titles['arbor'];
                                     break;
                                 case 'high_ground_work_cert': $title = $titles['hgw'];
                                     break;
-                                case 'insurance_contract': $title = $titles['insurance'];
+                                case 'insurance_contract_cert': $title = $titles['insurance'];
 
                             }
 

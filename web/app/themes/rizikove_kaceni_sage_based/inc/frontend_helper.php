@@ -78,4 +78,17 @@ class FrontendHelper {
         return preg_replace('@(<li>)(.*)(</li>)@', '$1<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span><span>$2</span>$3', $content);
     }
 
+    public static function get_featured_images($images){
+        return array_flip(preg_grep('/feature/', array_flip($images)));
+    }
+
+    public static function render_featured_images($featured_images, $dim){
+        print '<ul class="featured-images">';
+        foreach ($featured_images as $title => $img_id){
+            $feature_image = wp_get_attachment_image( $img_id, $dim);
+            print "<li class=\"featured-images__image\"><a href=\"profile-carousel\" class=\"slide-image modal-open\">$feature_image</a></li>";
+        }
+        print '</ul>';
+    }
+
 }

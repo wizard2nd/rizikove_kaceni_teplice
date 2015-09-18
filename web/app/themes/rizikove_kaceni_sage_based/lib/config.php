@@ -54,7 +54,8 @@ function display_sidebar() {
       [
         'is_404',
         'is_front_page',
-        ['is_page_template', 'profile.php']
+        ['is_page_template', 'profile.php'],
+        ['is_page_template', 'services.php']
       ]
     );
 

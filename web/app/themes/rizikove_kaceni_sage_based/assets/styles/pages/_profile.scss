@@ -1,7 +1,6 @@
 
 .profile-page{
   font-size: 17px;
-  font-weight: 200;
 
   .container{
     padding: 30px 20px;
@@ -13,14 +12,6 @@
     @include modular-mq(desktop){
       padding: 0;
     }
-  }
-
-  @include modular-mq(tablet){
-    font-size: 27px;
-  }
-
-  @include modular-mq(desktop){
-    font-size: 24px;
   }
 }
 
@@ -45,55 +36,50 @@
     }
   }
 
-}
-
-.featured-images{
-
-  @include modular-mq(tablet){
-    margin-top: 40px;
-  }
-
-  @include modular-mq(desktop){
-    margin-top: 50px;
-  }
-
-
-  &__image{
-
-    @extend .image-border;
-    border-width: 2px;
-    margin-bottom: 10px;
-
-    @include transition(all 0.5s ease-in-out);
-
-    &:hover{
-      @include transform(scale(1.2))
-    }
-
-    &:last-child{
-      margin-right: 0;
-    }
+  .featured-images{
 
     @include modular-mq(tablet){
-      display: inline-block;
-      width: 49%;
+      margin-top: 40px;
     }
 
     @include modular-mq(desktop){
-      width: 23%;
-      margin-right: 20px;
-      margin-bottom: 0;
+      margin-top: 50px;
     }
 
-    img{
-      @include square-dim(100%);
-    }
 
-    @include modular-mq(desktop){
+    &__image{
+
+      @include modular-mq(tablet){
+        margin-right: 10px;
+        &:nth-child(2){
+          margin-right: 0;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+
+      @include modular-mq(desktop){
+        margin-right: 25px;
+        margin-bottom: 0;
+        &:nth-child(2){
+          margin-right: 25px;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+
+      img{
+        @include square-dim(100%);
+      }
 
     }
   }
+
 }
+
+
 
 #profile-carousel{
 

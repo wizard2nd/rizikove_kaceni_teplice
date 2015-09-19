@@ -13,10 +13,6 @@
       @include transform(scale(1.2))
     }
 
-    &:last-child{
-      margin-right: 0;
-    }
-
     @include modular-mq(tablet){
       display: inline-block;
       width: 49%;

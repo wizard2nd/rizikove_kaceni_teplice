@@ -8,12 +8,15 @@
 
 .site-content{
 
-  @include modular-mq(desktop){
-    width: $site-width;
-    margin: 70px auto;
+  font-weight: 200;
+
+  @include modular-mq(tablet){
+    font-size: 27px;
   }
 
+  @include modular-mq(desktop){
+    width: $site-width;
+    font-size: 24px;
+    margin: 70px auto;
+  }
 }
-
-
-

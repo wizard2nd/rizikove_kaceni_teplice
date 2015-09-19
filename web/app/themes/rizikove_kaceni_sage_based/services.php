@@ -5,23 +5,50 @@ use rk\helpers\CarouselHelper;
 
 ?>
 
-<div id="profile-page" class="content-area profile-page">
-    <div id="content" class="site-content container profile-post" role="main">
+<div id="service-page" class="content-area service-page">
+    <div id="content" class="site-content container" role="main">
         <div class="row">
             <div class="services-navigation">
                 <div class="services-navigation__felling">
                     <h2><?php _e('Tree felling', 'sage')?></h2>
+                    <ul class="services-links">
+                        <?php $dynamic_nav = [36, 38, 40, 42]; ?>
+                        <?php foreach ($dynamic_nav as $post_id) : ?>
+                            <?php
+                                $post_in_link = get_post($post_id);
+                                $post_perm_link = get_permalink($post_id);
+                            ?>
+                            <li><a href="<?php echo $post_perm_link?>"><?php _e($post_in_link->post_title, 'sage') ?></a></li>
+                        <?php endforeach ?>
+                    </ul>
                 </div>
                 <div class="services-navigation__cms-content">
                     <?php
-                        if(have_posts()){
-                            echo FrontendHelper::add_icon_to_list_item($post->post_content);
-                        }
+                    $service_list = get_post(27);
+                    echo FrontendHelper::add_icon_to_list_item($service_list->post_content);
                     ?>
+
                 </div>
             </div>
-            <div class="col-md-8">
-                content
+            <div class="service-content">
+                <?php if (have_posts()) : ?>
+                    <?php
+                        global $post;
+                        $post_id = $post->ID;
+                        $post = $post_id == 27 ? get_post(36): $post;
+                        $attachment_img = get_the_post_thumbnail($post->ID, 'desktop');
+                    ?>
+                    <h1><?php _e($post->post_title, 'sage') ?></h1>
+                    <?php echo $attachment_img ?>
+                    <p class="service-content__description"><?php _e($post->post_content, 'sage') ?></p>
+
+                    <?php
+                    $custom_images = get_fields($post->ID);
+                    $featured_images = FrontendHelper::get_featured_images($custom_images);
+                    FrontendHelper::render_featured_images($featured_images, 'mobile');
+                    ?>
+
+                <?php endif ?>
             </div>
         </div>
     </div><!-- #content -->

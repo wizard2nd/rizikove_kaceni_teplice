@@ -1,0 +1,63 @@
+
+.services-navigation{
+
+  @extend .col-md-4;
+  margin-top: 20px;
+
+  @include modular-mq(desktop){
+    font-size: 20px;
+
+    h2{
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid;
+      font-size: 29px;
+    }
+
+    li{
+      margin-bottom: 10px;
+    }
+
+    .glyphicon{
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+      height: 32px;
+    }
+  }
+
+}
+
+.service-content{
+  @extend .col-md-8;
+
+  h1{
+    margin-bottom: 15px;
+  }
+
+  img{
+    @include square-dim(100%);
+  }
+
+  &__description{
+    margin: 30px 0 30px 0;
+    text-align: justify;
+  }
+
+  .featured-images{
+
+    @include modular-mq(desktop){
+
+      &__image{
+        width: 49%;
+        margin-right: 10px;
+        &:nth-child(2), &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+
+
+  }
+}
+

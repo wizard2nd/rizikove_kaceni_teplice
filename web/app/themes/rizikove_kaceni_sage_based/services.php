@@ -38,7 +38,8 @@ use rk\helpers\CarouselHelper;
                         $post = $post_id == 27 ? get_post(36): $post;
                         $attachment_img = FrontendHelper::get_thumbnail_image_by_device($post->ID);
                     ?>
-                    <h1><?php _e($post->post_title, 'sage') ?></h1>
+                    <?php // TODO: Add class to title to change font-size for bigger titles ?>
+                    <h1 class="<?php echo $post->post_name?>"><?php _e($post->post_title, 'sage') ?></h1>
                     <?php echo $attachment_img ?>
                     <p class="service-content__description"><?php _e($post->post_content, 'sage') ?></p>
 

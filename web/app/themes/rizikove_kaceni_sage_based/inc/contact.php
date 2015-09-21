@@ -15,7 +15,7 @@ class Contact {
 
     private $post_title = 'address';
 
-    private $has_fields = false;
+    private $map;
 
     private $address_fields = array();
 
@@ -28,7 +28,7 @@ class Contact {
         foreach ($personal_infos as $info) {
             if (strtolower($info->post_title) === $this->post_title) {
                 $contact_fields = get_fields($info->ID);
-
+                $this->map = $info->post_content;
                 foreach ($contact_fields as $field => $value) {
                     if (!in_array($field, array('email', 'phone_number'))){
                         $this->address_fields[$field] = $value;
@@ -74,6 +74,10 @@ class Contact {
         print "<span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span>";
         print '&nbsp;';
         print $this->contact_fields['phone_number'];
+    }
+
+    public function get_map(){
+        return $this->map;
     }
 
 }

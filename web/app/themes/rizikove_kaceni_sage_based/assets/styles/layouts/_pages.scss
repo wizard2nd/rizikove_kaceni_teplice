@@ -23,3 +23,17 @@
     padding: 0;
   }
 }
+
+.profile-post, .service-content{
+  .featured-images__image{
+
+    &.image-2{
+      margin-right: 0;
+    }
+
+    &.last{
+      margin-right: 0;
+    }
+
+  }
+}

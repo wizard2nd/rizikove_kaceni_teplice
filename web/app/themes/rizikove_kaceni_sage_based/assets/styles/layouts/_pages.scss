@@ -8,9 +8,11 @@
 
 .site-content{
 
-  font-weight: 200;
+  padding: 30px 20px;
+  font-size: 17px;
 
   @include modular-mq(tablet){
+    padding: 40px 30px;
     font-size: 27px;
   }
 
@@ -18,5 +20,6 @@
     width: $site-width;
     font-size: 24px;
     margin: 70px auto;
+    padding: 0;
   }
 }

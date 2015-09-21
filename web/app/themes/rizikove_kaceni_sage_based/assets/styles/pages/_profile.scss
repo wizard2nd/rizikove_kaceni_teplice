@@ -1,21 +1,4 @@
 
-.profile-page{
-  font-size: 17px;
-
-  .container{
-    padding: 30px 20px;
-
-    @include modular-mq(tablet){
-      padding: 40px 30px;
-    }
-
-    @include modular-mq(desktop){
-      padding: 0;
-    }
-  }
-}
-
-
 .profile-post{
 
   .profile-photo{

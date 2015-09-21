@@ -1,6 +1,7 @@
 <?php
 
 use rk\frontend_helper\FrontendHelper;
+use rk\contact\Contact;
 
 ?>
 
@@ -26,17 +27,13 @@ use rk\frontend_helper\FrontendHelper;
           </li>
           <li class="footer-container__contact footer-container__list--section last">
               <h3 class="contact__title"><?php _e('Contact', 'sage') ?></h3>
-              <p>
-                  Ján Pavlik<br/>
-                  U Vápenky 163<br/>
-                  Krupka - Vrchoslav<br/>
-                  Teplice 417 41<br/>
-                  Czech Republic
-              </p>
-              <p>
-                  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;<a href="mailto:janko.pavlik@seznam.cz">janko.pavlik@seznam.cz</a><br/>
-                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;+420&nbsp;720&nbsp;546&nbsp;667
-              </p>
+              <?php
+
+              $contact = new Contact();
+              $contact->render_address();
+              $contact->render_contact()
+
+              ?>
           </li>
 
       </ul>

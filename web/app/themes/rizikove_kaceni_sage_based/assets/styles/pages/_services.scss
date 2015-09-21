@@ -2,37 +2,76 @@
 .services-navigation{
 
   @extend .col-md-4;
-  margin-top: 20px;
 
   @include modular-mq(desktop){
+    margin-top: 25px;
     font-size: 20px;
+  }
 
-    h2{
+  ul {
+    @include modular-mq(tablet){
+      margin-bottom: 20px;
+    }
+  }
+
+  h2{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+
+    @include modular-mq(tablet){
+      font-size: 37px;
+    }
+
+    @include modular-mq(desktop){
       margin-bottom: 20px;
       padding-bottom: 5px;
-      border-bottom: 1px solid;
       font-size: 29px;
     }
 
-    li{
+  }
+
+  li{
+    margin-bottom: 5px;
+
+    @include modular-mq(desktop){
       margin-bottom: 10px;
     }
+  }
 
-    .glyphicon{
-      float: left;
+  .glyphicon {
+    float: left;
+    margin-right: 7px;
+    height: 22px;
+    margin-top: 4px;
+
+    @include modular-mq(tablet) {
+      margin-right: 12px;
+      height: 33px;
+      margin-top: 7px;
+    }
+
+    @include modular-mq(desktop) {
       margin-right: 10px;
       margin-top: 5px;
       height: 32px;
     }
   }
-
 }
 
 .service-content{
   @extend .col-md-8;
 
+  @include modular-mq(desktop){
+    padding-left: 30px;
+  }
+
   h1{
     margin-bottom: 15px;
+
+    @include modular-mq(tablet){
+      font-size: 43px;
+    }
   }
 
   img{
@@ -40,24 +79,22 @@
   }
 
   &__description{
-    margin: 30px 0 30px 0;
+    margin: 20px 0 30px 0;
     text-align: justify;
+
+    @include modular-mq(ddesktop){
+
+    }
   }
 
   .featured-images{
 
-    @include modular-mq(desktop){
-
+    @include modular-mq(tablet){
       &__image{
         width: 49%;
         margin-right: 10px;
-        &:nth-child(2), &:last-child{
-          margin-right: 0;
-        }
       }
     }
-
-
   }
 }
 

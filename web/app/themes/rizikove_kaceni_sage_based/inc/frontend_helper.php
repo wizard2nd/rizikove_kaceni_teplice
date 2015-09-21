@@ -70,8 +70,8 @@ class FrontendHelper {
         if (is_desktop()) return 'desktop';
     }
 
-    public static function get_thumbnail_image($post_id){
-        print get_the_post_thumbnail($post_id, self::get_device());
+    public static function get_thumbnail_image_by_device($post_id){
+        return get_the_post_thumbnail($post_id, self::get_device());
     }
 
     public static function add_icon_to_list_item($content){
@@ -79,16 +79,29 @@ class FrontendHelper {
     }
 
     public static function get_featured_images($images){
+        foreach ($images as $title => $id) {
+            if ($id === false) return array();
+        }
         return array_flip(preg_grep('/feature/', array_flip($images)));
     }
 
     public static function render_featured_images($featured_images, $dim){
         print '<ul class="featured-images">';
+        $i = 1;
+        $count = count($featured_images);
         foreach ($featured_images as $title => $img_id){
+            $last = $count === $i ? 'last': null;
             $feature_image = wp_get_attachment_image( $img_id, $dim);
-            print "<li class=\"featured-images__image\"><a href=\"profile-carousel\" class=\"slide-image modal-open\">$feature_image</a></li>";
+            print "<li class=\"featured-images__image image-{$i} $last\"><a href=\"profile-carousel\" class=\"slide-image modal-open\">$feature_image</a></li>";
+            $i++;
         }
         print '</ul>';
+    }
+
+    public static function render_featured_images_by_device($featured_images){
+        $dim = self::get_device();
+        self::render_featured_images($featured_images, $dim);
+
     }
 
 }

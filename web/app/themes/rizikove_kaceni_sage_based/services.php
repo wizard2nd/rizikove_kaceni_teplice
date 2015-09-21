@@ -36,7 +36,7 @@ use rk\helpers\CarouselHelper;
                         global $post;
                         $post_id = $post->ID;
                         $post = $post_id == 27 ? get_post(36): $post;
-                        $attachment_img = get_the_post_thumbnail($post->ID, 'desktop');
+                        $attachment_img = FrontendHelper::get_thumbnail_image_by_device($post->ID);
                     ?>
                     <h1><?php _e($post->post_title, 'sage') ?></h1>
                     <?php echo $attachment_img ?>

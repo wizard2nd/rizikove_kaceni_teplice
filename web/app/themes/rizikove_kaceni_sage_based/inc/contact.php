@@ -13,7 +13,7 @@ class Contact {
 
     private $post_type = 'personal_info';
 
-    private $post_title = 'address';
+    private $post_name = 'address';
 
     private $map;
 
@@ -26,7 +26,7 @@ class Contact {
         $args = array( 'post_type' => $this->post_type, );
         $personal_infos = get_posts($args);
         foreach ($personal_infos as $info) {
-            if (strtolower($info->post_title) === $this->post_title) {
+            if (strtolower($info->post_name) === $this->post_name) {
                 $contact_fields = get_fields($info->ID);
                 $this->map = $info->post_content;
                 foreach ($contact_fields as $field => $value) {

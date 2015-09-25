@@ -13,8 +13,10 @@
 require('jquery');
 require('modernizr');
 require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
-require('./pages/home.js');
 require('underscore');
+require('bxslider');
+
+
 var Modal = require('./components/modal.js');
 
 (function($) {
@@ -48,8 +50,7 @@ var Modal = require('./components/modal.js');
     },
     'profile': {
         init: function(){
-            Modal.init();
-
+            //Modal.init();
         }
     }
   };

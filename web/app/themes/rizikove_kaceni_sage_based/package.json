@@ -42,14 +42,12 @@
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
     "modernizr": "./bower_components/modernizr/modernizr.js",
-    "underscore": "./bower_components/underscore/underscore-min.js",
-    "bxslider": "./bower_components/bxslider-4/src/js/jquery.bxslider.js"
+    "underscore": "./bower_components/underscore/underscore-min.js"
   },
   "browserify-shim": {
     "jquery": "$",
     "modernizr": "Modernizr",
-    "underscore": "_",
-    "bxslider": { "depends": [ "jquery" ] }
+    "underscore": "_"
   },
   "browserify": {
     "transform": ["browserify-shim"]

@@ -12,12 +12,13 @@
 
 require('jquery');
 require('modernizr');
-require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 require('underscore');
-require('bxslider');
-
+require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+require("../../bower_components/bxslider-4/src/js/jquery.bxslider.js");
 
 var Modal = require('./components/modal.js');
+var gallerySlider = require('./components/gallery_slider.js');
+
 
 (function($) {
 
@@ -51,6 +52,11 @@ var Modal = require('./components/modal.js');
     'profile': {
         init: function(){
             //Modal.init();
+        }
+    },
+    'galery':{
+        init: function(){
+            gallerySlider.init();
         }
     }
   };

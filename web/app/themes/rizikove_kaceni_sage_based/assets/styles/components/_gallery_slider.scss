@@ -3,31 +3,50 @@
 
   position: fixed;
   @include square-dim(100%);
-  background-color: $modal-background;
+  background-color: $modal-background-no-alpha;
   top: 0;
   left: 0;
   z-index: 1000;
 
+  @include modular-mq(tablet){
+    background-color: $modal-background;
+  }
+
 
   .loader{
-    @include square-dim(100px);
+    @include square-dim(35px);
     position: relative;
     top: 40%;
     display: block;
     margin: 0 auto;
+
+    @include modular-mq(desktop){
+      @include square-dim(100px)
+    }
   }
 
   .slider-wrap {
 
     position: relative;
-    //visibility: hidden;
-    top: 25%;
+    top: 15%;
 
+    @include modular-mq(tablet){
+      top: 11%;
+    }
+
+    @include modular-mq(desktop){
+      top: 25%;
+    }
 
     &__controls {
       position: absolute;
-      width: 100%;
-      top: 44%;
+      display: none;
+
+      @include modular-mq(desktop){
+        display: block;
+        width: 100%;
+        top: 44%;
+      }
 
       .control {
         position: absolute;
@@ -56,6 +75,23 @@
     img{
       display: block;
       margin: 0 auto;
+      width: 90%;
+
+      @include modular-mq(mobile, landscape){
+        width: 35%;
+      }
+
+      @include modular-mq(tablet){
+        width: 80%;
+      }
+
+      @include modular-mq(tablet, landscape){
+        width: 44%;
+      }
+
+      @include modular-mq(desktop){
+        width: initial;
+      }
     }
 
     li{
@@ -64,5 +100,6 @@
 
   }
 }
+
 
 

@@ -76,6 +76,12 @@ module.exports = function(grunt) {
                 cwd: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/',
                 src: '*',
                 dest: '<%= meta.fonts_dest %>'
+            },
+            assets:{
+                expand: true,
+                cvd: '/assets/images/',
+                src: '**',
+                dest: 'dist/styles/images'
             }
         },
         watch: {
@@ -86,6 +92,10 @@ module.exports = function(grunt) {
             lint: {
                 files: '<%= jshint.all %>',
                 tasks: ['jshint','browserify']
+            },
+            copy_assets: {
+                files: "<%= copy.assets.cvd %>/**",
+                task: ['copy:assets']
             }
         }
     });

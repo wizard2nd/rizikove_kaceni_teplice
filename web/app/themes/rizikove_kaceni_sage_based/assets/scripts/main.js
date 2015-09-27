@@ -18,6 +18,7 @@ require("../../bower_components/bxslider-4/src/js/jquery.bxslider.js");
 
 var Modal = require('./components/modal.js');
 var gallerySlider = require('./components/gallery_slider.js');
+var gallery = require('./pages/gallery.js');
 
 
 (function($) {
@@ -57,6 +58,7 @@ var gallerySlider = require('./components/gallery_slider.js');
     'galery':{
         init: function(){
             gallerySlider.init();
+            gallery.init();
         }
     }
   };

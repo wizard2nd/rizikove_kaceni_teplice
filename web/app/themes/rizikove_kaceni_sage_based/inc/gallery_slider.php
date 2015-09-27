@@ -32,7 +32,7 @@ class gallerySlider {
         if (isset($attachment_ids)){
             $attachment_images = [];
             foreach ($attachment_ids as $id) {
-                $attachment_images[] = wp_get_attachment_image_src($id, 'full');
+                $attachment_images[] = wp_get_attachment_image_src($id, 'gallery-image');
             }
             $result['data'] = $attachment_images;
             die(json_encode($result));

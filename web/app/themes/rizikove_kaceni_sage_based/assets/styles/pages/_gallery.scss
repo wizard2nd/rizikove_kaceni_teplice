@@ -1,0 +1,38 @@
+
+.foogallery-album-header {
+
+  h2{
+    display: none;
+  }
+
+  .glyphicon {
+    display: block;
+    float: left;
+    margin-top: 2px;
+
+    @include modular-mq(tablet){
+      margin-top: 5px;
+    }
+
+    @include modular-mq(desktop){
+      margin-top: 1px;
+      font-size: 30px;
+    }
+  }
+}
+
+.foogallery-pile-inner{
+  h3 {
+    display: none !important;
+  }
+}
+
+.foogallery-album-gallery-list {
+  .foogallery-pile {
+    z-index: 0 !important;
+
+    img{
+      @include square-dim(100%);
+    }
+  }
+}

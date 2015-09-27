@@ -14,3 +14,13 @@
   border-style: solid;
   border-color: rgba(212, 224, 219, 0.69);
 }
+
+.title-bottom-border{
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+.hide-slider{
+  height: 0 !important;
+  overflow: hidden;
+}

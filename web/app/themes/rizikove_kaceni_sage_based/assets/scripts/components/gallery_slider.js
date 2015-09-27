@@ -3,19 +3,29 @@
  */
 
 
-var gallerySlider = function(){
+module.exports = (function(){
 
     var $sliderModalWrap        = $('#slider-modal-wrap'),
+        $closeModal             = $('#close-modal'),
+        $loader                 = $sliderModalWrap.children('.loader'),
         $sliderWrap             = $sliderModalWrap.children('.slider-wrap'),
-        $bxSlider               = $sliderWrap.children('.bxslider'),
+        $bxSlider               = $sliderWrap.children('.bx-slider'),
         $fooGalleryContainer    = $('.foogallery-container'),
         $triggerLinks           = $fooGalleryContainer.find('a'),
         attachmentsIds          = [],
         sliderIndex             = null,
+        $bxSliderInstance       = null,
+        carouselInitialized     = false,
+        firstTimeDisplayed      = true,
 
         bxSliderOptions         = {
-            pager: false
+            pager : false,
+            nextSelector: '#next-slide',
+            prevSelector: '#prev-slide',
+            nextText: '',
+            prevText: ''
         },
+
 
         getAttachmentIds = function(){
             if ($triggerLinks.length > 0){
@@ -35,19 +45,15 @@ var gallerySlider = function(){
             var getAttachmentsFn = $sliderModalWrap.data();
             getAttachmentsFn = getAttachmentsFn.getAttachmentImages;
 
-            $.ajax({
-                url: 'http://rizikovekaceni-teplice.dev/wp/wp-admin/admin-ajax.php',
+            return $.ajax({
+                url: '/wp/wp-admin/admin-ajax.php',
                 type: 'post',
                 dataType: 'json',
                 data: {action: getAttachmentsFn, attachment_ids: attachmentsIds},
-                success: function(response){
-                    if (response.result === false){
-                        console.log(response.error);
-                        return;
-                    }
-                    renderSliderImages(response.data);
-                    initCarousel(bxSliderOptions);
+                beforeSend: function(){
+                  showSliderModal();
                 },
+                success: function(response){},
                 error :function(jqXHR, status, err){
                     console.log(status);
                     console.log(err);
@@ -55,8 +61,45 @@ var gallerySlider = function(){
             });
         },
 
+        showSliderModal = function(){
+            $sliderModalWrap.removeClass('hide-slider');
+        },
+
+        hideSliderModal = function(){
+            $sliderModalWrap.addClass('hide-slider');
+        },
+
         initCarousel = function(){
-            $bxSlider.bxSlider();
+            // load slide images only if slider is empty
+            if ($bxSlider.children('li').length === 0){
+                getAttachmentImages().done(function(response){
+
+                    if (response.result === false){
+                        console.log(response.error);
+                        return;
+                    }
+
+                    renderSliderImages(response.data);
+                    $bxSliderInstance = $bxSlider.bxSlider(bxSliderOptions);
+                    $bxSliderInstance.goToSlide(sliderIndex);
+                    setTimeout(function(){
+                        $loader.hide();
+                        $sliderWrap.removeClass('invisible');
+                    }, 300);
+                    carouselInitialized = true;
+                });
+            }
+        },
+
+        showCarousel = function(){
+            initCarousel();
+            if (firstTimeDisplayed){
+                firstTimeDisplayed = false;
+            }
+            else{
+                $bxSliderInstance.goToSlide(sliderIndex);
+                setTimeout(function(){showSliderModal();},300);
+            }
         },
 
         renderSliderImage = function(src){
@@ -73,11 +116,21 @@ var gallerySlider = function(){
             });
         },
 
+        closeCarousel = function(){
+            hideSliderModal();
+        },
+
         bindEvents = function(){
+
             $triggerLinks.click(function(event){
                 event.preventDefault();
                 getSliderIndex($(this));
-                getAttachmentImages();
+                showCarousel();
+                //initCarousel();
+            });
+
+            $closeModal.click(function(){
+                closeCarousel();
             });
         };
 
@@ -87,10 +140,4 @@ var gallerySlider = function(){
                 bindEvents();
             }
         };
-
-
-
-
-};
-
-module.exports = new gallerySlider();
+})();

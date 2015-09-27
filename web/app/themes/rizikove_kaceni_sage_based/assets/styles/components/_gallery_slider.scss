@@ -1,0 +1,68 @@
+
+.slider-modal-wrap{
+
+  position: fixed;
+  @include square-dim(100%);
+  background-color: $modal-background;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+
+  .loader{
+    @include square-dim(100px);
+    position: relative;
+    top: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .slider-wrap {
+
+    position: relative;
+    //visibility: hidden;
+    top: 25%;
+
+
+    &__controls {
+      position: absolute;
+      width: 100%;
+      top: 44%;
+
+      .control {
+        position: absolute;
+        font-size: 50px;
+        color: #D2DED0;
+        margin: 0 35px;
+
+        a {
+          @include square-dim(100%);
+          display: block;
+          position: absolute;
+          top: 0;
+        }
+      }
+
+    }
+  }
+
+  #next-slide{
+    right: 0;
+  }
+
+
+  .bx-slider {
+
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+
+    li{
+      width: 300px;
+    }
+
+  }
+}
+
+

@@ -152,7 +152,6 @@ module.exports = (function(){
 
         return {
             init: function(){
-                //TODO: Initialize gallery slider after page load. Show it when clicked on image
                 getAttachmentIds();
                 initCarousel();
                 bindEvents();

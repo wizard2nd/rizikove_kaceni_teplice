@@ -82,6 +82,7 @@
         @include modular-mq(tablet, landscape){
           width: 50%;
         }
+
       }
 
       @include modular-mq(mobile, landscape){
@@ -98,6 +99,10 @@
 
       @include modular-mq(desktop){
         width: initial;
+
+        &.portrait{
+          width: initial;
+        }
       }
     }
 

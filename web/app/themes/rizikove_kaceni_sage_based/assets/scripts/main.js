@@ -19,6 +19,7 @@ require("../../bower_components/bxslider-4/src/js/jquery.bxslider.js");
 var Modal = require('./components/modal.js');
 var gallerySlider = require('./components/gallery_slider.js');
 var gallery = require('./pages/gallery.js');
+var service = require('./pages/services.js');
 
 
 (function($) {
@@ -30,6 +31,7 @@ var gallery = require('./pages/gallery.js');
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+          service.init();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -59,6 +61,11 @@ var gallery = require('./pages/gallery.js');
         init: function(){
             gallerySlider.init();
             gallery.init();
+        }
+    },
+    'services': {
+        init: function(){
+
         }
     }
   };
@@ -95,5 +102,9 @@ var gallery = require('./pages/gallery.js');
 
   // Load Events
   $(document).ready(UTIL.loadEvents);
+
+  //$(document).load(function(){
+  //    service.showSlideDownCursor();
+  //});
 
 })(jQuery); // Fully reference jQuery after this point.

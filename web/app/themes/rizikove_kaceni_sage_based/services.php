@@ -1,11 +1,10 @@
 <?php
 /** Template Name: Services */
 use rk\frontend_helper\FrontendHelper;
-use rk\helpers\CarouselHelper;
-
+//use rk\helpers\CarouselHelper;
 ?>
 
-<div id="service-page" class="content-area service-page">
+<div id="service-page" class="content-area service-page" data-is-mobile="<?php echo is_mobile() ?>">
     <div id="content" class="site-content container" role="main">
         <div class="row">
             <div class="services-navigation">

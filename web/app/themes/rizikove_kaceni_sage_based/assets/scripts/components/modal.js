@@ -2,38 +2,56 @@
  * Created by wizard on 16/09/15.
  */
 
-var Profile = function(){
+var Modal = function(){
 
-    var profileCarouselClass    = '.modal-wrap',
-        $profileCarousel        = $(profileCarouselClass),
-        slideClass              = '.slide-image',
-        $slide                  = $(slideClass),
-        closeCarouselId         = 'close-modal',
-        $closeCarousel          = $('#'+closeCarouselId),
-        carouselClass           = '.carousel';
+    var $modalWrap      = $('.modal-wrap'),
+        $modalContent   = $modalWrap.find('.rk-modal-content'),
+        $modalOpen      = $('.modal-open'),
+        $closeModal     = $('#close-modal'),
+        target_id       = null,
+        content         = null;
 
     var showCarousel = function(){
-        $profileCarousel.show();
+        $modalWrap.show();
     };
 
     var closeCarousel = function(){
-        $profileCarousel.hide();
+        $modalWrap.hide();
     };
 
-    var getSlideNUmber = function($el){
+    var getTarget = function($el){
+        target_id = $el.attr('href');
+    };
+
+    var emptyModalContent = function(){
+        $modalContent.empty();
+    };
+
+    var insertModalContent = function(){
+        content = $('#'+target_id).clone();
+        $modalContent.append(content.show());
+        if (content.hasClass('carousel')){
+            $('#profile-carousel').carousel();
+        }
 
     };
 
     var bindEvents = function(){
-        $slide.click(function(e){
+        $modalOpen.click(function(e){
             e.preventDefault();
+            getTarget($(this));
+            insertModalContent();
             showCarousel();
-
         });
 
-        $closeCarousel.click(function(){
-            closeCarousel();
+
+        _.each([$closeModal], function($el){
+            $el.click(function(){
+                emptyModalContent();
+                closeCarousel();
+            });
         });
+
     };
 
     return {
@@ -43,5 +61,4 @@ var Profile = function(){
     };
 };
 
-
-module.exports = new Profile();
+module.exports = new Modal();

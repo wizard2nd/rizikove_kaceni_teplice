@@ -3,15 +3,10 @@
 
   position: fixed;
   @include square-dim(100%);
-  background-color: $modal-background-no-alpha;
+  background-color: $modal-background;
   top: 0;
   left: 0;
   z-index: 1000;
-
-  @include modular-mq(tablet){
-    background-color: $modal-background;
-  }
-
 
   .loader{
     @include square-dim(35px);
@@ -94,7 +89,7 @@
       }
 
       @include modular-mq(tablet, landscape){
-        width: 65%;
+        width: 75%;
       }
 
       @include modular-mq(desktop){

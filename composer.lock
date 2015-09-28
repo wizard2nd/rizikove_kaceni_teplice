@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f83f3b9ad96f25836eb4128e31ea49f1",
+    "hash": "18d0683c28294498b9c5a9862172ed6d",
     "packages": [
         {
             "name": "composer/installers",
@@ -290,15 +290,15 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.2.7",
+            "version": "2.2.7.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.2.7"
+                "reference": "tags/2.2.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.2.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.2.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -389,6 +389,26 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
+            "name": "wpackagist-plugin/contus-video-gallery",
+            "version": "2.9",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/contus-video-gallery/",
+                "reference": "tags/2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/contus-video-gallery.2.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/contus-video-gallery/"
+        },
+        {
             "name": "wpackagist-plugin/custom-post-type-ui",
             "version": "1.1.2",
             "source": {
@@ -407,6 +427,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
+        },
+        {
+            "name": "wpackagist-plugin/foogallery",
+            "version": "1.2.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/foogallery/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/foogallery.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/foogallery/"
         },
         {
             "name": "wpackagist-plugin/ml-slider",

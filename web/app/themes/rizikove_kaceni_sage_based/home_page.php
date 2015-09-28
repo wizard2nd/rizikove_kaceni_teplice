@@ -26,7 +26,7 @@ use rk\frontend_helper\FrontendHelper;
                         <div class="item <?php echo $active ?>">
                             <a href="<?php echo $page_url?>">
                                 <?php //$page = get_post($page_id) ?>
-                                <?php FrontendHelper::get_thumbnail_image($page_id)?>
+                                <?php echo FrontendHelper::get_thumbnail_image_by_device($page_id)?>
                                 <div class="item__bottom-title">
                                     <h1><?php echo $title ?></h1>
                                     <a class="item__bottom-title--link" href="<?php echo $page_url ?>">

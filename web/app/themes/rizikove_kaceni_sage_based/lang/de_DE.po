@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Sage Starter Theme v8.2.1\n"
+"Project-Id-Version: Rizikove kaceni Sage based v8.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-09-07 10:51:22+0000\n"
+"PO-Revision-Date: 2015-09-28 18:30:15+0000\n"
 "Last-Translator: jakubadler <adler.jakub@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,28 +20,28 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: 404.php:4
+#: 404.php:5
 #@ sage
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Es tut uns leid, aber die Seite, die Sie versuchten, zu sehen gibt es nicht."
 
-#: base.php:14
+#: base.php:15
 #@ sage
 msgid "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience."
 msgstr ""
 
-#: functions.php:43
+#: functions.php:31
 #, php-format
 #@ sage
 msgid "Error locating %s for inclusion"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:81
 #@ default
 msgid "Index Images"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:82
 #@ default
 msgid "Index Image"
 msgstr ""
@@ -86,7 +86,7 @@ msgstr ""
 #: lib/titles.php:20
 #@ sage
 msgid "Not Found"
-msgstr ""
+msgstr "Nicht gefunden"
 
 #: templates/comments.php:9
 #, php-format
@@ -132,10 +132,80 @@ msgstr ""
 #: templates/searchform.php:6
 #@ sage
 msgid "Search"
+msgstr "Suche"
+
+#: contact.php:12
+#@ sage
+msgid "Address"
+msgstr "Anschrift"
+
+#: contact.php:24
+#@ default
+msgid "Use this form to contact provider instantly"
 msgstr ""
 
-#: home_page.php:9
+#: home_page.php:10
 #@ sage
-msgid "Pridej tady"
-msgstr "de translation"
+msgid "Risk Felling"
+msgstr "Risiko Fällen"
+
+#: home_page.php:11
+#@ sage
+msgid "Pruning trees"
+msgstr "Pruning"
+
+#: home_page.php:12
+#@ sage
+msgid "Directional felling"
+msgstr "Richtungseinschlag"
+
+#: home_page.php:13
+#@ sage
+msgid "Forklift trim"
+msgstr "Pruning mit Gabelstapler"
+
+#: home_page.php:33
+#@ sage
+msgid "More info"
+msgstr "Mehr Informationen"
+
+#: profile.php:30
+#@ sage
+msgid "Certificates"
+msgstr "Zertifikate"
+
+#: profile.php:36
+#@ sage
+msgid "Arboriculture"
+msgstr "Baumzucht"
+
+#: profile.php:37
+#@ sage
+msgid "Height ground work"
+msgstr "Höhe Bodenarbeit"
+
+#: profile.php:38
+#@ sage
+msgid "Insurance"
+msgstr "Versicherungen"
+
+#: services.php:13
+#@ sage
+msgid "Tree felling"
+msgstr "Fällen von Bäumen"
+
+#: templates/footer.php:13
+#@ sage
+msgid "Site map"
+msgstr "Sitemap"
+
+#: templates/footer.php:21
+#@ sage
+msgid "Services"
+msgstr "Dienstleistungen"
+
+#: templates/footer.php:29
+#@ sage
+msgid "Contact"
+msgstr "Kontakt"
 

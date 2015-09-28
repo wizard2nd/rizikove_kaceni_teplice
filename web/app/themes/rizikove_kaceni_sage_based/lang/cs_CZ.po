@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Rizikove kaceni Sage based v8.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-09-10 11:32:38+0000\n"
+"PO-Revision-Date: 2015-09-28 18:30:38+0000\n"
 "Last-Translator: jakubadler <adler.jakub@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,48 +20,43 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: 404.php:4
+#: 404.php:5
 #@ sage
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Omlouváme se, ale stránka, kterou se pokoušíte zobrazit, neexistuje."
 
 #: base.php:15
 #@ sage
 msgid "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience."
 msgstr ""
 
-#: functions.php:43
+#: functions.php:31
 #, php-format
 #@ sage
 msgid "Error locating %s for inclusion"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:81
 #@ default
 msgid "Index Images"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:82
 #@ default
 msgid "Index Image"
 msgstr ""
 
-#: home_page.php:9
-#@ sage
-msgid "Pridej tady"
-msgstr ""
-
-#: home_page.php:11
+#: home_page.php:10
 #@ sage
 msgid "Risk Felling"
 msgstr "Rizikové káceni"
 
-#: home_page.php:12
+#: home_page.php:11
 #@ sage
 msgid "Pruning trees"
 msgstr "Prořezy stromů"
 
-#: home_page.php:13
+#: home_page.php:12
 #@ sage
 msgid "Directional felling"
 msgstr "Směrové kácení"
@@ -106,7 +101,7 @@ msgstr ""
 #: lib/titles.php:20
 #@ sage
 msgid "Not Found"
-msgstr ""
+msgstr "Nenalezeno"
 
 #: templates/comments.php:9
 #, php-format
@@ -153,5 +148,65 @@ msgstr ""
 #: templates/searchform.php:6
 #@ sage
 msgid "Search"
+msgstr "Hledej"
+
+#: contact.php:12
+#@ sage
+msgid "Address"
+msgstr "Adresa"
+
+#: contact.php:24
+#@ default
+msgid "Use this form to contact provider instantly"
 msgstr ""
+
+#: home_page.php:13
+#@ sage
+msgid "Forklift trim"
+msgstr "Prořezávání stromů pomocí vysokozdvižné techniky"
+
+#: home_page.php:33
+#@ sage
+msgid "More info"
+msgstr "Vice informací"
+
+#: profile.php:30
+#@ sage
+msgid "Certificates"
+msgstr "Certyfikáty"
+
+#: profile.php:36
+#@ sage
+msgid "Arboriculture"
+msgstr "Arboristika"
+
+#: profile.php:37
+#@ sage
+msgid "Height ground work"
+msgstr "Práce ve výškách"
+
+#: profile.php:38
+#@ sage
+msgid "Insurance"
+msgstr "Pojištění"
+
+#: services.php:13
+#@ sage
+msgid "Tree felling"
+msgstr "Kácení stromů"
+
+#: templates/footer.php:13
+#@ sage
+msgid "Site map"
+msgstr "Mapa stránek"
+
+#: templates/footer.php:21
+#@ sage
+msgid "Services"
+msgstr "Služby"
+
+#: templates/footer.php:29
+#@ sage
+msgid "Contact"
+msgstr "Kontakt"
 

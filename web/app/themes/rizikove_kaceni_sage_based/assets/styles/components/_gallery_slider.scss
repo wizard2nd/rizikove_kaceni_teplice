@@ -28,15 +28,7 @@
   .slider-wrap {
 
     position: relative;
-    top: 15%;
-
-    @include modular-mq(tablet){
-      top: 11%;
-    }
-
-    @include modular-mq(desktop){
-      top: 25%;
-    }
+    top: 50%;
 
     &__controls {
       position: absolute;
@@ -69,16 +61,21 @@
     right: 0;
   }
 
-
   .bx-slider {
 
     img{
       display: block;
       margin: 0 auto;
-      width: 90%;
+      width: 95%;
+
+      &.portrait{
+        @include modular-mq(mobile, landscape){
+          width: 39%;
+        }
+      }
 
       @include modular-mq(mobile, landscape){
-        width: 35%;
+        width: 70%;
       }
 
       @include modular-mq(tablet){
@@ -86,7 +83,7 @@
       }
 
       @include modular-mq(tablet, landscape){
-        width: 44%;
+        width: 65%;
       }
 
       @include modular-mq(desktop){
@@ -100,6 +97,3 @@
 
   }
 }
-
-
-

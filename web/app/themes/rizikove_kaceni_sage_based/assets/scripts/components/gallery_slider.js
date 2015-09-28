@@ -9,14 +9,16 @@ module.exports = (function(){
         $closeModal             = $('#close-modal'),
         $loader                 = $sliderModalWrap.children('.loader'),
         $sliderWrap             = $sliderModalWrap.children('.slider-wrap'),
-        $bxSlider               = $sliderWrap.children('.bx-slider'),
+        $bxSlider               = $sliderWrap.find('.bx-slider'),
         $fooGalleryContainer    = $('.foogallery-container'),
         $triggerLinks           = $fooGalleryContainer.find('a'),
         attachmentsIds          = [],
-        sliderIndex             = null,
+        sliderIndex             = 0,
         $bxSliderInstance       = null,
         carouselInitialized     = false,
         firstTimeDisplayed      = true,
+        $window                 = $(window),
+        orientation             = 'portrait',
 
         bxSliderOptions         = {
             pager : false,
@@ -24,6 +26,7 @@ module.exports = (function(){
             prevSelector: '#prev-slide',
             nextText: '',
             prevText: ''
+            //slideWidth: 300
         },
 
 
@@ -50,9 +53,6 @@ module.exports = (function(){
                 type: 'post',
                 dataType: 'json',
                 data: {action: getAttachmentsFn, attachment_ids: attachmentsIds},
-                beforeSend: function(){
-                  showSliderModal();
-                },
                 success: function(response){},
                 error :function(jqXHR, status, err){
                     console.log(status);
@@ -92,27 +92,32 @@ module.exports = (function(){
         },
 
         showCarousel = function(){
-            initCarousel();
-            if (firstTimeDisplayed){
-                firstTimeDisplayed = false;
-            }
-            else{
+            if (carouselInitialized){
                 $bxSliderInstance.goToSlide(sliderIndex);
                 setTimeout(function(){showSliderModal();},300);
             }
+            else{
+                showSliderModal();
+            }
         },
 
-        renderSliderImage = function(src){
+        renderSliderImage = function(image){
             var $listItem = $('<li/>'),
                 $sliderImage = $('<img/>');
-            $sliderImage.attr('src', src);
+            $sliderImage.attr('src', image[0]);
+
+            // portrait image
+            if (image[1] < image[2]){
+                $sliderImage.addClass('portrait');
+            }
+
             $sliderImage.appendTo($listItem);
             $listItem.appendTo($bxSlider);
         },
 
         renderSliderImages = function(images){
             _.each(images, function(image, index){
-                renderSliderImage(image[0]);
+                renderSliderImage(image);
             });
         },
 
@@ -120,23 +125,37 @@ module.exports = (function(){
             hideSliderModal();
         },
 
+        centerCarouselVertically = function(){
+            setTimeout(function(){
+                $sliderWrap.css('margin-top', (Math.round($sliderWrap.height()/2)) * -1);
+            }, 50);
+        },
+
         bindEvents = function(){
 
             $triggerLinks.click(function(event){
                 event.preventDefault();
                 getSliderIndex($(this));
+                centerCarouselVertically();
                 showCarousel();
-                //initCarousel();
             });
 
             $closeModal.click(function(){
                 closeCarousel();
             });
+
+            $window.resize(function(){
+                centerCarouselVertically();
+            });
+
+
         };
 
         return {
             init: function(){
+                //TODO: Initialize gallery slider after page load. Show it when clicked on image
                 getAttachmentIds();
+                initCarousel();
                 bindEvents();
             }
         };

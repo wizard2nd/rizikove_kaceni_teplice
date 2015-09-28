@@ -33,6 +33,8 @@ class MediaHelper {
 
         add_image_size('gallery-image', 800, 550);
 
+        add_image_size('gallery-thumb', 300, 300, array('center', 'center'));
+
         add_image_size('cert-desktop', 690, 1000);
     }
 }

@@ -43,4 +43,8 @@ class gallerySlider {
         }
     }
 
+    public static function get_gallery_thumbnails($image_url){
+        return preg_replace('@(\d*)(x)(\d*)@', '300x300', $image_url);
+    }
+
 }

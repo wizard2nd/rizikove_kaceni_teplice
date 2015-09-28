@@ -25,7 +25,7 @@ use rk\helpers\CarouselHelper;
                 <div class="services-navigation__cms-content">
                     <?php
                     $service_list = get_post(27);
-                    echo FrontendHelper::add_icon_to_list_item($service_list->post_content);
+                    _e(FrontendHelper::add_icon_to_list_item($service_list->post_content));
                     ?>
 
                 </div>

@@ -16,27 +16,25 @@
   .loader{
     @include square-dim(35px);
     position: relative;
-    top: 40%;
+    top: 50%;
     display: block;
-    margin: 0 auto;
+    margin: -17px auto;
+
+    @include modular-mq(tablet){
+      @include square-dim(50px);
+      margin: -25px auto;
+    }
 
     @include modular-mq(desktop){
-      @include square-dim(100px)
+      @include square-dim(100px);
+      margin: -50px auto;
     }
   }
 
   .slider-wrap {
 
     position: relative;
-    top: 15%;
-
-    @include modular-mq(tablet){
-      top: 11%;
-    }
-
-    @include modular-mq(desktop){
-      top: 25%;
-    }
+    top: 50%;
 
     &__controls {
       position: absolute;
@@ -69,16 +67,25 @@
     right: 0;
   }
 
-
   .bx-slider {
 
     img{
       display: block;
       margin: 0 auto;
-      width: 90%;
+      width: 95%;
+
+      &.portrait{
+        @include modular-mq(mobile, landscape){
+          width: 39%;
+        }
+
+        @include modular-mq(tablet, landscape){
+          width: 50%;
+        }
+      }
 
       @include modular-mq(mobile, landscape){
-        width: 35%;
+        width: 70%;
       }
 
       @include modular-mq(tablet){
@@ -86,7 +93,7 @@
       }
 
       @include modular-mq(tablet, landscape){
-        width: 44%;
+        width: 65%;
       }
 
       @include modular-mq(desktop){
@@ -100,6 +107,3 @@
 
   }
 }
-
-
-

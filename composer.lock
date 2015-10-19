@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "18d0683c28294498b9c5a9862172ed6d",
+    "hash": "2492b47ca62a746c79b946ebd6af41e2",
     "packages": [
         {
             "name": "composer/installers",
@@ -103,16 +103,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e"
+                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
-                "reference": "4c247a5f81af6207a99ecda3ce3b895a9f6af84e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
+                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +136,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-04-23 16:31:07"
+            "time": "2015-09-15 15:01:23"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -289,66 +289,6 @@
             "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
         },
         {
-            "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "2.2.7.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/2.2.7.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.2.2.7.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack/"
-        },
-        {
-            "name": "wpackagist-plugin/all-in-one-seo-pack-qtranslate-x",
-            "version": "1.0",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/all-in-one-seo-pack-qtranslate-x/",
-                "reference": "tags/1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack-qtranslate-x.1.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack-qtranslate-x/"
-        },
-        {
-            "name": "wpackagist-plugin/categories-images",
-            "version": "2.5",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/categories-images/",
-                "reference": "tags/2.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/categories-images.2.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/categories-images/"
-        },
-        {
             "name": "wpackagist-plugin/codestyling-localization",
             "version": "1.99.30",
             "source": {
@@ -389,46 +329,6 @@
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
-            "name": "wpackagist-plugin/contus-video-gallery",
-            "version": "2.9",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/contus-video-gallery/",
-                "reference": "tags/2.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contus-video-gallery.2.9.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/contus-video-gallery/"
-        },
-        {
-            "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.1.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
-        },
-        {
             "name": "wpackagist-plugin/foogallery",
             "version": "1.2.7",
             "source": {
@@ -447,26 +347,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/foogallery/"
-        },
-        {
-            "name": "wpackagist-plugin/ml-slider",
-            "version": "3.3.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/ml-slider/",
-                "reference": "tags/3.3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ml-slider.3.3.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ml-slider/"
         },
         {
             "name": "wpackagist-plugin/php-browser-detection",
@@ -509,16 +389,16 @@
             "homepage": "https://wordpress.org/plugins/qtranslate-slug/"
         },
         {
-            "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.4",
+            "name": "wpackagist-plugin/qtranslate-x",
+            "version": "3.4.6.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.4"
+                "url": "http://plugins.svn.wordpress.org/qtranslate-x/",
+                "reference": "tags/3.4.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/qtranslate-x.3.4.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -526,7 +406,47 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+            "homepage": "https://wordpress.org/plugins/qtranslate-x/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "2.3.5",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/2.3.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-seo-qtranslate-x",
+            "version": "1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-seo-qtranslate-x/",
+                "reference": "tags/1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-seo-qtranslate-x.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-seo-qtranslate-x/"
         }
     ],
     "packages-dev": [],

@@ -30,7 +30,7 @@
                     <div class="site-logo"></div>
                     <h1 class="site-title"><?php bloginfo('title') ?></h1>
                 </div>
-                <h4 class="site-description"><?php bloginfo('description') ?></h4>
+                <h2 class="site-description"><?php bloginfo('description') ?></h2>
             </div>
             <?php else : ?>
                 <div class="desktop">
@@ -38,7 +38,7 @@
                         <div class="site-logo"></div>
                         <div class="title-description-wrap">
                             <h1 class="site-title"><?php bloginfo('title') ?></h1>
-                            <h4 class="site-description"><?php bloginfo('description') ?></h4>
+                            <h2 class="site-description"><?php bloginfo('description') ?></h2>
                         </div>
                     </div>
                 </div>

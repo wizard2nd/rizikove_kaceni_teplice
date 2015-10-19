@@ -64,7 +64,7 @@ class FrontendHelper {
         }
     }
 
-    private static function get_device(){
+    public static function get_device(){
         if (is_tablet()) return 'tablet';
         if (is_mobile()) return 'mobile';
         if (is_desktop()) return 'desktop';
@@ -75,7 +75,7 @@ class FrontendHelper {
     }
 
     public static function add_icon_to_list_item($content){
-        return preg_replace('@(<li>)(.*)(</li>)@', '$1<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span><span>$2</span>$3', $content);
+        return preg_replace('@(<li>)(.*)(</li>)@', '$1<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span><p>$2</p>$3', $content);
     }
 
     public static function get_featured_images($images){

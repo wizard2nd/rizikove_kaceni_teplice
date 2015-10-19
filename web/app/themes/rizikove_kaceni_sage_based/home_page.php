@@ -14,7 +14,7 @@ use rk\frontend_helper\FrontendHelper;
         );
         ?>
 
-            <div id="home-page-carousel" class="carousel slide" data-ride="carousel">
+            <div id="home-page-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <?php $i = 0 ?>
@@ -22,17 +22,16 @@ use rk\frontend_helper\FrontendHelper;
                         <?php
                             $active = $i++ == 0 ? 'active': null;
                             $page_url = get_page_link($page_id);
+                            $long_title = strlen($title) > 20 ? 'long-title' : null;
                         ?>
                         <div class="item <?php echo $active ?>">
                             <a href="<?php echo $page_url?>">
                                 <?php //$page = get_post($page_id) ?>
                                 <?php echo FrontendHelper::get_thumbnail_image_by_device($page_id)?>
-                                <div class="item__bottom-title">
+                                <a class="bottom-title <?= $long_title?>" href="<?php echo $page_url ?>">
                                     <h1><?php echo $title ?></h1>
-                                    <a class="item__bottom-title--link" href="<?php echo $page_url ?>">
-                                        <div class="more-info"><p><?php _e('More info', 'sage') ?></p><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></div>
-                                    </a>
-                                </div>
+                                    <div class="more-info"><span class="more-info__text"><? _e('More info', 'sage')?></span><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></div>
+                                </a>
                             </a>
                         </div>
                     <?php endforeach ?>

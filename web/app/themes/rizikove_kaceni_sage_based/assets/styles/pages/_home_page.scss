@@ -9,6 +9,7 @@
   // override bootstrap next, prev button in carousel
   .carousel-control{
     height: 82%;
+    background-image: none;
 
     @include modular-mq(tablet){
       height: 86%;
@@ -22,85 +23,117 @@
 
 .carousel{
 
+  @extend .shadow-box;
+
 }
 
-.item{
+.item {
 
-  &__bottom-title{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(223, 230, 221, 0.66);
-    padding: 10px 10px;
-    text-align: left;
-    //z-index: 1000;
-
-    h1{
-      color: $color-primary-4;
-      font-weight: 400;
-      font-size: 20px;
-
-      @include modular-mq(tablet){
-        font-size: 30px;
-      }
-    }
-
-
-
-    &--link{
-      position: absolute;
-      right: 0;
-      top: 0;
-
-      .more-info{
-        margin: 10px 8px 0 0;
-        font-size: 16px;
-        font-weight: 200;
-        color: $color-primary-4;
-
-        @include modular-mq(tablet){
-          font-size: 23px;
-          margin: 11px 8px 0 0;
-        }
-      }
-
-      p{
-        margin: 0;
-        float: left;
-      }
-
-      .glyphicon{
-        font-size: 21px;
-
-        @include modular-mq(tablet){
-          font-size: 30px;
-        }
-      }
-    }
+  @include modular-mq(desktop) {
+    height: 500px;
   }
 
   img{
     @include square-dim(100%);
+    height: 100% !important;
+  }
+
+}
+
+.bottom-title {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(223, 230, 221, 0.66);
+  padding: 6px 10px;
+  text-align: left;
+  //z-index: 1000;
+
+  @include modular-mq(tablet){
+    padding: 10px 10px
+  }
+
+  .mobile &.long-title {
+    h1 {
+      width: 90%;
+    }
+  }
+
+  h1 {
+    color: $color-primary-4;
+    font-weight: 400;
+    font-size: 20px;
+    float: left;
+
+    @include modular-mq(tablet) {
+      font-size: 30px;
+    }
   }
 }
 
+
+.more-info{
+  font-size: 0;
+  font-weight: 200;
+  color: $color-primary-4;
+  float: right;
+
+  &__text{
+    display: none;
+
+    @include modular-mq(tablet){
+      display: block;
+      float: left;
+      font-size: 25px;
+    }
+  }
+
+  .mobile .long-title &{
+    margin-top: 10px;
+  }
+
+  .glyphicon{
+    font-size: 21px;
+
+    @include modular-mq(tablet){
+      font-size: 30px;
+    }
+  }
+}
+
+//p{
+//  margin: 0;
+//  float: left;
+//}
+
 .home-page-post{
+
+  @extend .shadow-box;
 
   ul{
     list-style-type: none;
     margin: 0 auto;
     font-size: 15px;
-    padding: 10px;
-    background-color: #C1C7C2;
+    padding: 25px 10px 10px 10px;
+    background-color: #ECF7F5;
     font-family: HelveticaNeue-Light, Arial, sans-serif;
 
     li{
       margin-bottom: 10px;
+
+      p{
+        margin-left: 25px;
+
+        @include modular-mq(tablet){
+          margin-left: 40px;
+        }
+      }
     }
 
     @include modular-mq(tablet){
       font-size: 25px;
-      padding: 25px;
+      padding: 40px 25px 20px 25px;
     }
 
     @include modular-mq(desktop){
@@ -113,11 +146,10 @@
 
   .glyphicon{
 
-    font-size: 15px;
-    margin: 3px 10px 0 0;
+    font-size: 17px;
     float: left;
     display: block;
-    height: 22px;
+    margin-top: 3px;
 
     @include modular-mq(tablet){
       font-size: 25px;

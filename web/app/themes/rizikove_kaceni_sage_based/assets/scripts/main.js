@@ -65,7 +65,7 @@ var service = require('./pages/services.js');
     },
     'services': {
         init: function(){
-
+            service.init();
         }
     }
   };

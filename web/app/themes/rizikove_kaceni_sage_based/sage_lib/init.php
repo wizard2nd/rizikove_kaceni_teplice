@@ -28,6 +28,16 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
 
+    add_image_size('mobile', 700, 400, array('top', 'left'));
+    add_image_size('tablet', 1024, 500, array('top', 'left'));
+    add_image_size('desktop', 1024, 500, array('center', 'center'));
+
+    add_image_size('gallery-image', 800, 550);
+
+    add_image_size('gallery-thumb', 300, 300, array('center', 'center'));
+
+    add_image_size('cert-desktop', 690, 1000);
+
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);

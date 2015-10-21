@@ -22,6 +22,8 @@ class addHookHelper {
     private function filter_galery_thumbs_url(){
         add_action('foogallery_attachment_resize_thumbnail', array('\rk\gallerySlider', 'get_gallery_thumbnails'), 10, 1);
     }
+
+
 }
 
 new addHookHelper();

@@ -78,11 +78,23 @@ class FrontendHelper {
         return preg_replace('@(<li>)(.*)(</li>)@', '$1<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span><p>$2</p>$3', $content);
     }
 
-    public static function get_featured_images($images){
-        foreach ($images as $title => $id) {
-            if ($id === false) return array();
+    /**
+     * @param array     $img_ids        array of img ids format  'custom field name' => img_id
+     * @param string    $dim            tels what dimension should attachment be
+     * @return array                    array contains markup for images
+     */
+    public static function get_featured_images($img_ids, $dim){
+        $featured_images = array();
+        $i = 1;
+        foreach ($img_ids as $title => $img_id) {
+            if ($img_id !== false && preg_match('/feature/', $title)){
+                $featured_images[$i++] = wp_get_attachment_image( $img_id, $dim);
+            }
+            else{
+                continue;
+            }
         }
-        return array_flip(preg_grep('/feature/', array_flip($images)));
+        return $featured_images;
     }
 
     public static function render_featured_images($featured_images, $dim){

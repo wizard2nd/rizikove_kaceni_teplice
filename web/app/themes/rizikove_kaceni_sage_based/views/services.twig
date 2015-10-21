@@ -1,0 +1,29 @@
+<div id="service-page" class="content-area service-page" data-is-mobile="<?php echo is_mobile() ?>">
+    <div id="content" class="site-content container" role="main">
+        <div class="row">
+            <div class="services-navigation">
+                <div class="services-navigation__felling">
+                    <h2>{{ main_nav_title }}</h2>
+                    <ul class="services-links">
+                        {% for link in nav %}
+                            <li>
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="services-navigation__cms-content">
+                    {{ service_list }}
+                </div>
+            </div>
+            <div class="service-content">
+                {% if post %}
+                    <h1 class="{{ long_title }}">{{ post.title }}</h1>
+                    {{ post.image }}
+                    <p class="service-content__description">{{ post.content }}</p>
+                {% endif %}
+                {{ include('partials/featured_images.twig', {featured_images: featured_images }) }}
+            </div>
+        </div>
+    </div><!-- #content -->
+</div><!-- #primary -->

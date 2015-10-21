@@ -1,9 +1,9 @@
-<div id="service-page" class="content-area service-page" data-is-mobile="<?php echo is_mobile() ?>">
+<div id="service-page" class="content-area service-page">
     <div id="content" class="site-content container" role="main">
         <div class="row">
             <div class="services-navigation">
                 <div class="services-navigation__felling">
-                    <h2>{{ main_nav_title }}</h2>
+                    {{ main_nav_title }}
                     <ul class="services-links">
                         {% for link in nav %}
                             <li>
@@ -22,7 +22,7 @@
                     {{ post.image }}
                     <p class="service-content__description">{{ post.content }}</p>
                 {% endif %}
-                {{ include('partials/featured_images.twig', {featured_images: featured_images }) }}
+                {{ include('partials/featured_images.twig') }}
             </div>
         </div>
     </div><!-- #content -->

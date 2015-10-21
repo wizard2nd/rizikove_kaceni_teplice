@@ -1,11 +1,15 @@
 <?php
 /** Template Name: Services */
 use rk\frontend_helper\FrontendHelper;
+use rk\ServicesPage;
+
+$service_page = new ServicesPage();
 
 $posts_to_nav = [36, 38, 40, 42];
 $view = array();
 
-$view['main_nav_title'] = __('Tree felling', 'sage');
+$main_nav_title = '<h2>'.__('Tree felling', 'sage').'</h2>';
+$view['main_nav_title'] = $service_page->add_slide_down_icon($main_nav_title);
 $links = [];
 foreach ($posts_to_nav as $post_id) {
     $_post = get_post($post_id);
@@ -15,7 +19,9 @@ $view['nav'] = $links;
 
 
 $service_list = get_post(27);
-$view['service_list'] = __(FrontendHelper::add_icon_to_list_item($service_list->post_content));
+$service_list = __(FrontendHelper::add_icon_to_list_item($service_list->post_content));
+$service_list = $service_page->add_slide_down_icon($service_list);
+$view['service_list'] = $service_list;
 
 if (have_posts()){
     $post = get_post();

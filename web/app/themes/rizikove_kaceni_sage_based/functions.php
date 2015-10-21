@@ -40,6 +40,8 @@ unset($file, $filepath);
  * Custom classes
  */
 $custom_includes = [
+    'PageBase.php',
+    'ServicesPage.php',
     'frontend_helper.php',
     'carousel_helper.php',
     'contact.php',

@@ -55,3 +55,29 @@
   width: $dim;
   height: $dim;
 }
+
+/**
+* Sets same property for different breakpoints in one time
+* e.g
+* margin-top: 30px
+* @include modular-mq(tablet){
+*   margin-top: 60px
+* }
+* @include modular-mq(desktop){
+*   margin-top: 90px
+* }
+* values ar in order: mobile, tablet, desktop
+*/
+
+@mixin modify-property-by-device($property-mame, $values){
+
+  #{$property-mame}: nth($values, 1);
+
+  @include modular-mq(tablet){
+    #{$property-mame}: nth($values, 2);
+  }
+
+  @include modular-mq(desktop){
+    #{$property-mame}: nth($values, 3);
+  }
+}

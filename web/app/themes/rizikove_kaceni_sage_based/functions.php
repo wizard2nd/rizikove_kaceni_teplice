@@ -16,14 +16,14 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/utils.php',                 // Utility functions
-  'lib/init.php',                  // Initial theme setup and constants
-  'lib/wrapper.php',               // Theme wrapper class
-  'lib/conditional-tag-check.php', // ConditionalTagCheck class
-  'lib/config.php',                // Configuration
-  'lib/assets.php',                // Scripts and stylesheets
-  'lib/titles.php',                // Page titles
-  'lib/extras.php',                // Custom functions
+  'sage_lib/utils.php',                 // Utility functions
+  'sage_lib/init.php',                  // Initial theme setup and constants
+  'sage_lib/wrapper.php',               // Theme wrapper class
+  'sage_lib/conditional-tag-check.php', // ConditionalTagCheck class
+  'sage_lib/config.php',                // Configuration
+  'sage_lib/assets.php',                // Scripts and stylesheets
+  'sage_lib/titles.php',                // Page titles
+  'sage_lib/extras.php',                // Custom functions
 ];
 
 foreach ($sage_includes as $file) {
@@ -41,7 +41,6 @@ unset($file, $filepath);
  */
 $custom_includes = [
     'frontend_helper.php',
-    'media_helper.php',
     'carousel_helper.php',
     'contact.php',
     'gallery_slider.php',
@@ -49,7 +48,7 @@ $custom_includes = [
 ];
 
 foreach ($custom_includes as $file) {
-    $file = __DIR__."/inc/$file";
+    $file = __DIR__."/lib/$file";
     file_exists($file) ?
         require_once $file :
         trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
@@ -68,23 +67,4 @@ function get_gallery_attachments_images(){
 
 add_action("wp_ajax_get_gallery_attachments_images", "get_gallery_attachments_images");
 add_action("wp_ajax_nopriv_get_gallery_attachments_images", "get_gallery_attachments_images");
-
-
-
-/**
-* My custom functions
-*/
-
-function rk_create_home_image_post_type(){
-    $post_setting = array(
-        'labels' => array(
-            'name' => __('Index Images'),
-            'singular_name' => __('Index Image')
-        ),
-        'public' => true
-    );
-    register_post_type('rk_index_images', $post_setting);
-}
-
-add_action('init', 'rk_create_home_image_post_type');
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e5fa5201d38ae9afed7f7d633e7f7b2e",
+    "hash": "04773772b04b2d675188258a6f8c7a1f",
     "packages": [
         {
             "name": "composer/installers",
@@ -441,6 +441,26 @@
             "time": "2014-12-18 02:58:45"
         },
         {
+            "name": "wpackagist-plugin/acf-qtranslate",
+            "version": "1.7.9",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/acf-qtranslate/",
+                "reference": "tags/1.7.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-qtranslate.1.7.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-qtranslate/"
+        },
+        {
             "name": "wpackagist-plugin/advanced-custom-fields",
             "version": "4.4.3",
             "source": {
@@ -499,6 +519,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/contact-form-7/"
+        },
+        {
+            "name": "wpackagist-plugin/custom-post-type-ui",
+            "version": "1.1.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
+                "reference": "tags/1.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
         },
         {
             "name": "wpackagist-plugin/foogallery",
@@ -582,15 +622,15 @@
         },
         {
             "name": "wpackagist-plugin/timber-library",
-            "version": "0.21.10",
+            "version": "0.21.11",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/0.21.10"
+                "reference": "tags/0.21.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.0.21.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/timber-library.0.21.11.zip",
                 "reference": null,
                 "shasum": null
             },

@@ -1,46 +1,18 @@
 <?php
 
-use rk\frontend_helper\FrontendHelper;
-use rk\contact\Contact;
+use rk\Contact;
+use rk\Footer;
 
-?>
+$footer = new Footer();
+$contact = new Contact();
 
-<footer class="content-info" role="contentinfo">
-  <div class="footer-container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
-      <ul class="footer-container__list">
-          <li class="sitemap footer-container__list--section first">
-              <h3><?php _e('Site map', 'sage') ?></h3>
-              <div class="category-list-footer">
-                  <ul>
-                      <?php FrontendHelper::render_footer_links(array(2,14,27,20,22)) ?>
-                  </ul>
-              </div>
-          </li>
-          <li class="services footer-container__list--section">
-              <h3><?php _e('Services', 'sage') ?></h3>
-              <div class="category-list-footer">
-                  <ul>
-                      <?php FrontendHelper::render_footer_links(array(36,38,40,42)) ?>
-                  </ul>
-              </div>
-          </li>
-          <li class="footer-container__contact footer-container__list--section last">
-              <h3 class="contact__title"><?php _e('Contact', 'sage') ?></h3>
-              <?php
+$view = $contact->get_address_fields();
 
-              $contact = new Contact();
-              $contact->render_address();
-              $contact->render_contact()
+$view['site_map_title'] =  __('Site map', 'sage');
+$view['service_title'] =  __('Services', 'sage');
+$view['contact_title'] = __('Contact', 'sage');
 
-              ?>
-          </li>
+$view['page_map'] = $footer->get_page_map();
+$view['service_map'] = $footer->get_services_map();
 
-      </ul>
-      <div class="credentials">
-          <span class="created_by">Created by: Jakub Adler (2015)</span>
-          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-          <a href="mailto:adler.jakub@gmail.com">adler.jakub@gmail.com</a>
-      <div>
-  </div>
-</footer>
+Timber::render('partials/footer.twig', $view);

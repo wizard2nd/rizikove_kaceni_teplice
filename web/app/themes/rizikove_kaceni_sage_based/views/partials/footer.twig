@@ -1,0 +1,28 @@
+<footer class="content-info" role="contentinfo">
+    <div class="footer-container">
+        <ul class="footer-container__list">
+            <li class="sitemap footer-container__list--section first">
+                <h3>{{ site_map_title }}</h3>
+                <div class="category-list-footer">
+                    {{ include('partials/footer_links.twig', {map: page_map}) }}
+                </div>
+            </li>
+            <li class="services footer-container__list--section">
+                <h3>{{ service_title }}</h3>
+                <div class="category-list-footer">
+                    {{ include('partials/footer_links.twig', {map: service_map}) }}
+                </div>
+            </li>
+            <li class="footer-container__contact footer-container__list--section last">
+                <h3 class="contact__title">{{ contact_title }}</h3>
+                {{ include('partials/address.twig') }}
+            </li>
+
+        </ul>
+        <div class="credentials">
+            <span class="created_by">Created by: Jakub Adler (2015)</span>
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            <a href="mailto:adler.jakub@gmail.com">adler.jakub@gmail.com</a>
+        <div>
+    </div>
+</footer>

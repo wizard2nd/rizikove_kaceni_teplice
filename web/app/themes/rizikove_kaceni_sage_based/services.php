@@ -1,6 +1,6 @@
 <?php
 /** Template Name: Services */
-use rk\frontend_helper\FrontendHelper;
+use rk\FrontendHelper;
 use rk\ServicesPage;
 
 $service_page = new ServicesPage();
@@ -11,18 +11,22 @@ $view = array();
 $main_nav_title = '<h2>'.__('Tree felling', 'sage').'</h2>';
 $view['main_nav_title'] = $service_page->add_slide_down_icon($main_nav_title);
 $links = [];
+
+// dynamic Service navigation
 foreach ($posts_to_nav as $post_id) {
     $_post = get_post($post_id);
     $links[] = ['url' => get_permalink($post_id), 'title' => __($_post->post_title)];
 }
 $view['nav'] = $links;
 
-
+// Static service list
 $service_list = get_post(27);
 $service_list = __(FrontendHelper::add_icon_to_list_item($service_list->post_content));
 $service_list = $service_page->add_slide_down_icon($service_list);
 $view['service_list'] = $service_list;
 
+// Serve rizikove kaceni as main service
+// if access page from main menu
 if (have_posts()){
     $post = get_post();
     $post_id = $post->ID;
@@ -36,6 +40,8 @@ if (have_posts()){
     $view['featured_images'] = FrontendHelper::get_featured_images($custom_images, 'mobile');
 
 }
+
+$view['spinner'] = FrontendHelper::spinner_path();
 
 Timber::render('services.twig', $view);
 

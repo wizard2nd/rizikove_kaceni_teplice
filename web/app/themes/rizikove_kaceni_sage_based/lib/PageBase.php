@@ -18,6 +18,41 @@ class PageBase {
 
     }
 
+    protected static function error_handler($errno, $errstr, $file, $line){
+        $data = [
+            'result' => false,
+            'error' => $errstr,
+            'line' => $line
+        ];
+        die(json_encode($data));
+    }
+
+    /**
+     * Returns attachment images url of post
+     */
+    public static function get_attachment_images(){
+        set_error_handler(array('self', 'error_handler'));
+        $result = [
+            'result' => true,
+            'error' => null,
+        ];
+
+        $attachment_ids = $_POST['attachment_ids'];
+
+        if (isset($attachment_ids) && !empty($attachment_ids)){
+            $attachment_images = [];
+            foreach ($attachment_ids as $id) {
+                $attachment_images[] = wp_get_attachment_image_src($id, 'gallery-image');
+            }
+            $result['data'] = $attachment_images;
+            die(json_encode($result));
+        }
+        else{
+            $result['error'] = 'No images found';
+            die(json_encode($result));
+        }
+    }
+
     protected function get_post($post_id)
     {
         $this->post = get_post($post_id);

@@ -10,8 +10,8 @@ module.exports = (function(){
         $loader                 = $sliderModalWrap.children('.loader'),
         $sliderWrap             = $sliderModalWrap.children('.slider-wrap'),
         $bxSlider               = $sliderWrap.find('.bx-slider'),
-        $fooGalleryContainer    = $('.foogallery-container'),
-        $triggerLinks           = $fooGalleryContainer.find('a'),
+        $fooGalleryContainer    = $('.gallery-image-container'),
+        $triggerLinks           = $fooGalleryContainer.find('a.slide-image'),
         attachmentsIds          = [],
         sliderIndex             = 0,
         $bxSliderInstance       = null,
@@ -40,7 +40,9 @@ module.exports = (function(){
         },
 
         getSliderIndex = function($el){
-            sliderIndex = $el.index();
+            var li_parent = $el.parent('li');
+            sliderIndex = li_parent.length === 0 ? $el.index()
+                                                 : li_parent.index();
             //console.log(sliderIndex);
         },
 
@@ -152,6 +154,7 @@ module.exports = (function(){
 
         return {
             init: function(){
+                console.log('gallery slider init');
                 getAttachmentIds();
                 initCarousel();
                 bindEvents();

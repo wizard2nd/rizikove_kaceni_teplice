@@ -59,10 +59,15 @@ var
             //Modal.init();
         }
     },
-    'galery':{
+    'page_template_gallery':{
         init: function(){
             gallerySlider.init();
             gallery.init();
+        }
+    },
+    'page_template_services':{
+        init: function(){
+            gallerySlider.init();
         }
     },
     'services': {

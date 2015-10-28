@@ -74,10 +74,9 @@ class FrontendHelper {
      */
     public static function get_featured_images($img_ids, $dim){
         $featured_images = array();
-        $i = 1;
         foreach ($img_ids as $title => $img_id) {
             if ($img_id !== false && preg_match('/feature/', $title)){
-                $featured_images[$i++] = wp_get_attachment_image( $img_id, $dim);
+                $featured_images[$img_id] = wp_get_attachment_image( $img_id, $dim);
             }
             else{
                 continue;

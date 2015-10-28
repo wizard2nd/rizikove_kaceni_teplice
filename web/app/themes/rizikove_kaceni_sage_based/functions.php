@@ -72,3 +72,9 @@ function load_google_map_api(){
 
 add_action('wp_enqueue_scripts', 'load_google_map_api', 101);
 
+function add_class_to_gallery_image($attributes){
+    $attributes['class'] = 'slide-image';
+    return $attributes;
+}
+
+add_filter('foogallery_attachment_html_link_attributes', 'add_class_to_gallery_image');

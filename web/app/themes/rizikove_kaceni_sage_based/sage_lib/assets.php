@@ -1,7 +1,7 @@
 <?php
 
 namespace Roots\Sage\Assets;
-use rk\frontend_helper\FrontendHelper;
+use rk\FrontendHelper;
 
 /**
  * Scripts and stylesheets

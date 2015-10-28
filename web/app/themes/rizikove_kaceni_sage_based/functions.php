@@ -46,7 +46,7 @@ $custom_includes = [
     'carousel_helper.php',
     'Contact.php',
     'Footer.php',
-    'gallery_slider.php',
+    'Gallery.php',
     'add_hook_helper.php'
 ];
 
@@ -59,13 +59,13 @@ foreach ($custom_includes as $file) {
 
 add_filter('show_admin_bar', '__return_false');
 
-add_filter('wp_nav_menu_items', array('\rk\frontend_helper\FrontendHelper', 'add_icon_to_menu'), 10, 2);
+add_filter('wp_nav_menu_items', array('\rk\FrontendHelper', 'add_icon_to_menu'), 10, 2);
 
-add_filter('post_thumbnail_html', array('\rk\frontend_helper\FrontendHelper', 'add_class_to_thumbnail'), 10, 1);
+add_filter('post_thumbnail_html', array('\rk\FrontendHelper', 'add_class_to_thumbnail'), 10, 1);
 
 
 function get_gallery_attachments_images(){
-    \rk\gallerySlider::get_attachment_images();
+    \rk\Gallery::get_attachment_images();
 }
 
 add_action("wp_ajax_get_gallery_attachments_images", "get_gallery_attachments_images");

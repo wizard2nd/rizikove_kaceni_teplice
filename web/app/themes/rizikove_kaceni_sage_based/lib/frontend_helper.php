@@ -6,7 +6,7 @@
  * Time: 21:26
  */
 
-namespace rk\frontend_helper;
+namespace rk;
 
 
 class FrontendHelper {
@@ -53,17 +53,6 @@ class FrontendHelper {
         return $thumbnail_html;
     }
 
-    /**
-     * @param $page_ids
-     */
-    public static function render_footer_links($page_ids){
-        $pages = get_pages(array('include' => implode(',', $page_ids)));
-        foreach ($pages as $id => $page){
-            $url = get_page_link($page->ID);
-            print sprintf('<li class="footer-link"><a href="%s">%s</a></li>', $url, $page->post_title);
-        }
-    }
-
     public static function get_device(){
         if (is_tablet()) return 'tablet';
         if (is_mobile()) return 'mobile';
@@ -97,23 +86,28 @@ class FrontendHelper {
         return $featured_images;
     }
 
-    public static function render_featured_images($featured_images, $dim){
-        print '<ul class="featured-images">';
-        $i = 1;
-        $count = count($featured_images);
-        foreach ($featured_images as $title => $img_id){
-            $last = $count === $i ? 'last': null;
-            $feature_image = wp_get_attachment_image( $img_id, $dim);
-            print "<li class=\"featured-images__image image-{$i} $last\"><a href=\"profile-carousel\" class=\"slide-image modal-open\">$feature_image</a></li>";
-            $i++;
-        }
-        print '</ul>';
+    public static function spinner_path()
+    {
+        return get_stylesheet_directory_uri().'/dist/styles/images/spinner.gif';
     }
 
-    public static function render_featured_images_by_device($featured_images){
-        $dim = self::get_device();
-        self::render_featured_images($featured_images, $dim);
-
-    }
+//    public static function render_featured_images($featured_images, $dim){
+//        print '<ul class="featured-images">';
+//        $i = 1;
+//        $count = count($featured_images);
+//        foreach ($featured_images as $title => $img_id){
+//            $last = $count === $i ? 'last': null;
+//            $feature_image = wp_get_attachment_image( $img_id, $dim);
+//            print "<li class=\"featured-images__image image-{$i} $last\"><a href=\"profile-carousel\" class=\"slide-image modal-open\">$feature_image</a></li>";
+//            $i++;
+//        }
+//        print '</ul>';
+//    }
+//
+//    public static function render_featured_images_by_device($featured_images){
+//        $dim = self::get_device();
+//        self::render_featured_images($featured_images, $dim);
+//
+//    }
 
 }

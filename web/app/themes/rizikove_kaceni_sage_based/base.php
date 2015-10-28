@@ -2,7 +2,7 @@
 
 use Roots\Sage\Config;
 use Roots\Sage\Wrapper;
-use rk\frontend_helper\FrontendHelper;
+use rk\FrontendHelper;
 
 ?>
 

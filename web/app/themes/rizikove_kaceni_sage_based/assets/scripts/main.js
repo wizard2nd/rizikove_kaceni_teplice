@@ -16,10 +16,12 @@ require('underscore');
 require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 require("../../bower_components/bxslider-4/src/js/jquery.bxslider.js");
 
-var Modal = require('./components/modal.js');
-var gallerySlider = require('./components/gallery_slider.js');
-var gallery = require('./pages/gallery.js');
-var service = require('./pages/services.js');
+var
+    Modal = require('./components/modal.js'),
+    gallerySlider = require('./components/gallery_slider.js'),
+    gallery = require('./pages/gallery.js'),
+    service = require('./pages/services.js'),
+    contact = require('./pages/contact.js');
 
 
 (function($) {
@@ -102,6 +104,10 @@ var service = require('./pages/services.js');
 
   // Load Events
   $(document).ready(UTIL.loadEvents);
+
+    window.initMap = function(){
+        contact.init();
+    };
 
   //$(document).load(function(){
   //    service.showSlideDownCursor();

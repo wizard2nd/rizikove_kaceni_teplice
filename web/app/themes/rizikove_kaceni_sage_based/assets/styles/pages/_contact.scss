@@ -5,6 +5,12 @@
 
 }
 
+#g-map{
+  width: 100%;
+
+  @include modify-property-by-device(height, 300px 400px 500px);
+}
+
 .address-area{
 
   margin-bottom: 10px;
@@ -54,11 +60,16 @@
 
   @include modular-mq(desktop){
     margin-top: 17px;
+
+    .cz &{
+      margin-top: 24px;
+    }
   }
 
   h1{
     font-size: 26px;
     margin-bottom: 10px;
+
 
     @include modular-mq(tablet){
       font-size: 33px;
@@ -67,6 +78,10 @@
 
     @include modular-mq(desktop){
       font-size: 25px;
+
+      .cz &{
+        font-size: 19px;
+      }
     }
   }
 
@@ -141,4 +156,19 @@
     }
   }
 
+  .wpcf7-validation-errors{
+    display: none !important;
+  }
+
+  .wpcf7-response-output{
+    margin: 0;
+  }
+
+  span.wpcf7-not-valid-tip{
+    @include modify-property-by-device(font-size, 14px 15px 18px);
+    color: #FF6A6A;
+
+  }
+
 }
+

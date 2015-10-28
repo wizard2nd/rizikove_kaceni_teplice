@@ -1,37 +1,32 @@
 <?php
 /** Template Name: Contact */
 
-use \rk\contact\Contact;
+use \rk\Contact;
 
-?>
+$contact = new Contact();
 
-<div id="contact-page" class="content-area contact-page">
-    <div id="content" class="site-content container" role="main">
-        <div class="row">
-            <div class="address-area">
-                <h1 class="title-bottom-border"><?php _e('Address', 'sage')?></h1>
-                <?php
-                $address = new Contact();
+//$view = Timber::get_context();
 
-                $address->render_address();
-                $address->render_contact();
-                ?>
-                <div class="map-image">
-                    <?php echo $address->get_map() ?>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h1 class="title-bottom-border"><?php _e('Use this form to contact provider instantly')?></h1>
-                <?php
-                if ( have_posts() ) {
-                    while ( have_posts() ) {
-                        the_post();
-                        the_content();
-                    } // end while
-                } // end if
-                ?>
-            </div>
-        </div>
 
-    </div><!-- #content -->
-</div><!-- #primary -->
+$view = $contact->get_address_fields();
+
+$view['post'] = Timber::get_post();
+$view['address_title'] = __('Address', 'sage');
+$view['form_title'] = __('Use this form to contact provider instantly', 'sage');
+
+
+$coordinates = $contact->get_coordinates();
+$view['coordinates']['lat'] = $coordinates['lat'];
+$view['coordinates']['lng'] = $coordinates['lng'];
+
+if (is_mobile()){
+    $view['zoom'] = 14;
+}
+elseif (is_tablet()){
+    $view['zoom'] = 15;
+}
+else{
+    $view['zoom'] = 15;
+}
+
+Timber::render('contact.twig', $view);

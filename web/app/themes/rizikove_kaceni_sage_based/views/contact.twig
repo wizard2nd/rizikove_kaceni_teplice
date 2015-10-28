@@ -1,0 +1,15 @@
+<div id="contact-page" class="content-area contact-page">
+    <div id="content" class="site-content container" role="main">
+        <div class="row">
+            <div class="address-area">
+                <h1 class="title-bottom-border">{{ address_title }}</h1>
+                {{ include('partials/address.twig') }}
+                <div id="g-map" class="map-image" data-lat="{{ coordinates.lat }}" data-lng="{{ coordinates.lng }}" data-zoom="{{ zoom }}"></div>
+            </div>
+            <div class="contact-form">
+                <h1 class="title-bottom-border">{{ form_title }}</h1>
+                {{ post.content }}
+            </div>
+        </div>
+    </div><!-- #content -->
+</div><!-- #primary -->

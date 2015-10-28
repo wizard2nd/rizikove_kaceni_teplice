@@ -44,7 +44,8 @@ $custom_includes = [
     'ServicesPage.php',
     'frontend_helper.php',
     'carousel_helper.php',
-    'contact.php',
+    'Contact.php',
+    'Footer.php',
     'gallery_slider.php',
     'add_hook_helper.php'
 ];
@@ -69,4 +70,16 @@ function get_gallery_attachments_images(){
 
 add_action("wp_ajax_get_gallery_attachments_images", "get_gallery_attachments_images");
 add_action("wp_ajax_nopriv_get_gallery_attachments_images", "get_gallery_attachments_images");
+
+/**
+ * Google maps API
+ */
+function load_google_map_api(){
+    $contact = new \rk\Contact();
+    $api_key = $contact->get_google_api_key();
+    $src = "https://maps.googleapis.com/maps/api/js?key=$api_key&callback=initMap";
+    wp_enqueue_script('google_maps_api', $src, ['sage_js'], null, true);
+}
+
+add_action('wp_enqueue_scripts', 'load_google_map_api', 101);
 

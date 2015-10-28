@@ -48,6 +48,14 @@ function setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
+
+
+    /**
+     * Custom filters and helpers
+     */
+    add_filter('wp_nav_menu_items', array('\rk\FrontendHelper', 'add_icon_to_menu'), 10, 2);
+
+    add_filter('post_thumbnail_html', array('\rk\FrontendHelper', 'add_class_to_thumbnail'), 10, 1);
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 

@@ -15,6 +15,29 @@
  *
  * @link https://github.com/roots/sage/pull/1042
  */
+
+/**
+ * Custom classes
+ */
+$custom_includes = [
+    'PageBase.php',
+    'ServicesPage.php',
+    'frontend_helper.php',
+    'carousel_helper.php',
+    'Contact.php',
+    'Footer.php',
+    'Gallery.php',
+    'add_hook_helper.php',
+    'ajax.php'
+];
+
+foreach ($custom_includes as $file) {
+    $file = __DIR__."/lib/$file";
+    file_exists($file) ?
+        require_once $file :
+        trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
+}
+
 $sage_includes = [
   'sage_lib/utils.php',                 // Utility functions
   'sage_lib/init.php',                  // Initial theme setup and constants
@@ -35,41 +58,7 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
-
-/**
- * Custom classes
- */
-$custom_includes = [
-    'PageBase.php',
-    'ServicesPage.php',
-    'frontend_helper.php',
-    'carousel_helper.php',
-    'Contact.php',
-    'Footer.php',
-    'Gallery.php',
-    'add_hook_helper.php'
-];
-
-foreach ($custom_includes as $file) {
-    $file = __DIR__."/lib/$file";
-    file_exists($file) ?
-        require_once $file :
-        trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
-}
-
 add_filter('show_admin_bar', '__return_false');
-
-add_filter('wp_nav_menu_items', array('\rk\FrontendHelper', 'add_icon_to_menu'), 10, 2);
-
-add_filter('post_thumbnail_html', array('\rk\FrontendHelper', 'add_class_to_thumbnail'), 10, 1);
-
-
-function get_gallery_attachments_images(){
-    \rk\Gallery::get_attachment_images();
-}
-
-add_action("wp_ajax_get_gallery_attachments_images", "get_gallery_attachments_images");
-add_action("wp_ajax_nopriv_get_gallery_attachments_images", "get_gallery_attachments_images");
 
 /**
  * Google maps API

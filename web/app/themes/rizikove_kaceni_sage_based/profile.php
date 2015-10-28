@@ -18,11 +18,11 @@ use rk\helpers\CarouselHelper;
             <?php
                 $custom_images = get_fields();
 
-                $featured_images = FrontendHelper::get_featured_images($custom_images);
-                FrontendHelper::render_featured_images($featured_images, 'mobile');
+                $view['featured_images'] = FrontendHelper::get_featured_images($custom_images, 'mobile');
+                Timber::render('partials/featured_images.twig', $view);
 
-                $profile_carousel = new CarouselHelper('profile-carousel', $featured_images);
-                $profile_carousel->render();
+//                $profile_carousel = new CarouselHelper('profile-carousel', $featured_images);
+//                $profile_carousel->render();
 
                 $cert_images = array_flip(preg_grep('/cert/', array_flip($custom_images)));
             ?>

@@ -6,20 +6,24 @@
  * Time: 13:33
  */
 
-namespace rk\contact;
+namespace rk;
 
 
 class Contact {
 
     private $post_type = 'personal_info';
 
-    private $post_name = 'address';
-
-    private $map;
+    private $post_name = 'address-2';
 
     private $address_fields = array();
 
-    private $contact_fields = array();
+    private $email;
+
+    private $phone_number;
+
+    private $google_map_api_key;
+
+    private $address_coordinates;
 
 
     public function __construct(){
@@ -28,56 +32,46 @@ class Contact {
         foreach ($personal_infos as $info) {
             if (strtolower($info->post_name) === $this->post_name) {
                 $contact_fields = get_fields($info->ID);
-                $this->map = $info->post_content;
                 foreach ($contact_fields as $field => $value) {
-                    if (!in_array($field, array('email', 'phone_number'))){
-                        $this->address_fields[$field] = $value;
+                    switch($field) {
+                        case 'email':
+                            $this->email = $value;
+                            break;
+                        case 'phone_number':
+                            $this->phone_number = $value;
+                            break;
+                        case 'google_api_key':
+                            $this->google_map_api_key = $value;
+                            break;
+                        case 'coordinates':
+                            $coordinates = explode(',', $value);
+                            $this->address_coordinates['lat'] = trim($coordinates[0]);
+                            $this->address_coordinates['lng'] = trim($coordinates[1]);
+                            break;
+                        default:
+                            $this->address_fields[$field] = $value;
                     }
-                    else{
-                        $this->contact_fields[$field] = $value;
-                    }
-
                 }
                 break;
             }
         }
     }
 
-    private function render($fields, $class){
-        print '<p class="'.$class.'">';
-        foreach ($fields as $value){
-            print $value.'</br>';
-        }
-        print '<p>';
+    public function get_address_fields()
+    {
+        $view['address_fields'] = $this->address_fields;
+        $view['email'] = $this->email;
+        $view['phone'] = $this->phone_number;
+        return $view;
     }
 
-    public function render_address(){
-        $this->render($this->address_fields, 'address');
+    public function get_google_api_key()
+    {
+        return $this->google_map_api_key;
     }
 
-    public function render_contact(){
-        print '<p class="mail-phone">';
-        $this->render_email();
-        $this->render_phone();
-        print '</p>';
-
-
+    public function get_coordinates()
+    {
+        return $this->address_coordinates;
     }
-
-    public function render_email(){
-        print "<span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>";
-        print '&nbsp;';
-        print "<a href=\"mailto:{$this->contact_fields['email']}\">{$this->contact_fields['email']}</a><br/>";
-    }
-
-    public function render_phone(){
-        print "<span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span>";
-        print '&nbsp;';
-        print $this->contact_fields['phone_number'];
-    }
-
-    public function get_map(){
-        return $this->map;
-    }
-
 }

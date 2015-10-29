@@ -1,6 +1,6 @@
 <?php
 /** Template Name: Home Page */
-use rk\frontend_helper\FrontendHelper;
+use rk\FrontendHelper;
 
 ?>
 

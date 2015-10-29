@@ -15,7 +15,8 @@
 
     @include modular-mq(tablet){
       display: inline-block;
-      width: 49%;
+      width: 48%;
+
     }
 
     @include modular-mq(desktop){

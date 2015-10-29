@@ -1,18 +1,19 @@
 
 .foogallery-album-header {
 
+  p{
+    text-align: center;
+    margin-bottom: 75px;
+  }
+
   a {
+    position: relative;
     background-color: #253F1D;
-    width: 85px;
-    padding: 5px 10px;
-    margin-bottom: 20px;
+    padding: 8px 10px;
     color: #98B692;
-    display: block;
 
     @include modular-mq(tablet){
-      width: 150px;
-      font-size: 36px;
-      margin-left: 34px;
+      font-size: 21px;
     }
   }
 
@@ -21,17 +22,12 @@
   }
 
   .glyphicon {
-    display: block;
-    float: left;
-    margin-top: 3px;
-
-    @include modular-mq(tablet){
-      margin-top: 8px;
-    }
+    position: relative;
+    top: 3px;
 
     @include modular-mq(desktop){
-      margin-top: 10px;
-      font-size: 30px;
+      font-size: 20px;
+      top: 2px;
     }
   }
 }

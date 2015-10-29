@@ -13,8 +13,9 @@ module.exports = (function(){
         $fooGalleryContainer    = $('.gallery-image-container'),
         $triggerLinks           = $fooGalleryContainer.find('a.slide-image'),
         attachmentsIds          = [],
-        sliderIndex             = 0,
+        slideIndex              = 0,
         $bxSliderInstance       = null,
+        carouselBuild           = false,
         carouselInitialized     = false,
         firstTimeDisplayed      = true,
         $window                 = $(window),
@@ -22,8 +23,8 @@ module.exports = (function(){
 
         bxSliderOptions         = {
             pager : false,
-            nextSelector: '#next-slide',
-            prevSelector: '#prev-slide',
+            nextSelector: '#prev-slide',
+            prevSelector: '#next-slide',
             nextText: '',
             prevText: ''
             //slideWidth: 300
@@ -39,13 +40,17 @@ module.exports = (function(){
             }
         },
 
-        getSliderIndex = function($el){
+        getSlideIndex = function($el){
             var li_parent = $el.parent('li');
-            sliderIndex = li_parent.length === 0 ? $el.index()
+            slideIndex = li_parent.length === 0 ? $el.index()
                                                  : li_parent.index();
-            //console.log(sliderIndex);
+            //console.log(slideIndex);
         },
 
+        /**
+         * Download carousel images on background
+         * @returns {*}
+         */
         getAttachmentImages = function(){
             var getAttachmentsFn = $sliderModalWrap.data();
             getAttachmentsFn = getAttachmentsFn.getAttachmentImages;
@@ -71,7 +76,10 @@ module.exports = (function(){
             $sliderModalWrap.addClass('hide-slider');
         },
 
-        initCarousel = function(){
+        /**
+         * Download images from server and create carousel html markup
+         */
+        buildCarousel = function(){
             // load slide images only if slider is empty
             if ($bxSlider.children('li').length === 0){
                 getAttachmentImages().done(function(response){
@@ -82,25 +90,34 @@ module.exports = (function(){
                     }
 
                     renderSliderImages(response.data);
-                    $bxSliderInstance = $bxSlider.bxSlider(bxSliderOptions);
-                    centerCarouselVertically();
-                    $bxSliderInstance.goToSlide(sliderIndex);
-                    setTimeout(function(){
-                        $loader.hide();
-                        $sliderWrap.removeClass('invisible');
-                    }, 300);
-                    carouselInitialized = true;
+                    carouselBuild = true;
                 });
             }
         },
 
+        initCarousel = function(){
+            bxSliderOptions.startSlide = slideIndex;
+            $bxSliderInstance = $bxSlider.bxSlider(bxSliderOptions);
+            centerCarouselVertically();
+            $loader.hide();
+            $sliderWrap.removeClass('invisible');
+        },
+
         showCarousel = function(){
-            if (carouselInitialized){
-                $bxSliderInstance.goToSlide(sliderIndex);
-                setTimeout(function(){showSliderModal();},300);
+
+            // show slider modal
+            $sliderModalWrap.removeClass('hide-slider');
+
+            // wait until buildCarousel is finished
+            while(true){
+                if (carouselBuild){
+                    initCarousel();
+                    break;
+                }
             }
-            else{
-                showSliderModal();
+
+            if (carouselInitialized){
+                initCarousel();
             }
         },
 
@@ -126,20 +143,19 @@ module.exports = (function(){
 
         closeCarousel = function(){
             hideSliderModal();
+            $loader.show();
+            $bxSlider.destroySlider();
         },
 
         centerCarouselVertically = function(){
-            setTimeout(function(){
-                $sliderWrap.css('margin-top', (Math.round($sliderWrap.height()/2)) * -1);
-            }, 50);
+            $sliderWrap.css('margin-top', (Math.round($sliderWrap.height()/2)) * -1);
         },
 
         bindEvents = function(){
 
             $triggerLinks.click(function(event){
                 event.preventDefault();
-                getSliderIndex($(this));
-                centerCarouselVertically();
+                getSlideIndex($(this));
                 showCarousel();
             });
 
@@ -156,7 +172,7 @@ module.exports = (function(){
             init: function(){
                 console.log('gallery slider init');
                 getAttachmentIds();
-                initCarousel();
+                buildCarousel();
                 bindEvents();
             }
         };

@@ -70,6 +70,12 @@ var
             gallerySlider.init();
         }
     },
+    'page_template_profile':{
+        init: function(){
+            gallerySlider.init();
+
+        }
+    },
     'services': {
         init: function(){
             service.init();

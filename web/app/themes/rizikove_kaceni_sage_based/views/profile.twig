@@ -1,0 +1,20 @@
+<div id="profile-page" class="content-area profile-page">
+    <div id="content" class="site-content container" role="main">
+        <div class="profile-post">
+            {{ post.content }}
+            {{ include('partials/featured_images.twig') }}
+            <div id="certificates" class="certificates">
+                <h1>{{ certificates_title }}</h1>
+                <ul  class="certificates__list">
+                    {% for title, certificate in certificates %}
+                    <li class="certificates__list--single">
+                        <h3 class="cert-title">{{ title }}</h3>
+                        <a href="#" class="slide-image modal-open">{{ certificate }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div><!-- #content -->
+</div><!-- #primary -->
+{{ include('partials/slider_modal.twig') }}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "04773772b04b2d675188258a6f8c7a1f",
+    "hash": "bb87a009f376cb85002ae191336d5623",
     "packages": [
         {
             "name": "composer/installers",
@@ -582,15 +582,15 @@
         },
         {
             "name": "wpackagist-plugin/qtranslate-slug",
-            "version": "1.1.16",
+            "version": "1.1.17",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/qtranslate-slug/",
-                "reference": "tags/1.1.16"
+                "reference": "tags/1.1.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/qtranslate-slug.1.1.16.zip",
+                "url": "https://downloads.wordpress.org/plugin/qtranslate-slug.1.1.17.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -619,6 +619,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/qtranslate-x/"
+        },
+        {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "2.2.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/2.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/timber-library",

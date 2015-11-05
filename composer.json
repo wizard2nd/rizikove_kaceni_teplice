@@ -51,7 +51,7 @@
     "wpackagist-plugin/advanced-custom-fields": "~4.4.2",
     "wpackagist-plugin/php-browser-detection": "^3.1.4",
     "wpackagist-plugin/contact-form-7": "4.3.0",
-    "wpackagist-plugin/qtranslate-slug": "1.1.16",
+    "wpackagist-plugin/qtranslate-slug": "^1.1.16",
     "webcode/wp-bootstrap-navwalker":"dev-master",
     "wpackagist-plugin/wordpress-seo": "2.3.5",
     "wpackagist-plugin/codestyling-localization": "1.99.30",
@@ -62,7 +62,8 @@
     "wpackagist-plugin/timber-library": "^0.21.10",
     "semanticwp/twig-haml-templating": "0.1.0-alpha.2",
     "wpackagist-plugin/custom-post-type-ui": "1.1.2",
-    "wpackagist-plugin/acf-qtranslate": "1.7.9"
+    "wpackagist-plugin/acf-qtranslate": "1.7.9",
+    "wpackagist-plugin/regenerate-thumbnails": "2.2.4"
   },
   "extra": {
     "installer-paths": {

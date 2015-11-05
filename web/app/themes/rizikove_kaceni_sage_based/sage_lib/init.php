@@ -32,7 +32,9 @@ function setup() {
     add_image_size('tablet', 1024, 500, array('top', 'left'));
     add_image_size('desktop', 1024, 500, array('center', 'center'));
 
-    add_image_size('gallery-image', 800, 550);
+    add_image_size('gallery-image-mobile', 700, 500);
+    add_image_size('gallery-image-tablet', 900, 500);
+    add_image_size('gallery-image-desktop', 1000, 700);
 
     add_image_size('gallery-thumb', 300, 300, array('center', 'center'));
 

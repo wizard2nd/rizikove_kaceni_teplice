@@ -81,3 +81,11 @@
     #{$property-mame}: nth($values, 3);
   }
 }
+
+// opacity
+@mixin opacity($value){
+  -moz-opacity: $value;
+  -khtml-opacity: $value;
+  opacity: $value;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$value);
+}

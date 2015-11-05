@@ -37,12 +37,24 @@ class PageBase {
             'error' => null,
         ];
 
+        $device = FrontendHelper::get_device();
+        $dim = '';
+        switch($device){
+            case 'mobile': $dim = 'gallery-image-mobile';
+                break;
+            case 'tablet': $dim = 'gallery-image-tablet';
+                break;
+            case 'desktop': $dim = 'gallery-image-desktop';
+
+
+        }
+
         $attachment_ids = $_POST['attachment_ids'];
 
         if (isset($attachment_ids) && !empty($attachment_ids)){
             $attachment_images = [];
             foreach ($attachment_ids as $id) {
-                $attachment_images[] = wp_get_attachment_image_src($id, 'gallery-image');
+                $attachment_images[] = wp_get_attachment_image_src($id, $dim);
             }
             $result['data'] = $attachment_images;
             die(json_encode($result));

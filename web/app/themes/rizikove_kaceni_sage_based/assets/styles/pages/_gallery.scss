@@ -55,3 +55,11 @@
     }
   }
 }
+
+.full-opacity{
+  @include opacity(1);
+}
+
+.foogallery-default.border-style-square-white a{
+  border-width: 2px !important;
+}

@@ -1,5 +1,6 @@
 body{
-  background: url("#{$img-path}/green_cup.png");
+  //background: url("#{$img-path}/green_cup.png");
+  background-color: #C2D0BC;
   background-attachment: fixed;
   font-weight: 200;
 }
@@ -27,4 +28,10 @@ h1, h2, h3 {
     right: 20px;
   }
 
+}
+
+.shadow-box{
+  -webkit-box-shadow: 0px 1px 8px 1px #7B8A83;
+  -moz-box-shadow: 0px 1px 8px 1px #7B8A83;
+  box-shadow: 0px 1px 8px 1px #7B8A83;
 }

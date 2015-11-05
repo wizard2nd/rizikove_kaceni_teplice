@@ -20,9 +20,9 @@
  * Custom classes
  */
 $custom_includes = [
+    'FrontendHelper.php',
     'PageBase.php',
     'ServicesPage.php',
-    'frontend_helper.php',
     'carousel_helper.php',
     'Contact.php',
     'Footer.php',

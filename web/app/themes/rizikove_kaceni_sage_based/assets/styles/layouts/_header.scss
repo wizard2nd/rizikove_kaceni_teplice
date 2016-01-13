@@ -4,7 +4,24 @@ header{
 
 .header-image{
   position: relative;
-  @include bg_img('header-background.png'); //TODO: (optimization) serve image based on media querires
+  @include bg_img('header-background-mobile.png');
+
+  &.hide-header{
+    height: 0;
+  }
+
+  @include modular-mq(tablet){
+    @include bg_img('header-background-tablet.png');
+  }
+
+  @include modular-mq(desktop){
+    @include bg_img('header-background.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
   background-size: cover;
   width: 100%;
   height: $header-image-height;
@@ -29,7 +46,7 @@ header{
   }
 
   .desktop &{
-    top: 40%;
+    top: 60%;
   }
 
   @include modular-mq(tablet){
@@ -37,21 +54,25 @@ header{
   }
 }
 
-.title-description-wrap{
-  margin-top: 100px;
+.title-background{
   background-color: rgba(186, 208, 183, 0.5);
+}
+
+.title-description-wrap{
+  margin: 0 auto;
+  width: $site-width;
   padding: 10px;
 }
 
 .site-logo{
-  @include bg_img('logo.png');
+  @include bg_img('logo3.png');
   @include square-dim($logo-dim-mob);
   background-size: cover;
   margin: 0 auto;
 
   .desktop &{
-    margin: 0 80px 0 165px;
     float: left;
+    margin: -100px 10px 0 0;
   }
 
   @include modular-mq(tablet){
@@ -59,9 +80,27 @@ header{
   }
 }
 
+.menu-logo{
+  width: 30px;
+  height: 30px;
+  @include bg_img('menu-logo.png');
+  border: none;
+  margin: 9px;
+  background-size: cover;
+}
+
+.mobile-menu-title{
+  display: inline-block;
+  font-family: Berkshire Swash, cursive, Arial, sans-serif;
+  font-size: 22px;
+  color: #C7D8CD;
+  position: relative;
+  top: 7px;
+}
+
 .site-title{
 
-  font-family: Berkshire Swash, cursive;
+  font-family: Berkshire Swash, cursive, Arial, sans-serif;
   text-shadow: -2px 2px #BFD4C6;
   color: #055D2B;
 
@@ -73,7 +112,7 @@ header{
     text-align: center;
 
     @include modular-mq(mobile, landscape){
-      top: 75px
+      top: 76px
     }
 
     @include modular-mq(tablet){
@@ -83,7 +122,7 @@ header{
   }
 
   .desktop &{
-    font-size: 75px;
+    font-size: 73px;
   }
 
 }
@@ -113,6 +152,5 @@ header{
   .desktop &{
     font-size: 22px;
     margin-top: 15px;
-    padding-left: 500px
   }
 }

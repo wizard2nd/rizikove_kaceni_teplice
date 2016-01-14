@@ -9,15 +9,22 @@ $posts_to_nav = [36, 38, 40, 42];
 $view = array();
 
 $main_nav_title = '<h2>'.__('Tree felling', 'sage').'</h2>';
-$view['main_nav_title'] = $service_page->add_slide_down_icon($main_nav_title);
 $links = [];
+$current_id = get_the_ID();
+$open_menu = in_array($current_id, $posts_to_nav);
+
+$view['main_nav_title'] = $open_menu
+    ? $service_page->add_slide_up_icon($main_nav_title)
+    : $service_page->add_slide_down_icon($main_nav_title);
 
 // dynamic Service navigation
 foreach ($posts_to_nav as $post_id) {
     $_post = get_post($post_id);
-    $links[] = ['url' => get_permalink($post_id), 'title' => __($_post->post_title)];
+    $active = $post_id == $current_id;
+    $links[] = ['url' => get_permalink($post_id), 'title' => __($_post->post_title), 'active' => $active];
 }
 $view['nav'] = $links;
+$view['open_menu'] = $open_menu;
 
 // Static service list
 $service_list = get_post(27);

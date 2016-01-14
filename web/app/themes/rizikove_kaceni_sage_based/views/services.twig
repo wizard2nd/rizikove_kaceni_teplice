@@ -4,10 +4,15 @@
             <div class="services-navigation">
                 <div class="services-navigation__felling">
                     {{ main_nav_title }}
-                    <ul class="services-links">
+                    <ul class="services-links {{ open_menu ? 'show' : '' }}">
                         {% for link in nav %}
                             <li>
-                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                {% if link.active %}
+                                    <span>{{ link.title }}</span>
+                                {% else %}
+                                    <a href="{{ link.url }}">{{ link.title }}</a>
+                                {% endif %}
+
                             </li>
                         {% endfor %}
                     </ul>

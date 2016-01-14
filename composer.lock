@@ -4,21 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bb87a009f376cb85002ae191336d5623",
+    "hash": "7a319f648cedd8fdc0498e66636455b7",
+    "content-hash": "727343c60ac44ec06f9995409cc67747",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.21",
+            "version": "v1.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -28,9 +32,9 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "4.1.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "Composer\\Installers\\Installer",
+                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -99,20 +103,20 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-02-18 17:17:01"
+            "time": "2015-10-29 23:28:48"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.3.1",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f"
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/85d6a8c16c7e8bb369e7530d3676d16618f68e24",
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24",
                 "shasum": ""
             },
             "require": {
@@ -136,7 +140,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-09-15 15:01:23"
+            "time": "2016-01-06 18:46:15"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -188,16 +192,16 @@
         },
         {
             "name": "mthaml/mthaml",
-            "version": "1.7.1",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/arnaud-lb/MtHaml.git",
-                "reference": "64f70f1474f8618536cf9d7634d93e136564e3ff"
+                "reference": "b7e0c72883ee3efcf8b8819210b90496158b00d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/arnaud-lb/MtHaml/zipball/64f70f1474f8618536cf9d7634d93e136564e3ff",
-                "reference": "64f70f1474f8618536cf9d7634d93e136564e3ff",
+                "url": "https://api.github.com/repos/arnaud-lb/MtHaml/zipball/b7e0c72883ee3efcf8b8819210b90496158b00d4",
+                "reference": "b7e0c72883ee3efcf8b8819210b90496158b00d4",
                 "shasum": ""
             },
             "require": {
@@ -215,10 +219,10 @@
                 "kzykhys/ciconia": "~1",
                 "leafo/lessphp": "*",
                 "leafo/scssphp": "*",
-                "league/commonmark": ">=0.5",
+                "league/commonmark": ">=0.9",
                 "michelf/php-markdown": "~1.3",
                 "oyejorge/less.php": "*",
-                "twig/twig": "~1.11"
+                "twig/twig": "~1.12|~2.0"
             },
             "suggest": {
                 "cebe/markdown": "If you want to use :markdown filter",
@@ -255,7 +259,7 @@
             "keywords": [
                 "HAML"
             ],
-            "time": "2015-07-28 07:02:21"
+            "time": "2015-12-17 09:48:00"
         },
         {
             "name": "semanticwp/twig-haml-templating",
@@ -299,16 +303,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.22.3",
+            "version": "v1.23.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ebfc36b7e77b0c1175afe30459cf943010245540"
+                "reference": "ae53fc2c312fdee63773b75cb570304f85388b08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ebfc36b7e77b0c1175afe30459cf943010245540",
-                "reference": "ebfc36b7e77b0c1175afe30459cf943010245540",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ae53fc2c312fdee63773b75cb570304f85388b08",
+                "reference": "ae53fc2c312fdee63773b75cb570304f85388b08",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +325,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.22-dev"
+                    "dev-master": "1.23-dev"
                 }
             },
             "autoload": {
@@ -356,7 +360,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-10-13 07:07:02"
+            "time": "2016-01-11 14:02:19"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -462,15 +466,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.3",
+            "version": "4.4.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "trunk"
+                "reference": "tags/4.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -479,6 +483,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/better-wp-security",
+            "version": "5.1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/better-wp-security/",
+                "reference": "tags/5.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/better-wp-security.5.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/better-wp-security/"
         },
         {
             "name": "wpackagist-plugin/codestyling-localization",
@@ -502,15 +526,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "4.3",
+            "version": "4.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/4.3"
+                "reference": "tags/4.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -522,15 +546,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.1.2"
+                "reference": "tags/1.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -542,7 +566,7 @@
         },
         {
             "name": "wpackagist-plugin/foogallery",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/foogallery/",
@@ -622,15 +646,15 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.4",
+            "version": "2.2.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.4"
+                "reference": "tags/2.2.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -679,26 +703,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-autoloader",
-            "version": "2.0.9",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-autoloader/",
-                "reference": "tags/2.0.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-autoloader.2.0.9.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-autoloader/"
         },
         {
             "name": "wpackagist-plugin/wp-seo-qtranslate-x",

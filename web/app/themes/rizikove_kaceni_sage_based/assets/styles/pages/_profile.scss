@@ -4,7 +4,11 @@
   text-align: justify;
 
   .profile-photo{
-    display: none;
+
+    display: block;
+    width: 235px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 
     @include modular-mq(tablet){
       display: block;

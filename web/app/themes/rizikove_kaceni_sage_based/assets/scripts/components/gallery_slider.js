@@ -23,8 +23,8 @@ module.exports = (function(){
 
         bxSliderOptions         = {
             pager : false,
-            nextSelector: '#prev-slide',
-            prevSelector: '#next-slide',
+            nextSelector: '#next-slide',
+            prevSelector: '#prev-slide',
             nextText: '',
             prevText: ''
             //slideWidth: 300

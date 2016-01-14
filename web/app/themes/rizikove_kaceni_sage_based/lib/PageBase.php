@@ -73,6 +73,9 @@ class PageBase {
     protected function get_post_property($post_id, $property_names){
         $properties = array();
         $this->get_post($post_id);
+        if ($this->post === null){
+            return null;
+        }
         if (is_array($property_names)){
             foreach ($property_names as $property_name) {
                 if (property_exists($this->post, $property_name)){

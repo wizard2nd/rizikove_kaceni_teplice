@@ -38,7 +38,7 @@ function setup() {
 
     add_image_size('gallery-thumb', 300, 300, array('center', 'center'));
 
-    add_image_size('cert-desktop', 690, 1000);
+    add_image_size('cert-desktop', 258, 375);
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

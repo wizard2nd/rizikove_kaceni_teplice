@@ -65,7 +65,7 @@ header{
 }
 
 .site-logo{
-  @include bg_img('logo3.png');
+  @include bg_img('logo.png');
   @include square-dim($logo-dim-mob);
   background-size: cover;
   margin: 0 auto;

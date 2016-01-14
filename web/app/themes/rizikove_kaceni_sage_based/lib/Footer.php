@@ -11,7 +11,7 @@ namespace rk;
 
 class Footer extends PageBase{
 
-    private $pages = array(2,14,27,20,22);
+    private $pages = array(2,14,27,250);
 
     private $services = array(36,38,40,42);
 
@@ -40,6 +40,4 @@ class Footer extends PageBase{
     {
         return $this->create_site_map($this->services);
     }
-
-    
 }

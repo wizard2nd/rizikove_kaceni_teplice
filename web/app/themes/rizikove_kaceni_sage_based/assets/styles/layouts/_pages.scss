@@ -11,6 +11,10 @@
   padding: 30px 20px;
   font-size: 17px;
 
+  &.home-page{
+    padding: 0;
+  }
+
   @include modular-mq(tablet){
     padding: 40px 30px;
     font-size: 27px;

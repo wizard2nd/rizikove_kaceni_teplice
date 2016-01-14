@@ -5,7 +5,7 @@ use rk\FrontendHelper;
 ?>
 
 <div id="home-page" class="content-area">
-    <div id="content" class="site-content container" role="main">
+    <div id="content" class="site-content container home-page" role="main">
         <?php $index_pages = array(
             36 => __('Risk Felling', 'sage'),
             38 => __('Pruning trees', 'sage'),

@@ -9,7 +9,7 @@
                     {% for title, certificate in certificates %}
                     <li class="certificates__list--single">
                         <h3 class="cert-title">{{ title }}</h3>
-                        <a href="#" class="slide-image modal-open">{{ certificate }}</a>
+                        <a href="{{ certificate.url }}" class="slide-image modal-open">{{ certificate.img }}</a>
                     </li>
                     {% endfor %}
                 </ul>

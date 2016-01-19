@@ -170,7 +170,6 @@ module.exports = (function(){
 
         return {
             init: function(){
-                console.log('gallery slider init');
                 getAttachmentIds();
                 buildCarousel();
                 bindEvents();

@@ -41,6 +41,10 @@
         top: 44%;
       }
 
+      .glyphicon{
+        display: block;
+      }
+
       .control {
         position: absolute;
         font-size: 50px;
@@ -52,6 +56,7 @@
           display: block;
           position: absolute;
           top: 0;
+          background: rgba(194, 208, 188, 0)
         }
       }
 

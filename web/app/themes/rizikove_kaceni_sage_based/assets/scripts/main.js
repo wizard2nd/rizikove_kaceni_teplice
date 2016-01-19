@@ -33,7 +33,7 @@ var
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-          service.init();
+         service.init();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -74,11 +74,6 @@ var
         init: function(){
             gallerySlider.init();
 
-        }
-    },
-    'services': {
-        init: function(){
-            service.init();
         }
     }
   };

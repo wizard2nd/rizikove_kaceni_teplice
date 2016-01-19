@@ -1,6 +1,10 @@
 <?php
     if (is_ie() && get_browser_version() <= 8){
-        header('location: /no_support');
+        // Redirect if browser is lte IE8
+        $post = Timber::get_post();
+        if ($post->slug != 'no-support'){
+            header('location: '. $_SERVER['SERVER_URI'] .'/no-support');
+        }
     }
 ?>
 

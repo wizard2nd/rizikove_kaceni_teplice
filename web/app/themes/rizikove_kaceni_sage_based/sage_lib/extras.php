@@ -31,3 +31,15 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+
+
+function sage_wrap_base_cpts($templates) {
+    $post = \Timber::get_post();
+    if ($post->slug == 'no-support') {
+        array_unshift($templates, 'page-no-support.php'); // Shift the template to the front of the array
+    }
+    return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+}
+
+add_filter('sage/wrap_base', __NAMESPACE__ . '\\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter

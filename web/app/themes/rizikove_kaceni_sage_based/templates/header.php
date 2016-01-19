@@ -1,7 +1,13 @@
+<?php
+    if (is_ie() && get_browser_version() <= 8){
+        header('location: /no_support');
+    }
+?>
+
 <header class="banner" role="banner">
         <?php $home_on_mobile = (is_mobile() && is_front_page() && !is_tablet()) ?>
         <nav role="navigation" class="navbar navbar-inverse ">
-              <div class="container-fluid center-block menu-center">
+              <div class="container-fluid">
                   <?php if (!$home_on_mobile && !is_tablet() && !is_desktop()) : ?>
                       <button type="button" class="collapsed menu-logo clearfix" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       </button>

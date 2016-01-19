@@ -1,5 +1,6 @@
 .menu-center{
   width: 100%;
+  text-align: ce;
 }
 
 .navbar{
@@ -73,6 +74,7 @@
 
     @include modular-mq(desktop){
       width: 1030px;
+      float: none;
 
       .de & {
         width: 1100px;

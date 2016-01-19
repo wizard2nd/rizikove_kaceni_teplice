@@ -93,10 +93,10 @@
       }
 
       @include modular-mq(desktop){
-        width: initial;
+        width: auto;
 
         &.portrait{
-          width: initial;
+          width: auto;
         }
       }
     }

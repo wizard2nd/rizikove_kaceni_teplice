@@ -21,6 +21,7 @@
       border-radius: 0;
       box-shadow: 0;
       -webkit-box-shadow: 0;
+      background-color: #789e79;
     }
 
     .qtranxs-lang-menu-item{
@@ -28,11 +29,10 @@
       width: 33%;
       text-align: center;
 
-
-
       a{
-        font-size: 0px;
+        font-size: 0;
         padding: 0;
+        display: inline;
       }
     }
 

@@ -4,9 +4,8 @@
 }
 
 .navbar{
-  @extend .navigation-font;
   margin-bottom: 0;
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: 1px;
   min-height: initial;
   position: fixed;
@@ -17,8 +16,31 @@
 
   li.menu-item{
 
+    &.lang .dropdown-menu{
+      padding: 0;
+      border-radius: 0;
+      box-shadow: 0;
+      -webkit-box-shadow: 0;
+    }
+
+    .qtranxs-lang-menu-item{
+      float: left;
+      width: 33%;
+      text-align: center;
+
+
+
+      a{
+        font-size: 0px;
+        padding: 0;
+      }
+    }
+
+
     a {
       font-size: 20px;
+      padding-left: 30%;
+      letter-spacing: 2px;
 
       @include modular-mq(tablet){
         font-size: 17px;
@@ -33,9 +55,12 @@
 }
 
 .main-menu-container{
-  position: absolute;
-  left: 14px;
-  width: 75%;
+
+  &.navbar-collapse{
+    margin: 0;
+    border-bottom: 0;
+  }
+  width: 100%;
   z-index: 1000;
 
   @include modular-mq(tablet){

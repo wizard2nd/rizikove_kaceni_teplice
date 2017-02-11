@@ -20,7 +20,25 @@
   padding-bottom: 5px;
 }
 
-.hide-slider{
+.hide-slider {
   height: 0 !important;
   overflow: hidden;
+}
+
+.page-title{
+  text-align: center;
+  font-size: 29px;
+  margin-bottom: 20px;
+
+  @include modular-mq(tablet){
+    text-align: left;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  @include modular-mq(desktop){
+    text-align: left;
+    font-size: 43px;
+    margin-bottom: 40px;
+  }
 }

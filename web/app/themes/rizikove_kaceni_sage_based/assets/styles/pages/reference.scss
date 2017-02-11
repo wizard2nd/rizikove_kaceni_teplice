@@ -1,7 +1,16 @@
 .reference{
   margin-bottom: 20px;
+
+  @include modular-mq(tablet){
+    margin-bottom: 30px;
+  }
+
+  @include modular-mq(desktop){
+    margin-bottom: 40px;
+  }
+
   &.last{
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .client-info{
@@ -9,6 +18,12 @@
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 19px;
+    border-bottom: 1px solid;
+
+    @include modular-mq(tablet){
+      font-size: 26px;
+    }
+
   }
 
   .name{

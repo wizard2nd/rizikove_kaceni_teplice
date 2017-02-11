@@ -1,0 +1,25 @@
+.reference{
+  margin-bottom: 20px;
+  &.last{
+    margin-bottom: 0px;
+  }
+
+  .client-info{
+    @include clearfix;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 19px;
+  }
+
+  .name{
+    float: left;
+  }
+
+  .contact{
+    float: right;
+  }
+
+  .text{
+    text-align: justify;
+  }
+}

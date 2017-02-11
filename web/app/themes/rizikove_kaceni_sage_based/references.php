@@ -1,20 +1,7 @@
 <?php
 /** Template Name: References */
 
+$rows = get_field('reference');
+$view['references'] = $rows;
 
-
-?>
-
-<div id="contact-page" class="content-area contact-page">
-    <div id="content" class="site-content container" role="main">
-
-        <?php
-        if (have_posts()){
-            while (have_posts()){
-                the_post();
-                the_content();
-            }
-        }
-        ?>
-    </div><!-- #content -->
-</div><!-- #primary -->
+Timber::render('reference.twig', $view);

@@ -23,7 +23,7 @@ class FrontendHelper {
 		    'services'      => 'glyphicon-tree-conifer',
 		    'contact'       => 'glyphicon-earphone',
 		    'references'    => 'glyphicon-list-alt',
-		    'gallery'        => 'glyphicon-picture',
+		    'gallery'       => 'glyphicon-picture',
 		    'lang'          => 'glyphicon-text-color'
 	    );
 

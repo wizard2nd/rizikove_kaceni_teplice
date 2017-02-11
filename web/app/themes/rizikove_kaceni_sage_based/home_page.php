@@ -14,7 +14,7 @@ use rk\FrontendHelper;
         );
         ?>
 
-            <div id="home-page-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div id="home-page-carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <?php $i = 0 ?>

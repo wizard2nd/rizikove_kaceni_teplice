@@ -13,11 +13,11 @@
     @include modular-mq(tablet){
       display: block;
       margin-right: 20px;
-      @include square-dim(50%);
+      //@include square-dim(50%);
     }
 
     @include modular-mq(tablet, landscape){
-      @include square-dim(25%);
+      //@include square-dim(25%);
     }
 
     @include modular-mq(desktop){

@@ -28,6 +28,10 @@ header{
   margin-top: 50px;
 
   @include modular-mq(desktop){
+    height: 340px;
+  }
+
+  @include modular-mq(desktop-large){
     height: 500px;
   }
 
@@ -46,7 +50,15 @@ header{
   }
 
   .desktop &{
-    top: 60%;
+
+    @include modular-mq(desktop){
+      top: 40%;
+    }
+
+    @include modular-mq(desktop-large){
+      top: 60%;
+    }
+
   }
 
   @include modular-mq(tablet){

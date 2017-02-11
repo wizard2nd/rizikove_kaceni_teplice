@@ -13,9 +13,9 @@ class ServicesPage extends PageBase {
 
     private $id = 27;
 
-    private $slide_down_icon = '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>';
+    private $slide_down_icon = '<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>';
 
-    private $slide_up_icon = '<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>';
+    private $slide_up_icon = '<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>';
 
     public function __construct(){
 

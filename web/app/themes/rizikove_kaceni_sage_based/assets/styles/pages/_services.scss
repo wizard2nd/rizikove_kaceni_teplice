@@ -2,6 +2,11 @@
 .services-navigation{
 
   @extend .col-md-4;
+  margin-bottom: 16px;
+
+  @include modular-mq(tablet){
+    margin-bottom: 20px;
+  }
 
   @include modular-mq(desktop){
     margin-top: 25px;
@@ -27,17 +32,21 @@
 
     @include modify-property-by-device(width, 85% 93% 100%);
 
-    @include modify-property-by-device(font-size, 27px 37px 29px);
+    @include modify-property-by-device(font-size, 21px 30px 29px);
 
   }
 
-  .glyphicon-chevron-down, .glyphicon-chevron-up{
+  .glyphicon-menu-down, .glyphicon-menu-up{
     display: block;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 3px;
     top: initial;
-    font-size: 30px;
+    font-size: 22px;
+
+    @include modular-mq(tablet){
+      font-size: 27px;
+    }
 
     @include modular-mq(desktop){
       display: none;

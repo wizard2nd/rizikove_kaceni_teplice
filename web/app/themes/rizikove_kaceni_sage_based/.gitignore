@@ -7,3 +7,5 @@ npm-debug.log
 
 #sass cache
 .sass-cache/*
+
+lang/*

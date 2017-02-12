@@ -66,6 +66,10 @@
   li{
     margin-bottom: 5px;
 
+    a:hover{
+      text-decoration: none;
+    }
+
     @include modular-mq(desktop){
       margin-bottom: 10px;
     }

@@ -9,29 +9,50 @@
     margin-bottom: 40px;
   }
 
+  .client-logo{
+    @include modular-mq(desktop){
+      width: 10%;
+    }
+
+    width: 25%;
+    margin-bottom: 5px;
+  }
+
   &.last{
     margin-bottom: 0;
   }
 
   .client-info{
+    position: relative;
     @include clearfix;
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 19px;
     border-bottom: 1px solid;
 
+    @include modular-mq(desktop){
+      text-align: left;
+    }
+
     @include modular-mq(tablet){
       font-size: 26px;
     }
 
+    text-align: center;
+
   }
 
   .name{
-    float: left;
+
   }
 
   .klient-contact{
-    float: right;
+    @include modular-mq(desktop){
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
   }
 
   .text{

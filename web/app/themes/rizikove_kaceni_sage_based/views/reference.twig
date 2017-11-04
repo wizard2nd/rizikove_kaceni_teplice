@@ -4,6 +4,7 @@
         {% for reference in references %}
             <div class="reference {% if loop.last %}last{% endif %}">
                 <div class="client-info clearfix">
+                    <img class="client-logo" src="{{ reference.client_logo.sizes.medium }}"/>
                     <div class="name float-left">{{ reference.client_name }}</div>
                     <div class="klient-contact float-right">{{ reference.client_contact }}</div>
                 </div>

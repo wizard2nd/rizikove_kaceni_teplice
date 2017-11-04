@@ -1,0 +1,3 @@
+Sitemap: http://rizikovekaceni-teplice.cz/en/sitemap.xml
+Sitemap: http://rizikovekaceni-teplice.cz/de/sitemap.xml
+Sitemap: http://rizikovekaceni-teplice.cz/cz/sitemap.xml

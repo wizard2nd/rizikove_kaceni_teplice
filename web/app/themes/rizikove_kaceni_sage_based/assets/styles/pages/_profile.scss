@@ -24,16 +24,25 @@
       margin-right: 20px;
       margin-bottom: 0;
     }
+
+    &-left {
+      display: block;
+      margin: 10px auto;
+
+      @include modular-mq(tablet){
+        margin: 10px 0 0 20px
+      }
+    }
   }
 
   .featured-images{
 
     @include modular-mq(tablet){
-      margin-top: 40px;
+      margin-top: 100px;
     }
 
     @include modular-mq(desktop){
-      margin-top: 50px;
+      margin-top: 215px;
     }
 
 

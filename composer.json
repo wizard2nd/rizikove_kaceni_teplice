@@ -53,7 +53,7 @@
     "wpackagist-plugin/php-browser-detection": "^3.1.4",
     "wpackagist-plugin/contact-form-7": "^4.3.0",
     "wpackagist-plugin/qtranslate-slug": "^1.1.16",
-    "wpackagist-plugin/wordpress-seo": "2.3.5",
+    "wpackagist-plugin/wordpress-seo": "^8.0",
     "wpackagist-plugin/foogallery": "^1.2.7",
     "wpackagist-plugin/qtranslate-x": "^3.4.4",
     "wpackagist-plugin/wp-seo-qtranslate-x": "^1.1",

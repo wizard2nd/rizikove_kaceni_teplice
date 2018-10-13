@@ -6,7 +6,9 @@ header{
   position: relative;
   @include bg_img('header-background-mobile.png');
   opacity: 0;
-  transition: opacity 1.5s;
+
+  @include transition-property(opacity);
+  @include transition-duration(1.5s);
 
   &--show{
     opacity: 100;
@@ -83,7 +85,12 @@ header{
   position: relative;
   left: -80%;
   opacity: 0;
-  transition: left .75s linear .25s, opacity 1s linear .25s;
+
+  -webkit-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
+  -moz-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
+  -ms-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
+  -o-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
+  transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
 
   &--show {
     left: 0;

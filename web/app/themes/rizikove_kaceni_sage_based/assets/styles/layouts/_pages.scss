@@ -27,7 +27,16 @@
     font-size: 21px;
     letter-spacing: 1px;
 
+    -webkit-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+    -moz-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+    -ms-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+    -o-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
     transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+
+    &--show{
+      top: 0;
+      opacity: 100;
+    }
   }
 
   @include modular-mq(desktop){
@@ -54,9 +63,4 @@
     }
 
   }
-}
-
-.show-content{
-  top: 0px;
-  opacity: 100;
 }

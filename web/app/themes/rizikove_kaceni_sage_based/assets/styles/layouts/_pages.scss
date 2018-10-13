@@ -12,6 +12,12 @@
   font-size: 17px;
   font-weight: 100;
 
+  position: relative;
+  top: 20px;
+  opacity: 0;
+
+  transition: opacity 0.5s, top 0.5s;
+
   &.home-page{
     padding: 0;
   }
@@ -46,4 +52,9 @@
     }
 
   }
+}
+
+.show-content{
+  top: 0px;
+  opacity: 100;
 }

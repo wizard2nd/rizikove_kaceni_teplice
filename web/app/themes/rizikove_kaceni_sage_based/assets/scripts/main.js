@@ -34,6 +34,7 @@ var
       init: function() {
         // JavaScript to be fired on all pages
          service.init();
+          $('.site-content').addClass('show-content');
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

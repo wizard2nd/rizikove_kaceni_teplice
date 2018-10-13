@@ -5,6 +5,12 @@ header{
 .header-image{
   position: relative;
   @include bg_img('header-background-mobile.png');
+  opacity: 0;
+  transition: opacity 1.5s;
+
+  &--show{
+    opacity: 100;
+  }
 
   &.hide-header{
     height: 0;
@@ -74,6 +80,15 @@ header{
   margin: 0 auto;
   width: $site-width;
   padding: 10px;
+  position: relative;
+  left: -80%;
+  opacity: 0;
+  transition: left .75s linear .25s, opacity 1s linear .25s;
+
+  &--show {
+    left: 0;
+    opacity: 100;
+  }
 }
 
 .site-logo{

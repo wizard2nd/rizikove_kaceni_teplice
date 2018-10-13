@@ -33,8 +33,7 @@ var
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-         service.init();
-          $('.site-content').addClass('show-content');
+          service.init();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -116,8 +115,10 @@ var
         contact.init();
     };
 
-  //$(document).load(function(){
-  //    service.showSlideDownCursor();
-  //});
+  $(window).on('load', function(){
+      $('.site-content').addClass('show-content');
+      $('.title-description-wrap').addClass('title-description-wrap--show');
+      $('.header-image').addClass('header-image--show');
+  });
 
 })(jQuery); // Fully reference jQuery after this point.

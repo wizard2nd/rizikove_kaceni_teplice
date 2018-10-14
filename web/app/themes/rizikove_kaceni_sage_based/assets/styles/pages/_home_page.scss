@@ -1,39 +1,14 @@
 // styles for home page
 
-#home-page{
-
-  // override bootstrap next, prev button in carousel
-  .carousel-control{
-    height: 82%;
-    background-image: none;
-
-    @include modular-mq(tablet){
-      height: 86%;
-    }
-
+.service-list {
+  &__item {
     @include modular-mq(desktop){
-      height: 89%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
-}
-
-.carousel{
-
-  @extend .shadow-box;
-
-}
-
-.item {
-
-  @include modular-mq(desktop) {
-    height: 500px;
-  }
-
-  img{
-    @include square-dim(100%);
-    height: 100% !important;
-  }
-
 }
 
 .bottom-title {

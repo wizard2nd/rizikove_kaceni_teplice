@@ -16,7 +16,16 @@
   top: 20px;
   opacity: 0;
 
-  transition: opacity 0.5s, top 0.5s;
+  -webkit-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+  -moz-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+  -ms-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+  -o-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+  transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
+
+  &--show{
+    top: 0;
+    opacity: 100;
+  }
 
   &.home-page{
     padding: 0;
@@ -26,17 +35,6 @@
     padding: 40px 30px;
     font-size: 21px;
     letter-spacing: 1px;
-
-    -webkit-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
-    -moz-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
-    -ms-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
-    -o-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
-    transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
-
-    &--show{
-      top: 0;
-      opacity: 100;
-    }
   }
 
   @include modular-mq(desktop){

@@ -40,7 +40,7 @@ header{
   }
 
   @include modular-mq(desktop-large){
-    height: 500px;
+    height: 345px;
   }
 
   @include modular-mq(desktop){
@@ -100,6 +100,7 @@ header{
 
 .site-logo{
   @include bg_img('logo.png');
+
   @include square-dim($logo-dim-mob);
   background-size: cover;
   margin: 0 auto;

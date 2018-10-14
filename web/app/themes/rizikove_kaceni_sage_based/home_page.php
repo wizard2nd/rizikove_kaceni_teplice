@@ -17,33 +17,32 @@ use rk\FrontendHelper;
 
             <div class="row">
                 <?php foreach ($index_pages as $page_id => $title) : ?>
+                    <?php $service = get_post($page_id) ?>
                     <div class="col-md-3 service-list__item">
-                        <?php echo FrontendHelper::get_thumbnail_image_by_device($page_id) ?>
-                        <div class="title">
-                            <?= $title ?>
-                        </div>
-                        <div class="short-description">
-                            Lorem Ipsum .....
-                        </div>
+                        <div class="shadow-box">
+                            <?php echo FrontendHelper::get_thumbnail_image_by_device($page_id) ?>
+                            <div class="service-list__content home-page-content-background">
+                                <h2 class="service-list__title"><?= $title ?></h2>
+                                <div class="short-description">
+                                    <?= wp_trim_words(__($service->post_content, 'sage'), 20, '...') ?>
+                                </div>
 
-                        <a href="<?php echo get_page_link($page_id) ?>">
-                            <div class="more-info">
-                                <span class="more-info__text"><? _e('More info', 'sage') ?></span>
-                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+                                <a href="<?php echo get_page_link($page_id) ?>" class="service-list__more-info">
+                                    <span class="more-info__text"><? _e('More info', 'sage') ?></span>
+                                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 <?php endforeach ?>
             </div>
-
-            <div class="home-page-post">
-                <?php
-                if (have_posts()) {
-                    echo FrontendHelper::add_icon_to_list_item($post->post_content);
-                }
-                ?>
-            </div>
-
+        </section>
+        <section class="home-page-post home-page-content-background">
+            <?php
+            if (have_posts()) {
+                echo FrontendHelper::add_icon_to_list_item($post->post_content);
+            }
+            ?>
         </section>
     </div><!-- #content -->
 </div><!-- #primary -->

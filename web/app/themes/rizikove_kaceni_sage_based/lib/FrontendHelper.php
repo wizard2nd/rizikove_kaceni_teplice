@@ -59,8 +59,8 @@ class FrontendHelper {
         if (is_desktop()) return 'desktop';
     }
 
-    public static function get_thumbnail_image_by_device($post_id){
-        return get_the_post_thumbnail($post_id, self::get_device());
+    public static function thumbnail_image_url($post_id){
+        return get_the_post_thumbnail_url($post_id, self::get_device());
     }
 
     public static function add_icon_to_list_item($content){

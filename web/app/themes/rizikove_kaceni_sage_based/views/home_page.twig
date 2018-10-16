@@ -1,0 +1,25 @@
+<div id="home-page" class="content-area">
+    <div id="content" class="home-page" role="main">
+        <section id="services">
+            <div class="service-list-container">
+                {% for service in services %}
+                    <div class="service-item shadow-box home-page-content-background">
+                        <img src="{{ service.image_url }}" alt="{{ service.title }}"/>
+                        <div class="service-item__content">
+                            <h2 class="service-item__title">{{ service.title }}</h2>
+                            <div class="service-item__text">
+                                {{ service.preview }}
+                            </div>
+                            <a href="{{ service.url }}" class="btn btn-primary">
+                                {{ more_info }}
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="home-page-post home-page-content-background">
+            {{ home_page_content }}
+        </section>
+    </div><!-- #content -->
+</div><!-- #primary -->

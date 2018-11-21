@@ -40,6 +40,16 @@ Use [bedrock-ansible](https://github.com/roots/bedrock-ansible) for additional f
 4. Set your site vhost document root to `/path/to/site/web/` (`/path/to/site/current/web/` if using deploys)
 5. Access WP admin at `http://example.com/wp/wp-admin`
 
+## Custom deploy
+
+1. Composer install / update
+2. Install or update node / npm
+3. run npm install
+4. run bower install
+5. install grunt
+6. install sass gem
+7. run grunt build
+
 ## Deploys
 
 There are two methods to deploy Bedrock sites out of the box:

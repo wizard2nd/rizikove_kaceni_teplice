@@ -32,8 +32,7 @@
                             'menu_class'        => 'main-menu nav navbar-nav',
                             'container'         => 'div',
                             'container_class'   => 'collapse navbar-collapse main-menu-container',
-                            'container_id'      => 'bs-example-navbar-collapse-1',
-                            'walker'            => new \Webcode\WordPress\Template\BootstrapNavWalker()
+                            'container_id'      => 'bs-example-navbar-collapse-1'
                         ]);
                      }
                   ?>

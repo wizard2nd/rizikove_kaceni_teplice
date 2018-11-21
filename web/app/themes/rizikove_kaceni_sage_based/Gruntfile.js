@@ -71,6 +71,11 @@ module.exports = function(grunt) {
                 files: { '<%= meta.js_dest %>': ['<%= meta.js_assets_dir %>/main.js'] }
             }
         },
+        uglify: {
+            main: {
+                files: { '<%= meta.js_dest %>': '<%= meta.js_dest %>' }
+            }
+        },
         copy: {
             main:{
                 expand: true,
@@ -80,9 +85,9 @@ module.exports = function(grunt) {
             },
             assets:{
                 expand: true,
-                cvd: '/assets/images/',
-                src: '**',
-                dest: 'dist/styles/images'
+                cwd: 'assets/images/',
+                src: '*',
+                dest: 'dist/styles/images/'
             }
         },
         watch: {
@@ -108,10 +113,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // // Default task(s)
     //grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'copy']);
+    grunt.registerTask('build', ['sass', 'cssmin', 'browserify', 'uglify', 'copy']);
     grunt.registerTask('default', ['test', 'build']);
 };

@@ -60,7 +60,7 @@
     "wpackagist-plugin/timber-library": "^0.21.10",
     "semanticwp/twig-haml-templating": "0.1.0-alpha.2",
     "wpackagist-plugin/custom-post-type-ui": "^1.1.2",
-    "wpackagist-plugin/acf-qtranslate": "1.7.9",
+    "wpackagist-plugin/acf-qtranslate": "^1.7.25",
     "wpackagist-plugin/regenerate-thumbnails": "^2.2.4",
     "wpackagist-plugin/better-wp-security": "5.1.1",
     "wpackagist-plugin/uk-cookie-consent":"2.3.11"

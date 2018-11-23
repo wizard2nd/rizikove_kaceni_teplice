@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9eb9538e6dfedbd03512e265f877579a",
+    "content-hash": "5b1d406ee98be12eaa53b7bbd71f72c7",
     "packages": [
         {
             "name": "composer/installers",
@@ -522,15 +522,15 @@
         },
         {
             "name": "wpackagist-plugin/acf-qtranslate",
-            "version": "1.7.9",
+            "version": "1.7.25",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/acf-qtranslate/",
-                "reference": "tags/1.7.9"
+                "reference": "tags/1.7.25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/acf-qtranslate.1.7.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-qtranslate.1.7.25.zip",
                 "reference": null,
                 "shasum": null
             },

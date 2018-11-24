@@ -37,3 +37,6 @@ bin
 .idea/*
 
 web/app/themes/rizikove_kaceni_sage_based/lang/*
+
+# Capistrano log
+log

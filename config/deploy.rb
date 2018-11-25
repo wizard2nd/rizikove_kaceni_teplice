@@ -17,6 +17,12 @@ namespace :deploy do
   after :starting, 'composer:install_executable'
 end
 
+set :deploy_via, :remote_cache
+set :theme_dir, './web/app/themes/rizikove_kaceni_sage_based'
+
+set :npm_target_path, -> { release_path.join(fetch(:theme_dir)) }
+set :npm_flags, '--silent --no-progress'
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 

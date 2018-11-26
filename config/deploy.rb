@@ -15,6 +15,10 @@ SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}
 
 namespace :deploy do
   after :starting, 'composer:install_executable'
+  after :updated, 'set:env_file'
+
+  before :updated, 'assets:bower_install'
+  before :updated, 'assets:build'
 end
 
 set :deploy_via, :remote_cache
@@ -22,6 +26,17 @@ set :theme_dir, './web/app/themes/rizikove_kaceni_sage_based'
 
 set :npm_target_path, -> { release_path.join(fetch(:theme_dir)) }
 set :npm_flags, '--silent --no-progress'
+
+namespace :set do
+  desc 'Create symlink to .env file'
+  task :env_file do
+  	on roles(:app) do
+  	  within release_path do
+  	  	execute "ln -s #{shared_path}/.env #{release_path}/.env" 	
+  	  end
+  	end
+  end
+end
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

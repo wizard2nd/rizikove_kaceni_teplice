@@ -16,7 +16,4 @@ namespace :assets do
       end
     end
   end
-
-  before 'deploy:updated', 'assets:bower_install'
-  before 'deploy:updated', 'assets:build'
 end

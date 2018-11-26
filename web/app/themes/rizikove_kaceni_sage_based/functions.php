@@ -24,7 +24,7 @@ $custom_includes = [
     'PageBase.php',
     'ServicesPage.php',
     'carousel_helper.php',
-    'Contact.php',
+    'contact.php',
     'Footer.php',
     'Gallery.php',
     'add_hook_helper.php',

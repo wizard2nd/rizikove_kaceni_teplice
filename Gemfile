@@ -7,3 +7,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
  gem "capistrano"
  gem 'capistrano-composer'
  gem 'capistrano-npm'
+ gem 'capistrano-wpcli'

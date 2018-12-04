@@ -40,3 +40,9 @@ web/app/themes/rizikove_kaceni_sage_based/lang/*
 
 # Capistrano log
 log
+
+# db backup dir
+config/backup
+
+# wpcli local tmp for capistrano task
+tmp

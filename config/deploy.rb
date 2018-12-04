@@ -13,12 +13,22 @@ set :deploy_to, "/home/git/apps/rizikovekaceni/staging"
 # Insltall Composer
 SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"
 
+ask :sync_db, 'no'
+ask :sync_uploads, 'no'
+ask :build_assets, 'no'
+
 namespace :deploy do
   after :starting, 'composer:install_executable'
-  after :updated, 'set:env_file'
+  after :starting, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
+  after :starting, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
 
-  before :updated, 'assets:bower_install'
-  before :updated, 'assets:build'
+  after :updated, 'set:env_file'
+  after :updated, 'set:symlink_to_wp_uploads'
+
+  if fetch(:build_assets) == 'yes'
+  	before :updated, 'assets:bower_install'
+  	before :updated, 'assets:build'
+  end
 end
 
 set :deploy_via, :remote_cache
@@ -26,6 +36,8 @@ set :theme_dir, './web/app/themes/rizikove_kaceni_sage_based'
 
 set :npm_target_path, -> { release_path.join(fetch(:theme_dir)) }
 set :npm_flags, '--silent --no-progress'
+
+
 
 namespace :set do
   desc 'Create symlink to .env file'
@@ -36,7 +48,22 @@ namespace :set do
   	  end
   	end
   end
+
+  desc 'Set symlink to wp uploads'
+  task 'symlink_to_wp_uploads' do
+	on roles(:app) do
+	  within release_path do
+		execute "ln -s #{fetch(:wpcli_remote_uploads_dir)} #{release_path}/web/app/uploads"
+	  end
+	end
+  end
 end
+
+# WPCLI config
+set :wpcli_local_url, 'http://rizikovekaceni-teplice.local:8080'
+set :local_tmp_dir, 'tmp'
+set :wpcli_backup_db, true # backup remote db
+set :wpcli_remote_uploads_dir, '~/apps/rizikovekaceni/wp_uploads'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

@@ -23,6 +23,7 @@ namespace :deploy do
 
   after :updated, 'set:env_file'
   after :updated, 'set:symlink_to_wp_uploads'
+  after :updated, 'set:simlink_acf_repeater_plugin'
 
   if fetch(:build_assets) == 'yes'
   	before :updated, 'assets:bower_install'
@@ -56,6 +57,16 @@ namespace :set do
 	  end
 	end
   end
+
+  desc 'Set symlink to acf repeater plugin'
+  task 'simlink_acf_repeater_plugin' do
+    on roles(:app) do
+      within release_path do 
+        execute "ln -s #{fetch(:wp_external_plugins)}/acf-repeater #{release_path}/web/app/plugins"
+      end	
+    end	
+  end
+
 end
 
 # WPCLI config
@@ -63,6 +74,7 @@ set :wpcli_local_url, 'http://rizikovekaceni-teplice.local:8080'
 set :local_tmp_dir, 'tmp'
 set :wpcli_backup_db, true # backup remote db
 set :wpcli_remote_uploads_dir, '~/apps/rizikovekaceni/wp_uploads'
+set :wp_external_plugins, '~/apps/rizikovekaceni/external-plugins'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

@@ -24,6 +24,7 @@ namespace :deploy do
   after :updated, 'set:env_file'
   after :updated, 'set:symlink_to_wp_uploads'
   after :updated, 'set:simlink_acf_repeater_plugin'
+  after :updated, 'set:www_data_to_own_plugins_dir'
 
   if fetch(:build_assets) == 'yes'
   	before :updated, 'assets:bower_install'
@@ -66,6 +67,15 @@ namespace :set do
       end	
     end	
   end
+
+  desc 'Change owner of plugin dir to www-data (nginx)'
+  task 'www_data_to_own_plugins_dir'do
+  	on roles(:app) do
+  	  within release_path do 
+        execute "sudo chown -R www-data: #{release_path}/web/app/plugins"
+      end	
+  	end
+  end 
 
 end
 

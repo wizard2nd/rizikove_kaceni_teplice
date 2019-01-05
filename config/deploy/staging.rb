@@ -5,6 +5,8 @@
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
+set :stage, :staging
+
 server "rizikovekaceni-teplice.stage.goodcodecrusader.com", 
 user: "git", 
 roles: %w{app web db},
@@ -15,8 +17,6 @@ ssh_options: {
 }
 
 set :wpcli_remote_url, 'http://rizikovekaceni-teplice.stage.goodcodecrusader.com'
-
-
 
 # role-based syntax
 # ==================

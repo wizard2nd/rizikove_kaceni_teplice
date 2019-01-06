@@ -19,12 +19,12 @@ ask :build_assets, 'no'
 namespace :deploy do
   after :starting, 'composer:install_executable'
   after :starting, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
-  after :starting, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
 
   after :updated, 'set:env_file'
   after :updated, 'set:symlink_to_wp_uploads'
   after :updated, 'set:simlink_acf_repeater_plugin'
   after :updated, 'set:www_data_to_own_plugins_dir'
+  after :updated, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
 
   if fetch(:build_assets) == 'yes'
   	before :updated, 'assets:bower_install'

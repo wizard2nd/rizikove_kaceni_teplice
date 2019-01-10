@@ -49,9 +49,9 @@
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "~1.0.9",
     "johnpbloch/wordpress": "^4.9.8",
-    "wpackagist-plugin/advanced-custom-fields": "~4.4.2",
+    "wpackagist-plugin/advanced-custom-fields": "^4.4.2",
     "wpackagist-plugin/php-browser-detection": "^3.1.4",
-    "wpackagist-plugin/contact-form-7": "^4.3.0",
+    "wpackagist-plugin/contact-form-7": "^5.1.0",
     "wpackagist-plugin/qtranslate-slug": "^1.1.16",
     "wpackagist-plugin/wordpress-seo": "^9.1",
     "wpackagist-plugin/foogallery": "^1.2.7",
@@ -62,7 +62,7 @@
     "wpackagist-plugin/custom-post-type-ui": "^1.1.2",
     "wpackagist-plugin/acf-qtranslate": "^1.7.25",
     "wpackagist-plugin/regenerate-thumbnails": "^2.2.4",
-    "wpackagist-plugin/better-wp-security": "5.1.1",
+    "wpackagist-plugin/better-wp-security": "7.2.0",
     "wpackagist-plugin/uk-cookie-consent":"2.3.11"
 
   },

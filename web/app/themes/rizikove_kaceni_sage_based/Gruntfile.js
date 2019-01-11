@@ -118,5 +118,6 @@ module.exports = function(grunt) {
     // // Default task(s)
     //grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['sass', 'cssmin', 'browserify', 'uglify', 'copy']);
+    grunt.registerTask('build_dev', ['sass', 'cssmin', 'browserify', 'copy']);
     grunt.registerTask('default', ['test', 'build']);
 };

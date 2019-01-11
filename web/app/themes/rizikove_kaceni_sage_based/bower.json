@@ -11,7 +11,7 @@
     "bootstrap-sass-official": "3.3.4",
     "bourbon": "4.2.3",
     "underscore": "1.8.3",
-    "bxslider-4": "4.2.5"
+    "bxslider-4": "4.2.15"
   },
   "overrides": {
     "modernizr": {

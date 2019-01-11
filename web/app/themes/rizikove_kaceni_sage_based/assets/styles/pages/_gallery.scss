@@ -33,7 +33,7 @@
 }
 
 .foogallery-container{
-
+  z-index: 0 !important;
   img{
     @include square-dim(100%);
   }

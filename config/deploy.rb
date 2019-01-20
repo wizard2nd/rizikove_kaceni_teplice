@@ -14,7 +14,7 @@ SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}
 
 ask :sync_db, 'no'
 ask :sync_uploads, 'no'
-ask :build_assets, 'no'
+ask :build_assets, 'yes'
 
 namespace :deploy do
   after :starting, 'composer:install_executable'

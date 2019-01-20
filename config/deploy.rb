@@ -18,12 +18,12 @@ ask :build_assets, 'yes'
 
 namespace :deploy do
   after :starting, 'composer:install_executable'
-  after :starting, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
-
+  
   after :updated, 'set:env_file'
+  after :updated, 'set:set_rw_permittion_to_plugin_folder'
+  after :updated, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
   after :updated, 'set:symlink_to_wp_uploads'
   after :updated, 'set:simlink_acf_repeater_plugin'
-  after :updated, 'set:www_data_to_own_plugins_dir'
   after :updated, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
 
   if fetch(:build_assets) == 'yes'
@@ -68,11 +68,11 @@ namespace :set do
     end	
   end
 
-  desc 'Change owner of plugin dir to www-data (nginx)'
-  task 'www_data_to_own_plugins_dir'do
+  desc 'Set read and write permittions on plugins folder'
+  task 'set_rw_permittion_to_plugin_folder'do
   	on roles(:app) do
   	  within release_path do 
-        execute "sudo chown -R www-data: #{release_path}/web/app/plugins"
+        execute "sudo chmod -R 0777 #{release_path}/web/app/plugins"
       end	
   	end
   end 

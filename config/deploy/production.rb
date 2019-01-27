@@ -1,4 +1,5 @@
 set :stage, :production
+set :branch, 'master'
 
 server "rizikovekaceni-teplice.production.goodcodecrusader.com", 
 user: "git", 

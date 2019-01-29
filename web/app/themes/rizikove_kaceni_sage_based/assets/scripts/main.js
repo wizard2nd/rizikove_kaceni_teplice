@@ -117,7 +117,7 @@ var
 
   $(window).on('load', function(){
       $('.site-content').addClass('site-content--show');
-      $('.title-description-wrap').addClass('title-description-wrap--show');
+      //$('.title-description-wrap').addClass('title-description-wrap--show');
       $('.header-image').addClass('header-image--show');
   });
 

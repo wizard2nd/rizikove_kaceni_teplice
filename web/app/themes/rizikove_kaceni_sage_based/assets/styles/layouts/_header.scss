@@ -83,8 +83,8 @@ header{
   width: $site-width;
   padding: 10px;
   position: relative;
-  left: -80%;
-  opacity: 0;
+  //left: -80%;
+  //opacity: 0;
 
   -webkit-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
   -moz-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;

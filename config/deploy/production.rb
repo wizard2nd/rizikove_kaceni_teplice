@@ -10,7 +10,7 @@ ssh_options: {
 	keys: "~/.ssh/do_git"
 }
 
-set :wpcli_remote_url, 'https://rizikovekaceni-teplice.production.goodcodecrusader.com'
+set :wpcli_remote_url, 'https://rizikovekaceni-teplice.cz'
 
 #
 # Global options

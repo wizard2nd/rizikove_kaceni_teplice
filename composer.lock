@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb623c8ccfd29625a9b9bd4a85b75a47",
+    "content-hash": "182bfa0cacd3dcebc6fa3a966c83efa9",
     "packages": [
         {
             "name": "composer/installers",
@@ -622,7 +622,7 @@
         },
         {
             "name": "wpackagist-plugin/foogallery",
-            "version": "1.6.11",
+            "version": "1.6.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/foogallery/",
@@ -630,7 +630,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/foogallery.zip?timestamp=1545474554",
+                "url": "https://downloads.wordpress.org/plugin/foogallery.zip?timestamp=1549392410",
                 "reference": null,
                 "shasum": null
             },
@@ -719,6 +719,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/shortpixel-image-optimiser",
+            "version": "4.12.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/shortpixel-image-optimiser/",
+                "reference": "tags/4.12.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/shortpixel-image-optimiser.4.12.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/shortpixel-image-optimiser/"
         },
         {
             "name": "wpackagist-plugin/timber-library",

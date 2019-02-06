@@ -4,7 +4,7 @@ header{
 
 .header-image{
   position: relative;
-  @include bg_img('header-background-mobile.png');
+  @include bg_img('header-background-mobile.jpg');
   opacity: 0;
 
   @include transition-property(opacity);
@@ -19,11 +19,11 @@ header{
   }
 
   @include modular-mq(tablet){
-    @include bg_img('header-background-tablet.png');
+    @include bg_img('header-background-tablet.jpg');
   }
 
   @include modular-mq(desktop){
-    @include bg_img('header-background.png');
+    @include bg_img('header-background.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -33,7 +33,6 @@ header{
   background-size: cover;
   width: 100%;
   height: $header-image-height;
-  margin-top: 50px;
 
   @include modular-mq(desktop){
     height: 340px;
@@ -42,11 +41,6 @@ header{
   @include modular-mq(desktop-large){
     height: 500px;
   }
-
-  @include modular-mq(desktop){
-    margin-top: 77px;
-  }
-
 }
 
 .site-logo-title-wrap{

@@ -1,36 +1,51 @@
 <header class="banner" role="banner">
-    <nav role="navigation" class="navbar navbar-inverse ">
-        <div class="container-fluid">
-            {% if non_home_mobile_page == true %}
-                <button type="button" class="collapsed menu-logo clearfix" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <div class="header-image {% if non_home_mobile_page %} 'hide-header' {% endif %}">
+        <nav role="navigation" class="navbar">
+            <div class="mobile-nav-toggle">
+                <button type="button" class="navicon nav-toggle collapsed" >
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </button>
-                <h1 class="mobile-menu-title">{{ title }}</h1>
-            {% else %}
+            </div>
+            <div class="container-fluid">
+                {% if non_home_mobile_page == true %}
+                    <button type="button" class="collapsed menu-logo clearfix" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    </button>
+                    <h1 class="mobile-menu-title">{{ title }}</h1>
+                {% else %}
 
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
 
-            {% endif %}
 
-            {% if has_nav_menu == true %}
-                <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse main-menu-container">
-                    <ul class="main-menu nav navbar-nav">
-                        {% for item in menu.get_items %}
-                            <li class="nav-main-item {{ item.classes | join(' ') }}">
-                                <a class="nav-main-link" href="{{ item.get_link }}">{{ item.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-        </div>
-    </nav>
 
-    <div class="header-image <?php if ($other_mobile_page) echo 'hide-header'; ?>">
+
+
+                {% endif %}
+
+                {% if has_nav_menu == true %}
+                    <div id="bs-example-navbar-collapse-1" class="main-menu-container">
+                        <ul class="main-menu nav navbar-nav">
+                            {% for item in menu.get_items %}
+                                <li class="nav-main-item {{ item.classes | join(' ') }}">
+                                    <a class="nav-main-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                                    {% if item.get_children %}
+                                    <ul class="sub-menu">
+                                        {% for child_item in item.get_children  %}
+                                            <li class="sub-menu__item {{ child_item.class }}">
+                                                <a class="sub-menu-link" href="{{ child_item.get_link }}">{{ child_item.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+        </nav>
+
+
         {% if home_page_on_mobile_or_tablet == true %}
             <div class="mobile">
                 <div class="site-logo-title-wrap">

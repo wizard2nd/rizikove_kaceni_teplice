@@ -3,6 +3,24 @@
   text-align: center;
 }
 
+.mobile-nav-toggle {
+  background-color: #557963;
+  padding: 3px 0;
+}
+
+.navicon{
+  display: block;
+  padding: 0 6px;
+
+  .bar {
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+}
+
 .navbar{
   margin-bottom: 0;
   font-weight: 100;
@@ -12,7 +30,13 @@
   top: 0;
   z-index: 1;
   width: 100%;
+  border: none;
   @include border-radius(0px);
+
+  @include modular-mq(desktop) {
+    position: absolute;
+    right: 0;
+  }
 
   li.menu-item{
 
@@ -41,6 +65,8 @@
       font-size: 20px;
       padding-left: 30%;
       letter-spacing: 2px;
+      color: #40483c;
+      font-weight: 500;
 
       @include modular-mq(tablet){
         font-size: 17px;
@@ -76,39 +102,6 @@
   }
 }
 
-
-.main-menu{
-  &.navbar-nav{
-
-    @include modular-mq(tablet){
-      width: 730px;
-      margin: 0 auto;
-      float: initial;
-
-      .de & {
-        width: 750px;
-      }
-    }
-
-    @include modular-mq(tablet, landscape){
-      .de & {
-        width: 860px;
-      }
-      width: 860px;
-    }
-
-    @include modular-mq(desktop){
-      width: 1045px;
-      float: none;
-
-      .de & {
-        width: 1100px;
-      }
-    }
-  }
-
-  background: $navbar-inverse-bg;
-}
 
 // shift language menu to right
 .lang .dropdown-menu{

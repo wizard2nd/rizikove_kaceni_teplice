@@ -21,6 +21,13 @@
   }
 }
 
+.menu-close{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 3rem;
+}
+
 .navbar{
   margin-bottom: 0;
   font-weight: 100;
@@ -30,57 +37,21 @@
   top: 0;
   z-index: 1;
   width: 100%;
+  height: 100%;
   border: none;
-  @include border-radius(0px);
+
 
   @include modular-mq(desktop) {
     position: absolute;
     right: 0;
   }
-
-  li.menu-item{
-
-    &.lang .dropdown-menu{
-      padding: 0;
-      border-radius: 0;
-      box-shadow: 0;
-      -webkit-box-shadow: 0;
-      background-color: #789e79;
-    }
-
-    .qtranxs-lang-menu-item{
-      float: left;
-      width: 33%;
-      text-align: center;
-
-      a{
-        font-size: 0;
-        padding: 0;
-        display: inline;
-      }
-    }
-
-
-    a {
-      font-size: 20px;
-      padding-left: 30%;
-      letter-spacing: 2px;
-      color: #40483c;
-      font-weight: 500;
-
-      @include modular-mq(tablet){
-        font-size: 17px;
-      }
-
-      @include modular-mq(desktop) {
-        font-size: 23px;
-        line-height: 35px;
-      }
-    }
-  }
 }
 
 .main-menu-container{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #447b6d;
 
   &.navbar-collapse{
     margin: 0;
@@ -99,6 +70,23 @@
 
   @include modular-mq(desktop){
     width: 100%;
+  }
+}
+
+.main-menu {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+
+  li.menu-item {
+    text-align: center;
+    margin-bottom: 8px;
+
+    a {
+      font-size: 2em;
+      font-weight: 300;
+      color: #a2d2a9;
+    }
   }
 }
 

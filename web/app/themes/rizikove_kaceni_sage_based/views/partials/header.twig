@@ -8,41 +8,28 @@
                     <div class="bar"></div>
                 </button>
             </div>
-            <div class="container-fluid">
-                {% if non_home_mobile_page == true %}
-                    <button type="button" class="collapsed menu-logo clearfix" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    </button>
-                    <h1 class="mobile-menu-title">{{ title }}</h1>
-                {% else %}
 
-
-
-
-
-
-                {% endif %}
-
-                {% if has_nav_menu == true %}
-                    <div id="bs-example-navbar-collapse-1" class="main-menu-container">
-                        <ul class="main-menu nav navbar-nav">
-                            {% for item in menu.get_items %}
-                                <li class="nav-main-item {{ item.classes | join(' ') }}">
-                                    <a class="nav-main-link" href="{{ item.get_link }}">{{ item.title }}</a>
-                                    {% if item.get_children %}
-                                    <ul class="sub-menu">
-                                        {% for child_item in item.get_children  %}
-                                            <li class="sub-menu__item {{ child_item.class }}">
-                                                <a class="sub-menu-link" href="{{ child_item.get_link }}">{{ child_item.title }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
-            </div>
+            {% if has_nav_menu %}
+                <div id="bs-example-navbar-collapse-1" class="main-menu-container">
+                    <span class="menu-close glyphicon glyphicon-remove"></span>
+                    <ul class="main-menu">
+                        {% for item in menu.get_items %}
+                            <li class="nav-main-item {{ item.classes | join(' ') }}">
+                                <a class="nav-main-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                                {% if item.get_children %}
+                                <ul class="sub-menu">
+                                    {% for child_item in item.get_children  %}
+                                        <li class="sub-menu__item {{ child_item.class }}">
+                                            <a class="sub-menu-link" href="{{ child_item.get_link }}">{{ child_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </nav>
 
 

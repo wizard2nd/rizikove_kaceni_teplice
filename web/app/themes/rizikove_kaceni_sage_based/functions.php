@@ -38,6 +38,8 @@ foreach ($custom_includes as $file) {
         trigger_error(sprintf('Unable to load %s', $file), E_USER_ERROR);
 }
 
+require_once __DIR__ . "/lib/timber_extensions/Hero_Index_Post.php";
+
 $sage_includes = [
   'sage_lib/utils.php',                 // Utility functions
   'sage_lib/init.php',                  // Initial theme setup and constants

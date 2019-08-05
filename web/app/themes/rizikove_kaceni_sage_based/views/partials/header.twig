@@ -1,17 +1,11 @@
 <header class="banner" role="banner">
+    <div class="burger-menu">
+        <div class="lines"></div>
+    </div>
     <div class="header-image {% if non_home_mobile_page %} 'hide-header' {% endif %}">
         <nav role="navigation" class="navbar">
-            <div class="mobile-nav-toggle">
-                <button type="button" class="navicon nav-toggle collapsed" >
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </button>
-            </div>
-
             {% if has_nav_menu %}
                 <div id="bs-example-navbar-collapse-1" class="main-menu-container">
-                    <span class="menu-close glyphicon glyphicon-remove"></span>
                     <ul class="main-menu">
                         {% for item in menu.get_items %}
                             <li class="nav-main-item {{ item.classes | join(' ') }}">

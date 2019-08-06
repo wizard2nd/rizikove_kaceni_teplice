@@ -25,6 +25,7 @@ namespace :deploy do
   after :updated, 'set:simlink_acf_repeater_plugin'
   after :updated, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
   after :updated, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
+  after :updated, 'reset_opschache'
 
   if fetch(:build_assets) == 'yes'
   	before :updated, 'assets:bower_install'
@@ -75,8 +76,14 @@ namespace :set do
         execute "sudo chmod -R 0777 #{release_path}/web/app/plugins"
       end	
   	end
-  end 
+  end
+end
 
+desc 'Reset opschache'
+task 'reset_opschache'do
+  on roles(:app) do
+    execute "curl -k #{fetch(:wpcli_remote_url)}/reset_cache.php"
+  end
 end
 
 # WPCLI config

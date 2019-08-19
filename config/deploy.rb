@@ -22,7 +22,7 @@ namespace :deploy do
   after :updated, 'set:env_file'
   after :updated, 'set:set_rw_permittion_to_plugin_folder'
   after :updated, 'set:symlink_to_wp_uploads'
-  after :updated, 'set:simlink_acf_repeater_plugin'
+  after :updated, 'set:copy_acf_repeater_plugin'
   after :updated, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
   after :updated, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
   after :updated, 'reset_opschache'
@@ -60,11 +60,11 @@ namespace :set do
 	end
   end
 
-  desc 'Set symlink to acf repeater plugin'
-  task 'simlink_acf_repeater_plugin' do
+  desc 'Copy ACF repater plugin to plugins folder'
+  task 'copy_acf_repeater_plugin' do
     on roles(:app) do
       within release_path do 
-        execute "ln -s #{fetch(:wp_external_plugins)}/acf-repeater #{release_path}/web/app/plugins"
+        execute "cp -r #{fetch(:wp_external_plugins)}/acf-repeater #{release_path}/web/app/plugins"
       end	
     end	
   end
@@ -76,13 +76,6 @@ namespace :set do
         execute "sudo chmod -R 0777 #{release_path}/web/app/plugins"
       end	
   	end
-  end
-end
-
-desc 'Reset opschache'
-task 'reset_opschache'do
-  on roles(:app) do
-    execute "curl -k #{fetch(:wpcli_remote_url)}/reset_cache.php"
   end
 end
 

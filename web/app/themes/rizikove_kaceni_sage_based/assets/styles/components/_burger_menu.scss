@@ -8,11 +8,31 @@
 
   .lines {
     display: block;
+    position: relative;
     content: "";
     width: 100%;
     border-radius: .25em;
     background-color: #fff;
     height: .15em;
     top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+      content:"";
+      position: absolute;
+      height: .15em;
+      background-color: #fff;
+      width: 100%;
+      bottom: 8px;
+    }
+
+    &:after {
+      content:"";
+      position: absolute;
+      height: .15em;
+      background-color: #fff;
+      width: 100%;
+      top: 8px;
+    }
   }
 }

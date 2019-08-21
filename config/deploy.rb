@@ -25,7 +25,6 @@ namespace :deploy do
   after :updated, 'set:copy_acf_repeater_plugin'
   after :updated, 'wpcli:db:push' if fetch(:sync_db) == 'yes'
   after :updated, 'wpcli:uploads:rsync:push' if fetch(:sync_uploads) == 'yes'
-  after :updated, 'reset_opschache'
 
   if fetch(:build_assets) == 'yes'
   	before :updated, 'assets:bower_install'

@@ -3,11 +3,6 @@
   text-align: center;
 }
 
-.mobile-nav-toggle {
-  background-color: #557963;
-  padding: 3px 0;
-}
-
 .navicon{
   display: block;
   padding: 0 6px;
@@ -28,80 +23,69 @@
   font-size: 3rem;
 }
 
-.navbar{
+.navigation-bar{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #00a699;
   margin-bottom: 0;
   font-weight: 100;
   letter-spacing: 1px;
-  min-height: initial;
-  position: fixed;
-  top: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
-  border: none;
+  transition: left, 0.35s;
+  transition-timing-function: cubic-bezier(.2,.6,.58,.99);
 
+  &.open {
+    left: 0;
+  }
 
   @include modular-mq(desktop) {
-    position: absolute;
-    right: 0;
+    height: auto;
+    left: 0;
   }
 }
 
-.main-menu-container{
-  position: absolute;
-  top: 0;
-  height: 100%;
-  background-color: #447b6d;
+.menu-wrap {
+  position: relative;
+  top: 15%;
   width: 100%;
-  z-index: 1000;
-  left: -100%;
-  transition: left 0.40s;
-  transition-timing-function: linear;
 
-  @at-root {
-    .open & {
-      left: 0;
-    }
-  }
-
-  @include modular-mq(tablet){
-    position: relative;
-    left: initial;
-    padding: 0;
-    margin: 0 auto !important; // override .navbar-collapse from bootstrap
-    width: 100%;
-  }
-
-  @include modular-mq(desktop){
-    width: 100%;
+  @include modular-mq(desktop) {
+    float: right;
+    top: 0;
   }
 }
 
 .main-menu {
-  position: absolute;
-  top: 15%;
-  width: 100%;
 
   li.menu-item {
+    position: relative;
+    bottom: -5px;
+    opacity: 0;
     text-align: center;
-    margin-bottom: 8px;
+    transition: all 0.40s;
+    transition-delay: 0.45s;
+
+    @at-root {
+      .open & {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+
+    @include modular-mq(desktop) {
+      float: left;
+      margin-right: 4em;
+      opacity: 1;
+      bottom: 0;
+    }
 
     a {
-      position: relative;
-      bottom: -5px;
-      opacity: 0;
       font-size: 2em;
       font-weight: 300;
       color: #a2d2a9;
-      transition: all 0.40s;
-      transition-delay: 0.45s;
-
-      @at-root {
-        .open & {
-          opacity: 1;
-          bottom: 0;
-        }
-      }
     }
   }
 }

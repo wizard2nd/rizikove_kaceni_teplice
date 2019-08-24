@@ -83,11 +83,17 @@ module.exports = function(grunt) {
                 src: '*',
                 dest: '<%= meta.fonts_dest %>'
             },
-            assets:{
+            images:{
                 expand: true,
                 cwd: 'assets/images/',
                 src: '*',
                 dest: 'dist/styles/images/'
+            },
+            videos:{
+                expand: true,
+                cwd: 'assets/videos/',
+                src: '*',
+                dest: 'dist/styles/videos/'
             }
         },
         watch: {
@@ -100,8 +106,8 @@ module.exports = function(grunt) {
                 tasks: ['jshint','browserify']
             },
             copy_assets: {
-                files: "<%= copy.assets.cvd %>/**",
-                task: ['copy:assets']
+                files: [ "<%= copy.images.cwd %>/**", "<%= copy.videos.cwd %>/**"],
+                task: ['copy:images', 'copy:videos']
             }
         }
     });

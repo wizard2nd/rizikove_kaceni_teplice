@@ -8,10 +8,22 @@ var Navigation = function() {
             $navigation.toggleClass('open');
         });
     };
+    
+    var scrollFromTopEvent = function () {
+        $(document).scroll(function() {
+            if($(window).scrollTop() > 10) {
+                $navigation.addClass('scrolled')
+            }
+            else {
+                $navigation.removeClass('scrolled')
+            }
+        });
+    };
 
     return {
         init: function() {
             menuOpenEvent();
+            scrollFromTopEvent();
         }
     }
 };

@@ -80,6 +80,7 @@
     text-align: center;
     transition: bottom, 0.40s, opacity, 0.40s;
     transition-delay: 0.45s;
+    margin-bottom: 1em;
 
     @at-root {
       .open & {
@@ -91,6 +92,7 @@
     @include modular-mq(desktop) {
       float: left;
       margin-left: 1em;
+      margin-bottom: 0;
       opacity: 1;
       bottom: 0;
       padding: 1em;

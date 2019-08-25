@@ -19,6 +19,9 @@
     $view['home_page_on_mobile_or_tablet'] = $home_page_on_mobile_or_tablet;
     $view['title'] = $title;
     $view['description'] = $description;
+    $view['theme_uri'] = get_template_directory_uri();
+    $view['front_page'] = is_front_page();
+    $view['page_title'] = get_the_title();
 
     Timber::render('partials/header.twig', $view);
 

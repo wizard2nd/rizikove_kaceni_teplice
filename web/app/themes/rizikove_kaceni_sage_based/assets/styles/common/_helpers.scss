@@ -26,19 +26,9 @@
 }
 
 .page-title{
-  text-align: center;
-  font-size: 29px;
-  margin-bottom: 20px;
-
-  @include modular-mq(tablet){
-    text-align: left;
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
+  font-size: 5em;
 
   @include modular-mq(desktop){
-    text-align: left;
-    font-size: 43px;
-    margin-bottom: 40px;
+    font-size: 6em;
   }
 }

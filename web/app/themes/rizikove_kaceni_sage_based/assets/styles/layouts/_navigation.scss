@@ -113,4 +113,10 @@
       }
     }
   }
+
+  li.current-menu-item {
+    @include modular-mq(desktop) {
+      border-bottom: 3px solid #e8e8e8;
+    }
+  }
 }

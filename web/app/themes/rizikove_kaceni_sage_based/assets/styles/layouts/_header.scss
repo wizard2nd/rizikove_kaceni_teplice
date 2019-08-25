@@ -58,6 +58,18 @@
 }
 
 .site-title {
-  font-size: 6em;
+  font-size: 2.3em;
+
+  @include modular-mq(desktop) {
+    font-size: 6em;
+  }
+}
+
+.site-description {
+  font-size: 1em;
+
+  @include modular-mq(desktop) {
+    font-size: 2.5em;
+  }
 }
 

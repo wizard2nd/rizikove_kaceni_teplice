@@ -21,7 +21,7 @@ var
     gallerySlider = require('./components/gallery_slider.js'),
     gallery = require('./pages/gallery.js'),
     service = require('./pages/services.js'),
-    contact = require('./pages/contact.js');
+    contact = require('./pages/contact.js'),
     navigation = require('./components/navigation.js');
 
 

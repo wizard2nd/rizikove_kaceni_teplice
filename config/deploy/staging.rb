@@ -16,7 +16,7 @@ ssh_options: {
 	keys: "~/.ssh/do_git"
 }
 
-set :wpcli_remote_url, 'https://rizikovekaceni-teplice.stage.goodcodecrusader.com'
+set :wpcli_remote_url, 'http://rizikovekaceni-teplice.stage.goodcodecrusader.com'
 
 # role-based syntax
 # ==================

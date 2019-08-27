@@ -89,3 +89,32 @@
   opacity: $value;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$value);
 }
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin no-box-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin burger_menu_line() {
+  content: "";
+  width: 100%;
+  border-radius: .25em;
+  background-color: #fff;
+  height: .17em;
+
+  @include box-shadow(0, 0, 5px, rgba(0,0,0,0.75));
+  transition: all 0.5s;
+}

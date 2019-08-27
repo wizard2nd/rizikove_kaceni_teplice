@@ -1,190 +1,76 @@
-header{
-  //background: $navbar-inverse-bg;
+.video-background {
+
+  display: none;
+  text-align: center;
 }
 
-.header-image{
+.front-page {
+  .video-background {
+    @include modular-mq(desktop) {
+      display: block;
+      position: relative;
+    }
+  }
+
+  .image-background {
+    @include modular-mq(desktop) {
+      display: none;
+    }
+  }
+
+  .page-title {
+    display: none;
+  }
+
+  .site-title, .site-description {
+    display: block;
+  }
+}
+
+.site-title, .site-description {
+  display: none;
+}
+
+.image-background {
+  @include bg_img('section_header_mobile.jpg');
   position: relative;
-  @include bg_img('header-background-mobile.jpg');
-  opacity: 0;
-
-  @include transition-property(opacity);
-  @include transition-duration(1.5s);
-
-  &--show{
-    opacity: 100;
-  }
-
-  &.hide-header{
-    height: 0;
-  }
-
-  @include modular-mq(tablet){
-    @include bg_img('header-background-tablet.jpg');
-  }
-
-  @include modular-mq(desktop){
-    @include bg_img('header-background.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   background-size: cover;
   width: 100%;
-  height: $header-image-height;
-  margin-top: 50px;
+  height: 200px;
 
-  @include modular-mq(desktop){
-    height: 340px;
+  @include modular-mq(desktop) {
+    @include bg_img('section_header_desktop.jpeg');
+    height: $header-image-height;
   }
-
-  @include modular-mq(desktop-large){
-    height: 500px;
-  }
-
-  @include modular-mq(desktop){
-    margin-top: 77px;
-  }
-
 }
 
-.site-logo-title-wrap{
+.title-description-wrap {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
   width: 100%;
+}
 
-  .mobile &{
-    top: 17%;
-  }
+.site-title, .site-description, .page-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #e8e8e8;
+  text-shadow: 0 0 15px rgba(0,0,0,.7);
+}
 
-  .desktop &{
+.site-title {
+  font-size: 2.3em;
 
-    @include modular-mq(desktop){
-      top: 40%;
-    }
-
-    @include modular-mq(desktop-large){
-      top: 60%;
-    }
-
-  }
-
-  @include modular-mq(tablet){
-    top: 15%;
+  @include modular-mq(desktop) {
+    font-size: 6em;
   }
 }
 
-.title-background{
-  background-color: rgba(186, 208, 183, 0.5);
-}
+.site-description {
+  font-size: 1em;
 
-.title-description-wrap{
-  margin: 0 auto;
-  width: $site-width;
-  padding: 10px;
-  position: relative;
-  //left: -80%;
-  //opacity: 0;
-
-  -webkit-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
-  -moz-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
-  -ms-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
-  -o-transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
-  transition: left 0.75s linear 0.25s, opacity 1s linear .25s;
-
-  &--show {
-    left: 0;
-    opacity: 100;
+  @include modular-mq(desktop) {
+    font-size: 2.5em;
   }
 }
 
-.site-logo{
-  @include bg_img('logo.png');
-  @include square-dim($logo-dim-mob);
-  background-size: cover;
-  margin: 0 auto;
-
-  .desktop &{
-    float: left;
-    margin: -100px 10px 0 0;
-  }
-
-  @include modular-mq(tablet){
-    @include square-dim($logo-dim);
-  }
-}
-
-.menu-logo{
-  width: 30px;
-  height: 30px;
-  @include bg_img('menu-logo.png');
-  border: none;
-  margin: 9px;
-  background-size: cover;
-}
-
-.mobile-menu-title{
-  display: inline-block;
-  font-family: Berkshire Swash, cursive, Arial, sans-serif;
-  font-size: 22px;
-  color: #C7D8CD;
-  position: relative;
-  top: 7px;
-}
-
-.site-title{
-
-  font-family: Berkshire Swash, cursive, Arial, sans-serif;
-  text-shadow: -2px 2px #BFD4C6;
-  color: #055D2B;
-
-  .mobile &{
-    position: absolute;
-    top: 55px;
-    width: inherit;
-    font-size: 42px;
-    text-align: center;
-
-    @include modular-mq(mobile, landscape){
-      top: 76px
-    }
-
-    @include modular-mq(tablet){
-      font-size: 52px;
-      top: 88px;
-    }
-  }
-
-  .desktop &{
-    font-size: 73px;
-  }
-
-}
-
-.site-description{
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  font-style: italic;
-  text-shadow: -1px 1px #8C9A91;
-  color: #00401C;
-
-  .mobile & {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 100;
-    background-color: rgba(203, 222, 204, 0.5);
-    padding: 5px 50px;
-    text-align: center;
-
-    @include modular-mq(tablet){
-      padding: 5px 150px;
-      font-size: 23px;
-    }
-  }
-
-  .desktop &{
-    font-size: 22px;
-    margin-top: 15px;
-  }
-}

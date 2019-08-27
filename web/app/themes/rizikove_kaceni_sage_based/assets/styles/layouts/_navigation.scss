@@ -3,152 +3,126 @@
   text-align: center;
 }
 
-.navbar{
+.navicon{
+  display: block;
+  padding: 0 6px;
+
+  .bar {
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+}
+
+.menu-close{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 3rem;
+}
+
+.navigation-bar{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: #00a680;
   margin-bottom: 0;
   font-weight: 100;
   letter-spacing: 1px;
-  min-height: initial;
-  position: fixed;
-  top: 0;
   z-index: 1;
   width: 100%;
-  @include border-radius(0px);
+  height: 100%;
+  transition: left, 0.35s;
+  transition-timing-function: cubic-bezier(.2,.6,.58,.99);
 
-  li.menu-item{
+  &.open {
+    left: 0;
+  }
 
-    &.lang .dropdown-menu{
-      padding: 0;
-      border-radius: 0;
-      box-shadow: 0;
-      -webkit-box-shadow: 0;
-      background-color: #789e79;
+  @include modular-mq(desktop) {
+    background-color: transparent;
+    height: auto;
+    left: 0;
+    transition: background-color, 0.25s;
+    transition-timing-function: ease-out;
+
+    &.scrolled {
+      background-color: #00a699;
+      -webkit-box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.47);
+      -moz-box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.47);
+      box-shadow: 0px 4px 8px 1px rgba(0,0,0,0.47);
     }
+  }
+}
 
-    .qtranxs-lang-menu-item{
-      float: left;
-      width: 33%;
-      text-align: center;
+.menu-wrap {
+  position: relative;
+  top: 15%;
+  width: 100%;
 
-      a{
-        font-size: 0;
-        padding: 0;
-        display: inline;
+  @include modular-mq(desktop) {
+    float: right;
+    top: 0;
+    width: auto;
+  }
+}
+
+.main-menu {
+
+  font-family: 'Varela Round', sans-serif;
+
+  li.menu-item {
+    position: relative;
+    bottom: -5px;
+    opacity: 0;
+    text-align: center;
+    transition: bottom, 0.40s, opacity, 0.40s;
+    transition-delay: 0.45s;
+    margin-bottom: 1em;
+
+    @at-root {
+      .open & {
+        opacity: 1;
+        bottom: 0;
       }
     }
 
+    @include modular-mq(desktop) {
+      float: left;
+      margin-left: 1em;
+      margin-bottom: 0;
+      opacity: 1;
+      bottom: 0;
+      padding: 1em;
+    }
 
     a {
-      font-size: 20px;
-      padding-left: 30%;
-      letter-spacing: 2px;
-
-      @include modular-mq(tablet){
-        font-size: 17px;
-      }
+      font-size: 2em;
+      font-weight: 300;
+      color: whitesmoke;
 
       @include modular-mq(desktop) {
-        font-size: 23px;
-        line-height: 35px;
-      }
-    }
-  }
-}
+        text-decoration: none;
+        text-shadow: 0 0 8px rgba(0,0,0,.7);
 
-.main-menu-container{
-
-  &.navbar-collapse{
-    margin: 0;
-    border-bottom: 0;
-  }
-  width: 100%;
-  z-index: 1000;
-
-  @include modular-mq(tablet){
-    position: relative;
-    left: initial;
-    padding: 0;
-    margin: 0 auto !important; // override .navbar-collapse from bootstrap
-    width: 100%;
-  }
-
-  @include modular-mq(desktop){
-    width: 100%;
-  }
-}
-
-
-.main-menu{
-  &.navbar-nav{
-
-    @include modular-mq(tablet){
-      width: 730px;
-      margin: 0 auto;
-      float: initial;
-
-      .de & {
-        width: 750px;
-      }
-    }
-
-    @include modular-mq(tablet, landscape){
-      .de & {
-        width: 860px;
-      }
-      width: 860px;
-    }
-
-    @include modular-mq(desktop){
-      width: 1045px;
-      float: none;
-
-      .de & {
-        width: 1100px;
+        @at-root {
+          .scrolled & {
+            text-shadow: none;
+          }
+        }
       }
     }
   }
 
-  background: $navbar-inverse-bg;
-}
+  li.current-menu-item {
+    @include modular-mq(desktop) {
+      border-bottom: 3px solid #e8e8e8;
 
-// shift language menu to right
-.lang .dropdown-menu{
-  right: 0;
-  left: initial;
-}
-
-// css adjustments for language
-
-.nav>li>a {
-
-  @include modular-mq(tablet){
-    .de & {
-      padding: 20px 4px;
-    }
-
-    .en & {
-      padding: 20px 9px;
-    }
-
-    .cz & {
-      padding: 20px 11px;
+      &.home {
+        border: none;
+      }
     }
   }
-
-  @include modular-mq(tablet, landscape){
-    .de & {
-      padding: 20px 12px;
-    }
-
-    .en & {
-      padding: 20px 18px;
-    }
-
-    .cz & {
-      padding: 20px 20px;
-    }
-  }
-
 }
-
-//=============================
-

@@ -1,0 +1,46 @@
+<header class="banner" role="banner">
+    <div role="menu-open" class="burger-menu">
+        <div class="lines"></div>
+    </div>
+    <nav role="navigation" class="navigation-bar">
+        {% if has_nav_menu %}
+            <div class="menu-wrap">
+                <ul class="main-menu">
+                    {% for item in menu.get_items %}
+                        <li class="nav-main-item {{ item.classes | join(' ') }}">
+                            <a class="nav-main-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                            {% if item.get_children %}
+                            <ul class="sub-menu">
+                                {% for child_item in item.get_children  %}
+                                    <li class="sub-menu__item {{ child_item.class }}">
+                                        <a class="sub-menu-link" href="{{ child_item.get_link }}">{{ child_item.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </nav>
+
+    <div class="header-wrap {{ front_page ? 'front-page' }}">
+        <div class="video-background">
+            <video autoplay muted loop width="100%" class="header-video">
+                <source src="{{ theme_uri }}/dist/styles/videos/header.mp4" type="video/mp4">
+            </video>
+            <div class="title-description-wrap">
+                <h1 class="site-title">{{ title }}</h1>
+                <h2 class="site-description">{{ description }}</h2>
+            </div>
+        </div>
+        <div class="image-background">
+            <div class="title-description-wrap">
+                <h1 class="page-title">{{ page_title }}</h1>
+                <h1 class="site-title">{{ title }}</h1>
+                <h2 class="site-description">{{ description }}</h2>
+            </div>
+        </div>
+    </div>
+</header>

@@ -83,11 +83,17 @@ module.exports = function(grunt) {
                 src: '*',
                 dest: '<%= meta.fonts_dest %>'
             },
-            assets:{
+            images:{
                 expand: true,
                 cwd: 'assets/images/',
                 src: '*',
                 dest: 'dist/styles/images/'
+            },
+            videos:{
+                expand: true,
+                cwd: 'assets/videos/',
+                src: '*',
+                dest: 'dist/styles/videos/'
             }
         },
         watch: {
@@ -100,8 +106,8 @@ module.exports = function(grunt) {
                 tasks: ['jshint','browserify']
             },
             copy_assets: {
-                files: "<%= copy.assets.cvd %>/**",
-                task: ['copy:assets']
+                files: [ "<%= copy.images.cwd %>/**", "<%= copy.videos.cwd %>/**"],
+                task: ['copy:images', 'copy:videos']
             }
         }
     });
@@ -118,6 +124,6 @@ module.exports = function(grunt) {
     // // Default task(s)
     //grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['sass', 'cssmin', 'browserify', 'uglify', 'copy']);
-    grunt.registerTask('build_dev', ['sass', 'cssmin', 'browserify', 'copy']);
+    grunt.registerTask('build_dev', ['sass', 'browserify', 'copy']);
     grunt.registerTask('default', ['test', 'build']);
 };

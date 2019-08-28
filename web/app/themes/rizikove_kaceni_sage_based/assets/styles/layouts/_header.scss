@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.header-video {
+  display: block;
+}
+
 .front-page {
   .video-background {
     @include modular-mq(desktop) {

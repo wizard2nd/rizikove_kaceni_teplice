@@ -37,6 +37,10 @@
   text-align: center;
   width: 100%;
   background-color: #f6ffff;
+
+  @include modular-mq(desktop) {
+    padding: 2em 0;
+  }
 }
 
 .highlights {
@@ -45,6 +49,13 @@
   padding-top: 4em;
   color: #0c481d;
   margin: 0;
+
+
+  @include modular-mq(desktop) {
+    width: 1200px;
+    flex-flow: nowrap;
+    margin: 0 auto;
+  }
 
   .item {
     text-align: center;

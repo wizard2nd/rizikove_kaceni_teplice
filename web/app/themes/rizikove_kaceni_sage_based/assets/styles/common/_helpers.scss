@@ -32,3 +32,19 @@
     font-size: 6em;
   }
 }
+
+.title {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #e8e8e8;
+  text-shadow: 0 0 6px #000;
+}
+
+.vert-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.h-center {
+  text-align: center;
+}

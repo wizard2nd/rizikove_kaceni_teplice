@@ -68,3 +68,19 @@
     font-size: 1.8em;
   }
 }
+
+.section-img-divider {
+  @include bg_img('front_page_services_title_mobile.jpg');
+  height: 200px;
+
+  @include modular-mq(desktop) {
+    @include bg_img('front_page_services_title.jpg');
+    width: 100%;
+    height: 500px;
+
+    h1 {
+      font-size: 4em;
+    }
+  }
+
+}

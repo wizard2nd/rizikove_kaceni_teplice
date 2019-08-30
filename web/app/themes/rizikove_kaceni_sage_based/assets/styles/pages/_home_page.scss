@@ -52,7 +52,7 @@
 
 
   @include modular-mq(desktop) {
-    width: 1200px;
+    width: $front-page-section-content-width;
     flex-flow: nowrap;
     margin: 0 auto;
   }
@@ -88,12 +88,22 @@
   display: flex;
   flex-flow: wrap;
   margin-top: 4em;
+
+  @include modular-mq(desktop) {
+    width: $front-page-section-content-width;
+    flex-flow: nowrap;
+    margin: 8em auto;
+  }
 }
 
 .front-page-service {
   text-align: center;
   width: 100%;
   margin-bottom: 4em;
+
+  @include modular-mq(desktop) {
+    margin-bottom: 0;
+  }
 
   img {
     border-radius: 50%;
@@ -109,5 +119,9 @@
 
   &__link {
     text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

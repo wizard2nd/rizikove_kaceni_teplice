@@ -32,10 +32,17 @@
             </div>
         </div>
         <div class="section-img-divider" >
-            <h1 class="section-title title vert-center h-center">Naše Služby</h1>
+            <h1 class="section-title section-title vert-center h-center">Naše Služby</h1>
         </div>
         <section class="front-page-services">
-            {% for service_i %}
+            {% for service_id, service in services %}
+                <div class="front-page-service">
+                    <a class="front-page-service__link" href="{{ service.link }}" >
+                        {{ service.image }}
+                        <h2 class="front-page-service__title">{{ service.title }}</h2>
+                    </a>
+                </div>
+            {% endfor %}
         </section>
     </div><!-- #content -->
 </section><!-- #primary -->

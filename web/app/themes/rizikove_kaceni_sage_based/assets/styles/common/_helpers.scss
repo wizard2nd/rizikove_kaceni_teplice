@@ -33,9 +33,14 @@
   }
 }
 
+
 .title {
   font-family: 'Source Sans Pro', sans-serif;
   color: #e8e8e8;
+}
+
+.section-title {
+  @extend .title;
   text-shadow: 0 0 6px #000;
 }
 

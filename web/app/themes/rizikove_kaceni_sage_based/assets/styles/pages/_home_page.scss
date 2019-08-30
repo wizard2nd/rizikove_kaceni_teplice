@@ -82,5 +82,32 @@
       font-size: 4em;
     }
   }
+}
 
+.front-page-services{
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 4em;
+}
+
+.front-page-service {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 4em;
+
+  img {
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 1.5em;
+  }
+
+  &__title {
+    @extend .title;
+    color: #0c481d;
+    font-weight: 100;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
 }

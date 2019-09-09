@@ -12,7 +12,9 @@ foreach ($services_ids as $service_id) {
         'link' => get_permalink($service_id)
     ];
     $view['services'][$service_id] = $service;
-}
+};
+
+$view['clients'] = get_field('clients');
 
 Timber::render('home_page.twig', $view);
 

@@ -42,6 +42,19 @@
                 </div>
             {% endfor %}
         </section>
+        <section id="clients">
+            <div class="section-img-divider" >
+                <h1 class="section-title section-title vert-center h-center">Naši Klienti</h1>
+            </div>
+            <div class="clients">
+                {% for client in clients %}
+                    <div class="client">
+                        <img class="client__image" src="{{ client.client_image.sizes.medium }}">
+                        <h3 class="client__name">{{ client.client_name }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
     </div><!-- #content -->
 </section><!-- #primary -->
 

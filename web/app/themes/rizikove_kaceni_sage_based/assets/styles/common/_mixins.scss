@@ -118,3 +118,16 @@
   @include box-shadow(0, 0, 5px, rgba(0,0,0,0.75));
   transition: all 0.5s;
 }
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}

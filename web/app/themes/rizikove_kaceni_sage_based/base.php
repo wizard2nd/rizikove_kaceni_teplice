@@ -22,7 +22,7 @@ use rk\FrontendHelper;
     ?>
     <div class="wrap" role="document">
       <div class="content">
-        <main class="main-content site-content container" role="main">
+        <main class="main-content site-content" role="main">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Config\display_sidebar()) : ?>

@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.header-video {
+  display: block;
+}
+
 .front-page {
   .video-background {
     @include modular-mq(desktop) {
@@ -13,6 +17,9 @@
   }
 
   .image-background {
+    @include bg_img('header_img_mobile.jpg');
+    height: 700px;
+
     @include modular-mq(desktop) {
       display: none;
     }
@@ -55,19 +62,21 @@
 .site-title, .site-description, .page-title {
   font-family: 'Source Sans Pro', sans-serif;
   color: #e8e8e8;
-  text-shadow: 0 0 15px rgba(0,0,0,.7);
+  text-shadow: 0 0 6px #000;
 }
 
 .site-title {
-  font-size: 2.3em;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
 
   @include modular-mq(desktop) {
     font-size: 6em;
+    margin-bottom: 0;
   }
 }
 
 .site-description {
-  font-size: 1em;
+  font-size: 1.5em;
 
   @include modular-mq(desktop) {
     font-size: 2.5em;

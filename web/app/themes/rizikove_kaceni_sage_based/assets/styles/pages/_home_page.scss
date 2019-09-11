@@ -1,161 +1,157 @@
-// styles for home page
+#home-page {
+  font-family: 'Source Sans Pro', sans-serif;
 
-#home-page{
+  .glyphicon {
+    font-size: 3em;
+    text-shadow: 0 0 4px #64a99d;
+  }
 
-  // override bootstrap next, prev button in carousel
-  .carousel-control{
-    height: 82%;
-    background-image: none;
+  .glyphicon-education {
+    @include translate(8px, 0px);
+  }
 
-    @include modular-mq(tablet){
-      height: 86%;
-    }
+  .glyphicon-grain {
+    @include translate(-13px, -7px);
+  }
 
-    @include modular-mq(desktop){
-      height: 89%;
-    }
+  .glyphicon-cog {
+    @include translate(-14px, 0px);
+  }
+
+  .glyphicon-compressed {
+    @include translate(1px, 1px);
+    font-size: 2.5em;
+  }
+
+  .glyphicon-tree-deciduous {
+    @include rotate(5deg)
+  }
+
+  .glyphicon-home {
+    @include translate(-18px, 1px);
+    font-size: 1.7em;
   }
 }
 
-.carousel{
-
-  @extend .shadow-box;
-
-}
-
-.item {
+.highlights {
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 4em;
+  color: #0c481d;
 
   @include modular-mq(desktop) {
+    width: $front-page-section-content-width;
+    flex-flow: nowrap;
+    margin: 8em auto;
+  }
+
+  .item {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4em;
+
+    @include modular-mq(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.8em;
+  }
+}
+
+.section-img-divider {
+  @include bg_img('front_page_services_title_mobile.jpg');
+  height: 200px;
+
+  @include modular-mq(desktop) {
+    @include bg_img('front_page_services_title.jpg');
+    width: 100%;
     height: 500px;
-  }
 
-  img{
-    @include square-dim(100%);
-    height: 100% !important;
-  }
-
-}
-
-.bottom-title {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(223, 230, 221, 0.66);
-  padding: 6px 10px;
-  text-align: left;
-  //z-index: 1000;
-
-  @include modular-mq(tablet){
-    padding: 10px 10px
-  }
-
-  .mobile &.long-title {
     h1 {
-      width: 90%;
-    }
-  }
-
-  h1 {
-    color: $color-primary-4;
-    font-weight: 400;
-    font-size: 20px;
-    float: left;
-
-    @include modular-mq(tablet) {
-      font-size: 30px;
+      font-size: 4em;
     }
   }
 }
 
+.front-page-services{
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 4em;
 
-.more-info{
-  font-size: 0;
-  font-weight: 200;
-  color: $color-primary-4;
-  float: right;
+  @include modular-mq(desktop) {
+    width: $front-page-section-content-width;
+    flex-flow: nowrap;
+    margin: 8em auto;
+  }
+}
 
-  &__text{
-    display: none;
+.front-page-service {
+  text-align: center;
+  width: 100%;
+  margin: 0 1em 4em 1em;
 
-    @include modular-mq(tablet){
-      display: block;
-      float: left;
-      font-size: 25px;
-    }
+  @include modular-mq(desktop) {
+    margin-bottom: 0;
   }
 
-  .cz.mobile .long-title &{
-    margin-top: 10px;
+  img {
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 1.5em;
   }
 
-  .glyphicon{
-    font-size: 21px;
+  &__title {
+    @extend .title;
+    color: #0c481d;
+    font-weight: 100;
+  }
 
-    @include modular-mq(tablet){
-      font-size: 30px;
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }
 
-//p{
-//  margin: 0;
-//  float: left;
-//}
+.clients {
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 4em;
 
-.home-page-post{
-
-  @extend .shadow-box;
-
-  ul{
-    list-style-type: none;
-    margin: 0 auto;
-    font-size: 15px;
-    padding: 25px 10px 10px 10px;
-    background-color: #ECF7F5;
-    font-family: HelveticaNeue-Light, Arial, sans-serif;
-
-    li{
-      margin-bottom: 10px;
-
-      p{
-        margin-left: 25px;
-
-        @include modular-mq(tablet){
-          margin-left: 40px;
-        }
-      }
-    }
-
-    @include modular-mq(tablet){
-      font-size: 25px;
-      padding: 40px 25px 20px 25px;
-    }
-
-    @include modular-mq(desktop){
-      margin-top: 70px;
-      font-size: 31px;
-      padding: 20px;
-    }
-  }
-
-
-  .glyphicon{
-
-    font-size: 17px;
-    float: left;
-    display: block;
-    margin-top: 3px;
-
-    @include modular-mq(tablet){
-      font-size: 25px;
-    }
-
-    @include modular-mq(desktop){
-      font-size: 25px;
-      margin: 8px 16px 0 0;
-    }
-
+  @include modular-mq(desktop) {
+    width: $front-page-section-content-width;
+    margin: 4em auto;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
 
+.client {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4em;
+
+  @include modular-mq(desktop) {
+    width: auto;
+  }
+
+  &__name {
+    @extend .title;
+    color: #0c481d;
+    font-weight: 100;
+  }
+
+  &__image {
+    margin-bottom: 1.5em;
+    max-width: 40%;
+
+    @include modular-mq(desktop) {
+      max-width: 60%;
+    }
+  }
+}

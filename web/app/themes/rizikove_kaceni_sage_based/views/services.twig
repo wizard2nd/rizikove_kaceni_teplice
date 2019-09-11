@@ -1,35 +1,14 @@
 <div id="service-page" class="content-area service-page">
-    <div id="content" class="site-content container" role="main">
-        <div class="row">
-            <div class="services-navigation">
-                <div class="services-navigation__felling">
-                    {{ main_nav_title }}
-                    <ul class="services-links {{ open_menu ? 'show' : '' }}">
-                        {% for link in nav %}
-                            <li>
-                                {% if link.active %}
-                                    <span>{{ link.title }}</span>
-                                {% else %}
-                                    <a href="{{ link.url }}">{{ link.title }}</a>
-                                {% endif %}
-
-                            </li>
-                        {% endfor %}
-                    </ul>
+    <section id="services">
+        <div class="services">
+            {% for service_id, service in services %}
+                <div class="service">
+                    {{ service.image }}
+                    <h2 class="service_title">{{ service.title }}</h2>
+                    <div class="service__content">{{ service.content }}</div>
                 </div>
-                <div class="services-navigation__cms-content">
-                    {{ service_list }}
-                </div>
-            </div>
-            <div class="service-content">
-                {% if post %}
-                    <h1 class="{{ long_title }}">{{ post.title }}</h1>
-                    {{ post.image }}
-                    <p class="service-content__description">{{ post.content }}</p>
-                {% endif %}
-                {{ include('partials/featured_images.twig') }}
-            </div>
+            {% endfor %}
         </div>
-    </div><!-- #content -->
+    </section>
 </div><!-- #primary -->
 {{ include('partials/slider_modal.twig') }}

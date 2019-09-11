@@ -1,6 +1,6 @@
-<section id="home-page" class="content-area">
+<div id="home-page" class="content-area">
     <div id="content" class="site-content" role="main">
-        <div class="highlights">
+        <section class="highlights">
             <div class="item">
                 <div class="icon">
                     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
@@ -28,19 +28,21 @@
                 </div>
                 <p>Odpovědnost za škodu</p>
             </div>
-        </div>
-        <div class="section-img-divider" >
-            <h1 class="section-title section-title vert-center h-center">Naše Služby</h1>
-        </div>
-        <section class="front-page-services">
-            {% for service_id, service in services %}
-                <div class="front-page-service">
-                    <a class="front-page-service__link" href="{{ service.link }}" >
-                        {{ service.image }}
-                        <h2 class="front-page-service__title">{{ service.title }}</h2>
-                    </a>
-                </div>
-            {% endfor %}
+        </section>
+        <section id="front-page-services">
+            <div class="section-img-divider" >
+                <h1 class="section-title section-title vert-center h-center">Naše Služby</h1>
+            </div>
+            <div class="front-page-services">
+                {% for service_id, service in services %}
+                    <div class="front-page-service">
+                        <a class="front-page-service__link" href="{{ service.link }}" >
+                            {{ service.image }}
+                            <h2 class="front-page-service__title">{{ service.title }}</h2>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
         </section>
         <section id="clients">
             <div class="section-img-divider" >
@@ -56,5 +58,5 @@
             </div>
         </section>
     </div><!-- #content -->
-</section><!-- #primary -->
+</div><!-- #primary -->
 

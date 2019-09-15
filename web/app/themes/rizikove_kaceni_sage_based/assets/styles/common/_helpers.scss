@@ -25,15 +25,6 @@
   overflow: hidden;
 }
 
-.page-title{
-  font-size: 5em;
-
-  @include modular-mq(desktop){
-    font-size: 6em;
-  }
-}
-
-
 .title {
   font-family: 'Source Sans Pro', sans-serif;
   color: #e8e8e8;

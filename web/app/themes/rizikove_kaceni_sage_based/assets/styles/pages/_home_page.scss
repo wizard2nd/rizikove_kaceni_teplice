@@ -91,7 +91,7 @@
 .front-page-service {
   text-align: center;
   width: 100%;
-  margin: 0 1em 4em 1em;
+  margin: 0 1.5em 4em 1.5em;
 
   @include modular-mq(desktop) {
     margin-bottom: 0;
@@ -106,7 +106,7 @@
   &__title {
     @extend .title;
     color: #0c481d;
-    font-weight: 100;
+    font-weight: 400;
   }
 
   &__link {
@@ -114,6 +114,42 @@
 
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+.additional-services-wrap{
+  display: flex;
+  flex-flow: wrap;
+
+  @include modular-mq(desktop) {
+    width: 1100px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 1em auto;
+  }
+}
+
+.additional-services {
+  @include border-radius(5px);
+  border: 1px solid #2F5D1F;
+  width: 100%;
+  margin: 0 1.5em 4em 1.5em;
+
+  &__title {
+    text-align: center;
+    margin: 0.5em 0;
+  }
+
+  &__content {
+    ul {
+      margin: 0 10%;
+      font-size: 1.5em;
+
+      li {
+        list-style-type: disc;
+        margin-bottom: 0.5em;
+      }
     }
   }
 }

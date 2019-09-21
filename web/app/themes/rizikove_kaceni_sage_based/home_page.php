@@ -1,6 +1,5 @@
 <?php
 /** Template Name: Home Page */
-use rk\FrontendHelper;
 
 $view = [];
 $services_ids = array(36, 38, 42);
@@ -15,6 +14,7 @@ foreach ($services_ids as $service_id) {
 };
 
 $view['clients'] = get_field('clients');
+$view['additional_services'] = get_field('front_page_services', 27);
 
 Timber::render('home_page.twig', $view);
 

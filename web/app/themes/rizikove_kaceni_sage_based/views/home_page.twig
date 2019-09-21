@@ -29,7 +29,7 @@
                 <p>Odpovědnost za škodu</p>
             </div>
         </section>
-        <section id="front-page-services">
+        <section id="front-page-services-container">
             <div class="section-img-divider" >
                 <h1 class="section-title section-title vert-center h-center">Naše Služby</h1>
             </div>
@@ -40,6 +40,16 @@
                             {{ service.image }}
                             <h2 class="front-page-service__title">{{ service.title }}</h2>
                         </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="additional-services-wrap">
+                {% for additional_service in additional_services %}
+                    <div class="additional-services">
+                        <h2 class="additional-services__title">{{ additional_service.title }}</h2>
+                        <div class="additional-services__content">
+                            {{ additional_service.content }}
+                        </div>
                     </div>
                 {% endfor %}
             </div>

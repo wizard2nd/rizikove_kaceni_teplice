@@ -2,7 +2,7 @@
 /** Template Name: Home Page */
 use rk\Service;
 
-$services_ids = array(36, 38, 42);
+$services_ids = array(36, 38, 1161);
 $services = [];
 foreach ($services_ids as $service_id) {
     $service = new Service($service_id);

@@ -9,12 +9,15 @@ class Service {
 
     private $service_post;
 
-    private $id;
+    public $id;
 
-    public function __construct($service_id, $fields = [])
+    public function __construct($service, $fields = [])
     {
         $this->fields = array_merge(self::DEFAULT_FIELDS, $fields);
-        $this->service_post = get_post($service_id);
+
+        if (is_int($service)) $this->service_post = get_post($service);
+        if (is_object($service)) $this->service_post = $service;
+
         $this->id = $this->service_post->ID;
     }
 

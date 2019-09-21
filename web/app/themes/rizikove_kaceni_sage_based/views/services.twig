@@ -1,14 +1,4 @@
 <div id="service-page" class="content-area service-page">
-    <section id="services">
-        <div class="services">
-            {% for service_id, service in services %}
-                <div class="service">
-                    {{ service.image }}
-                    <h2 class="service_title">{{ service.title }}</h2>
-                    <div class="service__content">{{ service.content }}</div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+    {% include('partials/services.twig') with { 'services' : services } %}
 </div><!-- #primary -->
 {{ include('partials/slider_modal.twig') }}

@@ -5,8 +5,9 @@
 
   @include modular-mq(desktop) {
     width: $front-page-section-content-width;
-    flex-flow: nowrap;
-    margin: 8em auto;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -16,7 +17,7 @@
   margin: 0 1.5em 4em 1.5em;
 
   @include modular-mq(desktop) {
-    margin-bottom: 0;
+    width: 29%;
   }
 
   &__image {
@@ -32,6 +33,10 @@
     font-weight: 100;
     border: 1px solid;
     padding: 0.3em;
+
+    &:hover {
+      color: #00a699;
+    }
   }
 
   &__content {

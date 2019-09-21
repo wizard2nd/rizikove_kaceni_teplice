@@ -1,7 +1,7 @@
 <section class="services-container">
     {% for service_id, service in services %}
         <div class="service">
-            <img src="{{ service.image_src }}" class="service__image">
+            <img src="{{ service.featured_image.url }}" class="service__image">
             <a class="service__link" href="{{ service.url }}">
                 <h2 class="service__title">{{ service.title }}</h2>
             </a>

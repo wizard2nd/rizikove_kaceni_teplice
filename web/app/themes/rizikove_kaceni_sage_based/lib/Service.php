@@ -3,40 +3,50 @@ namespace rk;
 
 class Service {
 
-    const DEFAULT_FIELDS = ['image', 'title', 'url'];
+    const DEFAULT_FIELDS = ['featured_image', 'title', 'url'];
 
     public $fields;
 
     private $service_post;
 
+    private $id;
+
     public function __construct($service_id, $fields = [])
     {
         $this->fields = array_merge(self::DEFAULT_FIELDS, $fields);
         $this->service_post = get_post($service_id);
+        $this->id = $this->service_post->ID;
     }
 
-    public function image()
+    private function featured_image()
     {
-        return get_the_post_thumbnail_url($this->service_post->ID, 'gallery-thumb');
+        return [
+            'url' => get_the_post_thumbnail_url($this->service_post->ID, 'gallery-thumb')
+        ];
     }
 
-    public function title()
+    private function title()
     {
 
         return __($this->service_post->post_title, 'sage');
     }
 
-    public function content()
+    private function content()
     {
         return __($this->service_post->post_content, 'sage');
     }
 
-    public function url()
+    private function url()
     {
-        return get_permalink($this->service_post->ID);
+        return get_permalink($this->id);
     }
 
-    public function to_view()
+    private function featured_images()
+    {
+        FrontendHelper::get_featured_images(get_fields($this->id), 'gallery-thumb');
+    }
+
+    public function display_fields()
     {
         $view = [];
         foreach ($this->fields as $field) {

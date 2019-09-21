@@ -20,7 +20,7 @@ class PageBase {
     }
 
     public function has_long_title(){
-        if (strlen($this->post->post_title) > self::TITLE_MAX_CHARS){
+        if (strlen(__($this->post->post_title, 'sage')) > self::TITLE_MAX_CHARS){
             return true;
         }
         else {

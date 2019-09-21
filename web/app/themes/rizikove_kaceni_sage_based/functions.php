@@ -20,6 +20,7 @@
  * Custom classes
  */
 $custom_includes = [
+    'Service.php',
     'FrontendHelper.php',
     'PageBase.php',
     'ServicesPage.php',

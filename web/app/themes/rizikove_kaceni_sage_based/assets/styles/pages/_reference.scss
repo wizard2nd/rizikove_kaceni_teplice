@@ -1,61 +1,38 @@
-.reference{
-  margin-bottom: 20px;
+.references {
 
-  @include modular-mq(tablet){
-    margin-bottom: 30px;
+}
+
+.reference {
+  margin-bottom: 2em;
+
+  &__client-logo {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 40%;
   }
 
-  @include modular-mq(desktop){
-    margin-bottom: 40px;
-  }
-
-  .client-logo{
-    @include modular-mq(desktop){
-      width: 10%;
-    }
-
-    width: 25%;
-    margin-bottom: 5px;
-  }
-
-  &.last{
-    margin-bottom: 0;
-  }
-
-  .client-info{
-    position: relative;
-    @include clearfix;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 19px;
-    border-bottom: 1px solid;
-
-    @include modular-mq(desktop){
-      text-align: left;
-    }
-
-    @include modular-mq(tablet){
-      font-size: 26px;
-    }
-
+  &__client-name {
     text-align: center;
-
+    margin-bottom: 0.3em;
   }
 
-  .name{
+  &__content {
+    text-align: left;
 
-  }
-
-  .klient-contact{
-    @include modular-mq(desktop){
-      position: absolute;
-      right: 0;
-      bottom: 0;
+    ul {
+      margin-left: 1em;
     }
 
-  }
+    li {
+      list-style-type: disc;
+    }
 
-  .text{
-    text-align: justify;
+    p {
+      text-align: justify;
+    }
+
+    li, p {
+      font-size: 0.8em;
+    }
   }
 }

@@ -46,7 +46,7 @@ class Service {
 
     private function featured_images()
     {
-        FrontendHelper::get_featured_images(get_fields($this->id), 'gallery-thumb');
+        return FrontendHelper::get_featured_images(get_fields($this->id), 'gallery-thumb');
     }
 
     public function display_fields()

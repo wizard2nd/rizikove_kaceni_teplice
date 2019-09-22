@@ -2,7 +2,7 @@
 /** Template Name: Service */
 
 use rk\Service;
-$display = [ 'content' ];
+$display = [ 'content', 'featured_images' ];
 $service = new Service(get_the_ID(), $display);
 $view['service'] = $service->display_fields();
 

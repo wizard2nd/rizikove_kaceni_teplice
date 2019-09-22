@@ -1,10 +1,9 @@
-<ul class="featured-images gallery-image-container">
-    {% for img_id, image in featured_images %}
-        {% if loop.last %}
-            {% set last = 'last'%}
-        {% endif %}
-        <li class="featured-images__image image-{{ loop.index }} {{ last }}">
-            <a href="profile-carousel" class="slide-image modal-open" data-attachment-id="{{ img_id }}">{{ image }}</a>
-        </li>
+<div class="featured-images gallery-image-container">
+    {% for img_id, image_src in featured_images %}
+        <div class="feature-image">
+            <a href="profile-carousel" class="slide-image modal-open" data-attachment-id="{{ img_id }}">
+                <img src="{{ image_src }}" class="feature-image__image">
+            </a>
+        </div>
     {% endfor %}
-</ul>
+</div>

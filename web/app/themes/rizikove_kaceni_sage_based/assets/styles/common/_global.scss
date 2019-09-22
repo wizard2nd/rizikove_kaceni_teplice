@@ -21,6 +21,17 @@ h1{
   }
 }
 
+.post-content {
+  margin: 2em 1em 0 1em;
+  font-size: 1.5em;
+
+  @include modular-mq(desktop) {
+    width: 950px;
+    margin: 2em auto;
+
+  }
+}
+
 #close-modal{
   position: absolute;
   top: 10px;

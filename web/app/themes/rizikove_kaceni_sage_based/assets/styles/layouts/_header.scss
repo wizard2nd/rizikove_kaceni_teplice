@@ -91,6 +91,10 @@
 
     &.long-page-title {
       font-size: 2.5em;
+
+      @include modular-mq(desktop){
+        font-size: 4.5em;
+      }
     }
 
     @include modular-mq(desktop){

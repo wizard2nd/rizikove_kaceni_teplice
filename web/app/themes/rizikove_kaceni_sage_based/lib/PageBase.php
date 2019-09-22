@@ -11,7 +11,7 @@ namespace rk;
 
 class PageBase {
 
-    private $post = null;
+    protected $post = null;
 
     const TITLE_MAX_CHARS = 20;
 

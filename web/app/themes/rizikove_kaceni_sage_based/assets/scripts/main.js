@@ -22,7 +22,8 @@ var
     gallery = require('./pages/gallery.js'),
     service = require('./pages/services.js'),
     contact = require('./pages/contact.js'),
-    navigation = require('./components/navigation.js');
+    navigation = require('./components/navigation.js'),
+    references = require('./pages/references.js');
 
 
 (function($) {
@@ -50,10 +51,9 @@ var
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'references': {
       init: function() {
-        // JavaScript to be fired on the about us page
+          references.init();
       }
     },
     'profile': {

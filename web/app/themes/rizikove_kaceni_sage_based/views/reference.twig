@@ -1,5 +1,5 @@
 <div class="post-content">
-    <section class="references">
+    <section id="references" class="references" data-post-id="{{ post_id }}" data-ref-count="{{ ref_count }}">
         {% for reference in references %}
             <div class="reference">
                 {% if reference.client_logo %}
@@ -9,5 +9,8 @@
                 <div class="reference__content">{{ reference.text_reference }}</div>
             </div>
         {% endfor %}
+        <button id="next" type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </button>
     </section>
 </div>

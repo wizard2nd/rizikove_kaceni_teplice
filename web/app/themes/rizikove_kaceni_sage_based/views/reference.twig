@@ -9,8 +9,22 @@
                 <div class="reference__content">{{ reference.text_reference }}</div>
             </div>
         {% endfor %}
-        <button id="next" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-        </button>
     </section>
+    <button id="next" type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    </button>
 </div>
+{% raw %}
+    <script id="references-tmpl" type="x-tmlp-mustache">
+        {{ #references }}
+            <div class="reference">
+                {{ #client_logo }}
+                    <img class="reference__client-logo" src="{{ client_logo.sizes.medium }}"/>
+                {{ /client_logo }}
+                <h3 class="reference__client-name">{{ client_name }}</h3>
+                <div class="reference__content">{{ &text_reference }}</div>
+            </div>
+        {{ /references }}
+    </script>
+{% endraw %}
+

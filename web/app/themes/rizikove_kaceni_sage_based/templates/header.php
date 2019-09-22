@@ -1,4 +1,6 @@
 <?php
+    use rk\PageBase;
+
     if (is_ie() && get_browser_version() <= 8){
         // Redirect if browser is lte IE8
         $post = Timber::get_post();
@@ -13,6 +15,8 @@
     $title = get_bloginfo('name');
     $description = get_bloginfo('description');
 
+    $page = new PageBase(get_the_ID());
+
     $view['non_home_mobile_page'] = $non_home_mobile_page;
     $view['has_nav_menu'] = has_nav_menu('primary_navigation');
     $view['menu'] = new TimberMenu();
@@ -22,6 +26,7 @@
     $view['theme_uri'] = get_template_directory_uri();
     $view['front_page'] = is_front_page();
     $view['page_title'] = get_the_title();
+    $view['long_page_title'] = $page->has_long_title();
 
     Timber::render('partials/header.twig', $view);
 

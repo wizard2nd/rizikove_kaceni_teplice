@@ -76,44 +76,38 @@
   }
 }
 
-.front-page-services{
+.additional-services-wrap{
   display: flex;
   flex-flow: wrap;
-  margin-top: 4em;
 
   @include modular-mq(desktop) {
-    width: $front-page-section-content-width;
-    flex-flow: nowrap;
-    margin: 8em auto;
+    width: 1100px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 1em auto;
   }
 }
 
-.front-page-service {
-  text-align: center;
+.additional-services {
+  @include border-radius(5px);
+  border: 1px solid #2F5D1F;
   width: 100%;
-  margin: 0 1em 4em 1em;
-
-  @include modular-mq(desktop) {
-    margin-bottom: 0;
-  }
-
-  img {
-    border-radius: 50%;
-    box-shadow: 0 0 10px black;
-    margin-bottom: 1.5em;
-  }
+  margin: 0 1.5em 4em 1.5em;
 
   &__title {
-    @extend .title;
-    color: #0c481d;
-    font-weight: 100;
+    text-align: center;
+    margin: 0.5em 0;
   }
 
-  &__link {
-    text-decoration: none;
+  &__content {
+    ul {
+      margin: 0 10%;
+      font-size: 1.5em;
 
-    &:hover {
-      text-decoration: none;
+      li {
+        list-style-type: disc;
+        margin-bottom: 0.5em;
+      }
     }
   }
 }

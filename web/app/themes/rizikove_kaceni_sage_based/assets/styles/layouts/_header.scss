@@ -59,12 +59,6 @@
   width: 100%;
 }
 
-.site-title, .site-description, .page-title {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #e8e8e8;
-  text-shadow: 0 0 6px #000;
-}
-
 .site-title {
   font-size: 3.5em;
   margin-bottom: 0.5em;
@@ -80,6 +74,32 @@
 
   @include modular-mq(desktop) {
     font-size: 2.5em;
+  }
+}
+
+.header-wrap {
+
+  .site-title, .site-description, .page-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #e8e8e8;
+    text-shadow: 0 0 6px #000;
+  }
+
+  .page-title {
+    margin: 0 0.5em;
+    font-size: 5em;
+
+    &.long-page-title {
+      font-size: 2.5em;
+
+      @include modular-mq(desktop){
+        font-size: 4.5em;
+      }
+    }
+
+    @include modular-mq(desktop){
+      font-size: 6em;
+    }
   }
 }
 

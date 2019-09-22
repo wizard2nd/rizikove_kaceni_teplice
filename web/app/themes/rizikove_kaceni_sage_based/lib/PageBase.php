@@ -13,9 +13,19 @@ class PageBase {
 
     private $post = null;
 
-    public function __construct()
-    {
+    const TITLE_MAX_CHARS = 20;
 
+    public function __construct($post_id) {
+        $this->post = get_post($post_id);
+    }
+
+    public function has_long_title(){
+        if (strlen(__($this->post->post_title, 'sage')) > self::TITLE_MAX_CHARS){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     protected static function error_handler($errno, $errstr, $file, $line){

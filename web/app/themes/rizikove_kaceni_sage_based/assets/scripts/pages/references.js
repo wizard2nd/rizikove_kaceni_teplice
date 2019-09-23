@@ -9,6 +9,7 @@ module.exports = (function(){
         $references     = $('#references'),
         $referenceTmpl  = $('#references-tmpl'),
         page            = 1,
+        $spinner        = $('#spinner'),
 
         getReferences = function () {
 

@@ -31,4 +31,9 @@ class References extends PageBase
 
         return array_slice($this->references, $offset, $this->options['per_page']);
     }
+
+    public function page_count()
+    {
+        return ceil($this->count / $this->options['per_page']);
+    }
 }

@@ -20,13 +20,14 @@ module.exports = (function(){
                 data: {
                     action: 'get_references',
                     post_id: $references.data('postId'),
-                    page: ++page
+                    page: page
                 },
                 beforeSend: function () {
                   showSpinner();
                 },
                 success: function (response) {
                     showNextReferences(response.data);
+                    if (page >= $references.data('pageCount')) { hideNextButton(); }
                 },
                 error: function (jqXHR, status, err) {
                     console.log(status);
@@ -42,6 +43,10 @@ module.exports = (function(){
 
         showSpinner = function () {
             $spinner.removeClass('hide');
+        },
+
+        hideNextButton = function () {
+            $nextButton.addClass('hide');
         },
 
         newReferences = function () {
@@ -60,6 +65,7 @@ module.exports = (function(){
 
         loadNextReferences = function(){
             $nextButton.click(function (event) {
+                page++;
                 event.preventDefault();
                 getNextReferences();
             });

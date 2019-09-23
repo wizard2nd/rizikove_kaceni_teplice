@@ -127,6 +127,14 @@
   transform: $transforms;
 }
 
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
 // translate
 @mixin translate ($x, $y) {
   @include transform(translate($x, $y));

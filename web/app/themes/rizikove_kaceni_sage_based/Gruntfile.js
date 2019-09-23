@@ -58,7 +58,8 @@ module.exports = function(grunt) {
                     $: true,
                     module: true,
                     _ : true,
-                    google: true
+                    google: true,
+                    Mustache: true
                 }
             },
             all: [

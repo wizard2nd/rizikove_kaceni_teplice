@@ -13,6 +13,8 @@
 require('jquery');
 require('modernizr');
 require('underscore');
+require('mustache');
+
 require('../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
 require("../../bower_components/bxslider-4/src/js/jquery.bxslider.js");
 
@@ -22,7 +24,8 @@ var
     gallery = require('./pages/gallery.js'),
     service = require('./pages/services.js'),
     contact = require('./pages/contact.js'),
-    navigation = require('./components/navigation.js');
+    navigation = require('./components/navigation.js'),
+    references = require('./pages/references.js');
 
 
 (function($) {
@@ -50,10 +53,9 @@ var
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'references': {
       init: function() {
-        // JavaScript to be fired on the about us page
+          references.init();
       }
     },
     'profile': {

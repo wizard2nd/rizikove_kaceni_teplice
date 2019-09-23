@@ -42,3 +42,12 @@
     margin: 0 auto;
   }
 }
+
+.new-references {
+  opacity: 0;
+  @include transition(opacity 1s);
+}
+
+.new-references-show {
+  opacity: 1;
+}

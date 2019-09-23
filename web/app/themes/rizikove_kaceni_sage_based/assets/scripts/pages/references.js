@@ -11,7 +11,7 @@ module.exports = (function(){
         page            = 1,
         $spinner        = $('#spinner'),
 
-        getReferences = function () {
+        getNextReferences = function () {
 
             return $.ajax({
                 url: '/wp/wp-admin/admin-ajax.php',
@@ -22,31 +22,53 @@ module.exports = (function(){
                     post_id: $references.data('postId'),
                     page: ++page
                 },
+                beforeSend: function () {
+                  showSpinner();
+                },
                 success: function (response) {
+                    showNextReferences(response.data);
                 },
                 error: function (jqXHR, status, err) {
                     console.log(status);
                     console.log(err);
+                    $spinner.addClass('hide');
                 }
             });
         },
 
-        displayReferences = function(){
+        hideSpinner = function () {
+            $spinner.addClass('hide');
+        },
+
+        showSpinner = function () {
+            $spinner.removeClass('hide');
+        },
+
+        newReferences = function () {
+            return $references.find('.new-references').last();
+        },
+
+        showNextReferences = function (references) {
+            console.log(references);
+            Mustache.parse($referenceTmpl.html());
+            $references.append(Mustache.render($referenceTmpl.html(), { references: references } ));
+            hideSpinner();
+            setTimeout(function () {
+                newReferences().addClass('new-references-show');
+            },100);
+        },
+
+        loadNextReferences = function(){
             $nextButton.click(function (event) {
                 event.preventDefault();
-                getReferences().done(function (response) {
-                    console.log(response);
-                    Mustache.parse($referenceTmpl.html());
-                    $references.append(Mustache.render($referenceTmpl.html(), { references: response.data } ));
-                });
+                getNextReferences();
             });
         };
 
         return {
             init: function() {
-                displayReferences();
+                loadNextReferences();
             }
         };
-
 
 })();

@@ -17,6 +17,7 @@
 </div>
 {% raw %}
     <script id="references-tmpl" type="x-tmlp-mustache">
+        <div class="new-references">
         {{ #references }}
             <div class="reference">
                 {{ #client_logo }}
@@ -26,6 +27,7 @@
                 <div class="reference__content">{{ &text_reference }}</div>
             </div>
         {{ /references }}
+        </div>
     </script>
 {% endraw %}
 

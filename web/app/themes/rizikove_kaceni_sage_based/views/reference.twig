@@ -1,4 +1,4 @@
-<div class="post-content">
+<div class="post-content references-content">
     <section id="references" class="references" data-post-id="{{ post_id }}" data-ref-count="{{ ref_count }}">
         {% for reference in references %}
             <div class="reference">
@@ -11,9 +11,7 @@
         {% endfor %}
     </section>
     <img id="spinner" class="reference__spinner hide" src="{{ spinner }}"/>
-    <button id="next" type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-    </button>
+    <button id="next" class="next-button">Dalsi Reference</button>
 </div>
 {% raw %}
     <script id="references-tmpl" type="x-tmlp-mustache">

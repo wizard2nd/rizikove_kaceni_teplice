@@ -1,5 +1,5 @@
-.references {
-
+.references-content {
+  margin-bottom: 1em;
 }
 
 .reference {
@@ -39,7 +39,7 @@
   &__spinner {
     display: block;
     width: 2em;
-    margin: 0 auto;
+    margin: 0.5em auto;
   }
 }
 
@@ -50,4 +50,17 @@
 
 .new-references-show {
   opacity: 1;
+}
+
+.references-content {
+  .next-button {
+    @extend .service__title;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      color: #00a699;
+    }
+  }
 }

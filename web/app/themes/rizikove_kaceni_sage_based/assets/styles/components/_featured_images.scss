@@ -1,6 +1,7 @@
 .featured-images {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2em;
 
   @include modular-mq(desktop) {
     width: $desktop-content-width;

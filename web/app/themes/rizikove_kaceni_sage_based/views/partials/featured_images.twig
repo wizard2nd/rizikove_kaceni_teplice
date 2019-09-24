@@ -1,9 +1,9 @@
 <div class="featured-images gallery-image-container">
     {% for img_id, image_src in featured_images %}
         <div class="feature-image">
-            <a href="profile-carousel" class="slide-image modal-open" data-attachment-id="{{ img_id }}">
+            {#<a href="profile-carousel" class="slide-image modal-open" data-attachment-id="{{ img_id }}">#}
                 <img src="{{ image_src }}" class="feature-image__image">
-            </a>
+            {#</a>#}
         </div>
     {% endfor %}
 </div>

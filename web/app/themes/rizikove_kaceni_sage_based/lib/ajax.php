@@ -23,4 +23,4 @@ add_action("wp_ajax_get_gallery_attachments_images", "get_gallery_attachments_im
 add_action("wp_ajax_nopriv_get_gallery_attachments_images", "get_gallery_attachments_images");
 
 add_action("wp_ajax_get_references", "get_references");
-add_action("wp_ajax_get_references", "get_references");
+add_action("wp_ajax_nopriv_get_references", "get_references");

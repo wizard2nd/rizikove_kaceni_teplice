@@ -18,7 +18,7 @@
 
   .image-background {
     @include bg_img('header_img_mobile.jpg');
-    height: 700px;
+    height: 100vh;
 
     @include modular-mq(desktop) {
       display: none;
@@ -29,12 +29,12 @@
     display: none;
   }
 
-  .site-title, .site-description {
+  .site-title, .site-description, .site-logo {
     display: block;
   }
 }
 
-.site-title, .site-description {
+.site-title, .site-description, .site-logo {
   display: none;
 }
 
@@ -61,11 +61,22 @@
 
 .site-title {
   font-size: 3.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 
   @include modular-mq(desktop) {
     font-size: 6em;
     margin-bottom: 0;
+  }
+}
+
+.site-logo {
+  width: 75px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #f0f8ff;
+  margin: 1em auto;
+
+  @include modular-mq(desktop) {
+    width: 85px;
   }
 }
 

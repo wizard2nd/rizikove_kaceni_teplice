@@ -91,6 +91,11 @@ class FrontendHelper {
         return get_stylesheet_directory_uri().'/dist/styles/images/spinner.gif';
     }
 
+    public static function image_path()
+    {
+        return get_stylesheet_directory_uri().'/dist/styles/images';
+    }
+
 //    public static function render_featured_images($featured_images, $dim){
 //        print '<ul class="featured-images">';
 //        $i = 1;

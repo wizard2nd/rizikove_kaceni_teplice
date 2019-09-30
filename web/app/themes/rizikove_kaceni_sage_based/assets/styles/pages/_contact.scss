@@ -1,8 +1,25 @@
+.contact-content {
+  text-align: center;
+  h2 {
+    margin-bottom: 0.5em;
+  }
 
-.address-area, .contact-form{
+  margin-bottom: 2em;
+}
 
-  @extend .col-md-6
+.contact-image {
+  @extend .feature-image__image;
+  width: auto;
+  margin: 0 auto 1em auto;
 
+  @include modular-mq(desktop) {
+    margin-bottom: 2em;
+  }
+}
+
+.mail-phone {
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }
 
 #g-map{
@@ -11,170 +28,5 @@
   @include modify-property-by-device(height, 300px 400px 500px);
 }
 
-.address-area{
 
-  margin-bottom: 10px;
-
-  @include modular-mq(tablet){
-    margin-bottom: 40px;
-  }
-
-  h1{
-    font-size: 25px;
-    margin-bottom: 10px;
-
-    @include modular-mq(tablet){
-      font-size: 30px;
-    }
-
-    @include modular-mq(desktop){
-      margin-bottom: 10px;
-    }
-  }
-
-  .address{
-    @include modular-mq(desktop){
-      margin-bottom: 40px;
-    }
-  }
-
-
-  .mail-phone{
-
-    @include modular-mq(desktop){
-      margin-bottom: 33px;
-    }
-
-  }
-
-  img{
-    @include square-dim(100%);
-
-    @include modular-mq(tablet){
-      float: none;
-    }
-  }
-}
-
-.contact-form{
-
-  @include modular-mq(desktop){
-    margin-top: 17px;
-
-    .cz &{
-      margin-top: 24px;
-    }
-  }
-
-  h1{
-    font-size: 26px;
-    margin-bottom: 10px;
-
-
-    @include modular-mq(tablet){
-      font-size: 33px;
-      margin-bottom: 20px;
-    }
-
-    @include modular-mq(desktop){
-      font-size: 25px;
-
-      .cz &{
-        font-size: 19px;
-      }
-
-      .de & {
-        font-size: 19px;
-        margin-top: -13px;
-      }
-
-    }
-  }
-
-  .field-title{
-    @include modular-mq(desktop){
-      font-size: 21px;
-    }
-
-  }
-
-  .asterisk:after{
-    content: '*';
-    color: #AB3131;
-    margin-left: 3px;
-    top: 3px;
-    font-size: 22px;
-    position: relative;
-  }
-
-  .select-image{
-    height: 90px;
-
-    .field-title{
-
-      @include modular-mq(tablet){
-        float: left;
-        margin-right: 20px;
-      }
-
-      &+p{
-
-        @include modular-mq(tablet){
-          float: left;
-          width: 250px;
-          font-size: 24px;
-        }
-      }
-    }
-  }
-
-  input[type=text], input[type=email], textarea{
-
-    width: 100%;
-    border: none;
-    padding: 5px 10px;
-
-    @include modular-mq(desktop){
-      font-size: 22px;
-    }
-  }
-
-  textarea{
-    height: 200px;
-  }
-
-  input[type=file]{
-    width: 100%;
-  }
-
-  input[type=submit]{
-    display: block;
-    width: 100px;
-    padding: 5px 10px;
-    margin: 0 auto;
-
-    @include modular-mq(tablet){
-      width: 145px;
-    }
-
-    @include modular-mq(desktop){
-      margin: 0;
-    }
-  }
-
-  .wpcf7-validation-errors{
-    display: none !important;
-  }
-
-  .wpcf7-response-output{
-    margin: 0;
-  }
-
-  span.wpcf7-not-valid-tip{
-    @include modify-property-by-device(font-size, 14px 15px 18px);
-    color: #FF6A6A;
-
-  }
-
-}
 

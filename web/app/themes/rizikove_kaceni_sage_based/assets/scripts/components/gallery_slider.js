@@ -161,6 +161,12 @@ module.exports = (function(){
                 closeCarousel();
             });
 
+            $(document).keydown(function(e){
+                if (e.keyCode === 27) {
+                    closeCarousel();
+                }
+            });
+
             $window.resize(function(){
                 centerCarouselVertically();
             });

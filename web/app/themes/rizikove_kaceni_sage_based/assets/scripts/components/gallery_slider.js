@@ -41,10 +41,8 @@ module.exports = (function(){
         },
 
         getSlideIndex = function($el){
-            var li_parent = $el.parent('li');
-            slideIndex = li_parent.length === 0 ? $el.index()
-                                                 : li_parent.index();
-            //console.log(slideIndex);
+            slideIndex = $el.parent('figure').parent('div').index();
+            console.log(slideIndex);
         },
 
         /**

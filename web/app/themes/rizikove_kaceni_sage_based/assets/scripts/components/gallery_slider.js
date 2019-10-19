@@ -29,6 +29,7 @@ module.exports = (function(){
             prevText: ''
             //slideWidth: 300
         },
+        $openMenuIcon = $('.burger-menu'),
 
 
         getAttachmentIds = function(){
@@ -105,6 +106,7 @@ module.exports = (function(){
 
             // show slider modal
             $sliderModalWrap.removeClass('hide-slider');
+            $openMenuIcon.hide();
 
             // wait until buildCarousel is finished
             while(true){
@@ -143,6 +145,7 @@ module.exports = (function(){
             hideSliderModal();
             $loader.show();
             $bxSlider.destroySlider();
+            $openMenuIcon.show();
         },
 
         centerCarouselVertically = function(){

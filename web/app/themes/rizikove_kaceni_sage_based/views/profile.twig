@@ -1,10 +1,2 @@
-<div id="profile-page" class="content-area profile-page">
-    <div id="content" class="site-content container" role="main">
-        <h1 class="page-title">{{ post.title }}</h1>
-        <div class="profile-post">
-            {{ post.content }}
-            {{ include('partials/featured_images.twig') }}
-        </div>
-    </div><!-- #content -->
-</div><!-- #primary -->
-{{ include('partials/slider_modal.twig') }}
+<div class="post-content profile-content" >{{ profile.post.content }}</div>
+{% include('partials/featured_images.twig') with { 'featured_images' : profile.featured_images } %}

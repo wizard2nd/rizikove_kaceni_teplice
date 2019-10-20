@@ -1,19 +1,5 @@
-
-@include modular-mq(tablet){
-  .container{
-    width: 100%;
-
-  }
-}
-
 .site-content{
-
-  padding: 30px 20px;
-  font-size: 17px;
-  font-weight: 100;
-
   position: relative;
-  top: 20px;
   opacity: 0;
 
   -webkit-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
@@ -22,20 +8,13 @@
   -o-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
   transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
 
-  &.home-page{
-    padding: 0;
-  }
-
   &--show{
     top: 0;
+
     opacity: 100;
   }
 
   @include modular-mq(tablet){
-    padding: 40px 30px;
-    font-size: 21px;
-    letter-spacing: 1px;
-
     -webkit-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
     -moz-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
     -ms-transition: opacity 0.5s linear 1s, top 0.5s linear 1s;
@@ -44,28 +23,4 @@
 
   }
 
-  @include modular-mq(desktop){
-    width: $site-width;
-    font-size: 24px;
-    margin: 0 auto;
-    padding: 50px 0;
-
-    &.home-page{
-      padding: 100px 0;
-    }
-  }
-}
-
-.profile-post, .service-content{
-  .featured-images__image{
-
-    &.image-2{
-      margin-right: 0;
-    }
-
-    &.last{
-      margin-right: 0;
-    }
-
-  }
 }

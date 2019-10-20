@@ -29,6 +29,7 @@ module.exports = (function(){
             prevText: ''
             //slideWidth: 300
         },
+        $openMenuIcon = $('.burger-menu'),
 
 
         getAttachmentIds = function(){
@@ -41,10 +42,8 @@ module.exports = (function(){
         },
 
         getSlideIndex = function($el){
-            var li_parent = $el.parent('li');
-            slideIndex = li_parent.length === 0 ? $el.index()
-                                                 : li_parent.index();
-            //console.log(slideIndex);
+            slideIndex = $el.parent('figure').parent('div').index();
+            console.log(slideIndex);
         },
 
         /**
@@ -107,6 +106,7 @@ module.exports = (function(){
 
             // show slider modal
             $sliderModalWrap.removeClass('hide-slider');
+            $openMenuIcon.hide();
 
             // wait until buildCarousel is finished
             while(true){
@@ -145,6 +145,7 @@ module.exports = (function(){
             hideSliderModal();
             $loader.show();
             $bxSlider.destroySlider();
+            $openMenuIcon.show();
         },
 
         centerCarouselVertically = function(){
@@ -161,6 +162,12 @@ module.exports = (function(){
 
             $closeModal.click(function(){
                 closeCarousel();
+            });
+
+            $(document).keydown(function(e){
+                if (e.keyCode === 27) {
+                    closeCarousel();
+                }
             });
 
             $window.resize(function(){

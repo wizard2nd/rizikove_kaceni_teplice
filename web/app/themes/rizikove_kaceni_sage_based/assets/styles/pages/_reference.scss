@@ -1,61 +1,106 @@
-.reference{
-  margin-bottom: 20px;
+.references-content {
+  margin-bottom: 1em;
 
-  @include modular-mq(tablet){
-    margin-bottom: 30px;
+  @include modular-mq(desktop) {
+    width: $desktop-content-width;
   }
+}
 
-  @include modular-mq(desktop){
-    margin-bottom: 40px;
+.references-wrap {
+
+  @include modular-mq(desktop) {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
   }
+}
 
-  .client-logo{
-    @include modular-mq(desktop){
-      width: 10%;
-    }
+.reference {
+  margin-bottom: 2em;
 
-    width: 25%;
-    margin-bottom: 5px;
-  }
-
-  &.last{
-    margin-bottom: 0;
-  }
-
-  .client-info{
-    position: relative;
-    @include clearfix;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 19px;
+  @include modular-mq(desktop) {
+    width: 50%;
     border-bottom: 1px solid;
+    padding: 0 0.5em;
+  }
 
-    @include modular-mq(desktop){
-      text-align: left;
+  &__client-logo {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 35%;
+
+    @include modular-mq(desktop) {
+      width: 100px;
     }
+  }
 
-    @include modular-mq(tablet){
-      font-size: 26px;
-    }
-
+  &__client-name {
     text-align: center;
-
+    margin-bottom: 0.3em;
   }
 
-  .name{
+  &__content {
+    text-align: left;
 
-  }
+    ul {
+      margin-left: 1em;
+    }
 
-  .klient-contact{
-    @include modular-mq(desktop){
-      position: absolute;
-      right: 0;
-      bottom: 0;
+    li {
+      list-style-type: disc;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    li, p {
+      font-size: 0.8em;
+
+      @include modular-mq(desktop) {
+        font-size: 0.9em;
+      }
     }
 
   }
 
-  .text{
-    text-align: justify;
+  &__spinner {
+    display: block;
+    width: 2em;
+    margin: 0 auto 0.5em auto;
+
+    @include modular-mq(desktop) {
+      margin: 0 auto 1em auto;
+    }
+  }
+}
+
+.new-references {
+  opacity: 0;
+  @include transition(opacity 1s);
+
+  @extend .references-wrap;
+}
+
+.new-references-show {
+  opacity: 1;
+}
+
+.references-content {
+  .next-button {
+    @extend .service__title;
+    display: block;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+
+    @include modular-mq(desktop) {
+      width: auto;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      color: #00a699;
+    }
   }
 }

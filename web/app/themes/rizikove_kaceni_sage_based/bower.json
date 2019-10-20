@@ -12,7 +12,8 @@
     "bourbon": "4.2.3",
     "underscore": "1.8.3",
     "bxslider-4": "4.2.15",
-    "jquery": "3.1.0"
+    "jquery": "3.1.0",
+    "mustache": "3.1.0"
   },
   "overrides": {
     "modernizr": {

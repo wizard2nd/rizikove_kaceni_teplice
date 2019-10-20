@@ -76,7 +76,7 @@ var
     },
     'page_template_profile':{
         init: function(){
-            gallerySlider.init();
+            //gallerySlider.init();
 
         }
     }

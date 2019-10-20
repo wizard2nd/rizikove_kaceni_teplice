@@ -14,17 +14,8 @@
     @include translate(-13px, -7px);
   }
 
-  .glyphicon-cog {
-    @include translate(-14px, 0px);
-  }
-
-  .glyphicon-compressed {
-    @include translate(1px, 1px);
-    font-size: 2.5em;
-  }
-
   .glyphicon-tree-deciduous {
-    @include rotate(5deg)
+    @include rotate(9deg)
   }
 
   .glyphicon-home {

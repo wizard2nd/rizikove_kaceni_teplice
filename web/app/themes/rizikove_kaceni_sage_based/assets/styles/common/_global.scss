@@ -1,12 +1,13 @@
 body{
   //background: url("#{$img-path}/green_cup.png");
-  background-color: #C2D0BC;
-  background-attachment: fixed;
+  background-color: #f6ffff;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
+  color: #0c481d;
 }
 
 h1, h2, h3 {
-  @extend .navigation-font
+  font-family: 'Source Sans Pro', sans-serif
 }
 
 h1{
@@ -21,12 +22,23 @@ h1{
   }
 }
 
+.post-content {
+  margin: 2em 1em 0 1em;
+  font-size: 1.5em;
+
+  @include modular-mq(desktop) {
+    width: 950px;
+    margin: 2em auto;
+
+  }
+}
+
 #close-modal{
   position: absolute;
   top: 10px;
   right: 10px;
   color: #DCE4DE;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   z-index: 10000;
 
@@ -43,7 +55,13 @@ h1{
 }
 
 .shadow-box{
-  -webkit-box-shadow: 0px 1px 8px 1px #7B8A83;
-  -moz-box-shadow: 0px 1px 8px 1px #7B8A83;
-  box-shadow: 0px 1px 8px 1px #7B8A83;
+  -webkit-box-shadow: 0 1px 8px 1px #7B8A83;
+  -moz-box-shadow: 0 1px 8px 1px #7B8A83;
+  box-shadow: 0 1px 8px 1px #7B8A83;
+}
+
+@mixin image-shadow {
+  -webkit-box-shadow: 0 0 10px 0 #000;
+  -moz-box-shadow: 0 0 10px 0 #000;
+  box-shadow: 0 0 10px 0 #000;
 }

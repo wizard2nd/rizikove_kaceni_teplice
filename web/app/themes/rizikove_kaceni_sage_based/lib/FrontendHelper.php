@@ -73,10 +73,11 @@ class FrontendHelper {
      * @return array                    array contains markup for images
      */
     public static function get_featured_images($img_ids, $dim){
+        if (!$img_ids) return array();
         $featured_images = array();
         foreach ($img_ids as $title => $img_id) {
             if ($img_id !== false && preg_match('/feature/', $title)){
-                $featured_images[$img_id] = wp_get_attachment_image( $img_id, $dim);
+                $featured_images[$img_id] = wp_get_attachment_image_src($img_id, $dim)[0];
             }
             else{
                 continue;
@@ -88,6 +89,11 @@ class FrontendHelper {
     public static function spinner_path()
     {
         return get_stylesheet_directory_uri().'/dist/styles/images/spinner.gif';
+    }
+
+    public static function image_path()
+    {
+        return get_stylesheet_directory_uri().'/dist/styles/images';
     }
 
 //    public static function render_featured_images($featured_images, $dim){

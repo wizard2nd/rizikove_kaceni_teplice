@@ -1,6 +1,12 @@
 .gallery-content {
+  width: 80%;
+
   @include modular-mq(desktop) {
-    width: $desktop-content-width;
+    width: 1035px;
+  }
+
+  &.post-content {
+    margin: 2em auto 1.5em auto;
   }
 }
 
@@ -23,6 +29,10 @@
   h2{
     display: none;
   }
+
+  .glyphicon-menu-left {
+    @include translate(-3px, 4px);
+  }
 }
 
 .foogallery-container {
@@ -37,14 +47,6 @@
     @include modular-mq(desktop) {
       margin-right: 20px !important;
     }
-  }
-}
-
-.gallery-content {
-  padding-bottom: 1.5em;
-
-  .glyphicon {
-    @include translate(-3px, 4px);
   }
 }
 

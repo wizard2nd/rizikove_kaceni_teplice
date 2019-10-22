@@ -29,13 +29,16 @@
   &__title {
     @extend .title;
     @include border-radius(5px);
-    color: #0c481d;
+    font-size: 1.6em;
+    color: #e5f7f6;
     font-weight: 100;
-    border: 1px solid;
     padding: 0.3em;
+    background-color: #00a699;
+    box-shadow: 0 3px grey;
 
-    &:hover {
-      color: #00a699;
+    @include modular-mq(desktop) {
+      box-shadow: none;
+      font-size: 1.5em;
     }
   }
 
@@ -47,10 +50,13 @@
   }
 
   &__link {
+    display: block;
     text-decoration: none;
 
     &:hover {
       text-decoration: none;
+      color: #e5f7f6;
+      box-shadow: 0 3px grey;
     }
   }
 }

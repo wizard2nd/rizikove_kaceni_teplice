@@ -84,7 +84,7 @@ set :local_tmp_dir, 'tmp'
 set :wpcli_backup_db, true # backup remote db
 set :wpcli_remote_uploads_dir, '~/apps/rizikovekaceni/wp_uploads'
 set :wp_external_plugins, '~/apps/rizikovekaceni/external-plugins'
-set :wpcli_args, '--include-columns=guid,option_value,post_content'
+set :wpcli_args, '--all-tables'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

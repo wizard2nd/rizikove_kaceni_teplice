@@ -1,3 +1,5 @@
-<div class="description post-content" >{{ service.content }}</div>
+<a href="{{ service.parent_url }}" class="service__title service__link service__link--top">Naše služby</a>
+<div class="description post-content">{{ service.content }}</div>
 {% include('partials/featured_images.twig') with { 'featured_images' : service.featured_images } %}
 {% include('partials/slider_modal.twig') %}
+<a href="{{ service.parent_url }}" class="service__title service__link service__link--bottom">Naše služby</a>

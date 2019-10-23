@@ -2,8 +2,8 @@
     {% for service_id, service in services %}
         <div class="service">
             <img src="{{ service.featured_image.url }}" class="service__image">
-            <a class="service__link service__title" href="{{ service.url }}">
-                {{ service.title }}
+            <a class="service__link" href="{{ service.url }}">
+                <h2 class="service__title">{{ service.title }}</h2>
             </a>
             <div class="service__content">{{ service.content }}</div>
         </div>

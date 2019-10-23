@@ -48,7 +48,7 @@ class PageBase {
         ];
 
         $device = FrontendHelper::get_device();
-        $dim = '';
+        $dim = 'gallery-image-desktop';
         switch($device){
             case 'mobile': $dim = 'gallery-image-mobile';
                 break;

@@ -49,6 +49,12 @@ class Service {
         return FrontendHelper::get_featured_images(get_fields($this->id), 'gallery-thumb');
     }
 
+    private function parent_url()
+    {
+        $parent = new self($this->service_post->post_parent);
+        return $parent->url();
+    }
+
     public function display_fields()
     {
         $view = [];

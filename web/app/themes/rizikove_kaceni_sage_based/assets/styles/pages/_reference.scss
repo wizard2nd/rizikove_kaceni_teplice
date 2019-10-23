@@ -88,19 +88,14 @@
 
 .references-content {
   .next-button {
-    @extend .service__title;
+    @extend .service__link;
     display: block;
-    background-color: transparent;
     width: 100%;
     cursor: pointer;
 
     @include modular-mq(desktop) {
       width: auto;
       margin: 0 auto;
-    }
-
-    &:hover {
-      color: #00a699;
     }
   }
 }

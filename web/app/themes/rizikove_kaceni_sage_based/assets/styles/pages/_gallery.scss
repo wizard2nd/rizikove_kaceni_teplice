@@ -22,8 +22,13 @@
   }
 
   a {
+    @extend .service__link;
     @extend .service__title;
-    font-size: 1.5em;
+
+    @include modular-mq(desktop) {
+      width: 200px;
+      margin: 0 auto;
+    }
   }
 
   h2{

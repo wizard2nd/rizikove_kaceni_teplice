@@ -102,9 +102,9 @@
       font-size: 2em;
       font-weight: 300;
       color: #eafbfb;
+      text-decoration: none;
 
       @include modular-mq(desktop) {
-        text-decoration: none;
         text-shadow: 0 0 8px rgba(0,0,0,.7);
 
         @at-root {
